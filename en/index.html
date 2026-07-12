@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="TikLive TTS reads your TikTok Live, Twitch and YouTube chat out loud inside a free, open-source desktop app for streamers."
+    />
+    <meta name="theme-color" content="#f7f8fb" />
+
+    <!-- On deploy: replace the domain in canonical/hreflang/og:url and sitemap.xml -->
+    <link rel="canonical" href="https://ikhunsa.github.io/tiktok-tts-landing/en/" />
+    <link rel="alternate" hreflang="es" href="https://ikhunsa.github.io/tiktok-tts-landing/" />
+    <link rel="alternate" hreflang="en" href="https://ikhunsa.github.io/tiktok-tts-landing/en/" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://ikhunsa.github.io/tiktok-tts-landing/"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TikLive TTS - Read your chat out loud" />
+    <meta
+      property="og:description"
+      content="Read your chat out loud, mix TikTok Live, Twitch and YouTube, and show OBS-ready alerts. Free and open source."
+    />
+    <meta property="og:image" content="../assets/logo.png" />
+    <meta property="og:url" content="https://ikhunsa.github.io/tiktok-tts-landing/en/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="TikLive TTS - Read your chat out loud" />
+    <meta
+      name="twitter:description"
+      content="Read your chat out loud, mix TikTok Live, Twitch and YouTube, and show OBS-ready alerts. Free and open source."
+    />
+    <meta name="twitter:image" content="../assets/logo.png" />
+
+    <title>TikLive TTS - Read your chat out loud, made for streamers</title>
+    <link rel="icon" href="../assets/logo.png" />
+    <link rel="apple-touch-icon" href="../assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TikLive TTS",
+        "operatingSystem": "Windows",
+        "applicationCategory": "MultimediaApplication",
+        "description": "Free, open-source desktop app that reads TikTok Live, Twitch and YouTube chat out loud, with OBS-ready overlays.",
+        "url": "https://ikhunsa.github.io/tiktok-tts-landing/en/",
+        "downloadUrl": "https://github.com/iKhunsa/tiktok-tts/releases/latest",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to content</a>
+
+    <header class="site-header" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="TikLive TTS home">
+        <img src="../assets/logo.png" alt="" />
+        <span>TikLive TTS</span>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Sections">
+        <a href="#features">Features</a>
+        <a href="#overlays">Overlays</a>
+        <a href="#support">Support</a>
+        <a href="#download">Download</a>
+        <a href="blog.html">Blog</a>
+      </nav>
+      <div class="header-actions">
+        <a class="lang-link" href="../index.html" hreflang="es" aria-label="Leer en español">ES</a>
+        <a
+          class="icon-link"
+          href="https://github.com/iKhunsa/tiktok-tts"
+          target="_blank"
+          rel="noopener"
+          aria-label="TikLive TTS on GitHub"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .5a12 12 0 0 0-3.8 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.45 11.45 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+          </svg>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Open menu"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path class="bars" d="M4 7h16M4 12h16M4 17h16" />
+            <path class="cross" d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">Desktop app for live creators</p>
+        <h1 id="hero-title">TikLive TTS</h1>
+        <p class="hero-copy">
+          Read your chat out loud, mix TikTok Live, Twitch and YouTube, and show OBS-ready alerts without relying on an external browser.
+        </p>
+
+        <div class="hero-actions" aria-label="Main actions">
+          <a
+            class="button button-primary"
+            href="https://github.com/iKhunsa/tiktok-tts/releases/latest"
+            target="_blank"
+            rel="noopener"
+            data-latest-exe
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 5.6 10.3 4v7H3V5.6Zm8.3-1.8L21 2v9h-9.7V3.8ZM3 12.2h7.3v7.1L3 17.7v-5.5Zm8.3 0H21v9l-9.7-1.7v-7.3Z" />
+            </svg>
+            Download for Windows
+          </a>
+          <a
+            class="button button-secondary"
+            href="https://github.com/iKhunsa/tiktok-tts"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .5a12 12 0 0 0-3.8 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.45 11.45 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+
+        <p class="version-note">NSIS installer for Windows<span data-release-version></span>. Updates via GitHub Releases.</p>
+
+        <div class="platforms" aria-label="Supported platforms">
+          <span>TikTok Live</span>
+          <span>Twitch</span>
+          <span>YouTube</span>
+          <span>OBS</span>
+        </div>
+
+        <div class="product-shot" aria-label="TikLive TTS app preview">
+          <div class="app-window">
+            <div class="window-topbar">
+              <div class="window-brand">
+                <img src="../assets/logo.png" alt="" />
+                <strong>TikLive TTS</strong>
+              </div>
+              <div class="window-dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="app-grid">
+              <section class="chat-panel" aria-label="Live chat">
+                <div class="panel-title">
+                  <span class="status-dot"></span>
+                  Live chat
+                </div>
+                <article class="chat-message">
+                  <span class="badge tiktok">TikTok</span>
+                  <div>
+                    <strong>@sofi_stream</strong>
+                    <p>new gift, thanks for the stream!</p>
+                  </div>
+                </article>
+                <article class="chat-message">
+                  <span class="badge twitch">Twitch</span>
+                  <div>
+                    <strong>@pixeldev</strong>
+                    <p>read this message out loud please</p>
+                  </div>
+                </article>
+                <article class="chat-message">
+                  <span class="badge youtube">YouTube</span>
+                  <div>
+                    <strong>@neo_live</strong>
+                    <p>greetings from the YouTube chat</p>
+                  </div>
+                </article>
+              </section>
+
+              <section class="control-panel" aria-label="TTS controls">
+                <div class="voice-card">
+                  <span>Active voice</span>
+                  <strong>English US</strong>
+                  <div class="meter"><span></span></div>
+                </div>
+                <div class="queue-card">
+                  <span>TTS queue</span>
+                  <strong>3 messages</strong>
+                </div>
+                <div class="overlay-card">
+                  <span>OBS overlay</span>
+                  <strong>localhost:3000</strong>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-band" aria-label="Overview">
+        <div class="reveal"><strong>13</strong><span>TTS languages</span></div>
+        <div class="reveal"><strong>3</strong><span>simultaneous chats</span></div>
+        <div class="reveal"><strong>1</strong><span>ordered queue</span></div>
+        <div class="reveal"><strong>OBS</strong><span>overlays included</span></div>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Built for real streams</p>
+          <h2>Your chat speaks without interrupting you</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="reveal">
+            <h3>Multi-platform</h3>
+            <p>Merge messages from TikTok Live, Twitch and YouTube into a single queue with clear per-platform badges.</p>
+          </article>
+          <article class="reveal">
+            <h3>Anti-spam filter</h3>
+            <p>Skips duplicates, overly long texts and blocked words to keep the narration clean.</p>
+          </article>
+          <article class="reveal">
+            <h3>Auto-reconnect</h3>
+            <p>Recovers connections with backoff whenever a platform drops the stream or changes state.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="overlays" class="section split-section">
+        <div>
+          <p class="eyebrow">OBS ready</p>
+          <h2>Alerts and counters as a Browser Source</h2>
+          <p>
+            Paste the local URLs into OBS to show gifts, likes and followers. You can upload your own backgrounds and keep everything inside the app.
+          </p>
+        </div>
+        <div class="overlay-preview reveal" aria-label="Overlay example">
+          <div class="gift-alert">
+            <span class="gift-icon">TTS</span>
+            <div>
+              <strong>@luna sent a gift</strong>
+              <p>The alert shows up in OBS while the TTS keeps reading.</p>
+            </div>
+          </div>
+          <div class="likes-row">
+            <span>Likes</span>
+            <strong>24,810</strong>
+          </div>
+          <div class="followers-row">
+            <span>Followers</span>
+            <strong>+128</strong>
+          </div>
+        </div>
+      </section>
+
+      <section id="support" class="section support-section">
+        <div class="section-heading">
+          <p class="eyebrow">Independent project</p>
+          <h2>Support the project</h2>
+          <p class="section-sub">
+            TikLive TTS is free and open source. If it helps your streams, you can support development with a voluntary donation or by following the creator's channels.
+          </p>
+        </div>
+
+        <div class="support-grid">
+          <article class="donation-card reveal">
+            <span class="donation-icon" aria-hidden="true">⚡</span>
+            <h3>Lightning Network</h3>
+            <p>Instant, with minimal fees.</p>
+            <div class="copy-row">
+              <input
+                type="text"
+                value="Khunsa@coinos.io"
+                readonly
+                aria-label="Lightning Network address"
+              />
+              <button class="copy-btn" type="button" data-copy="Khunsa@coinos.io">Copy</button>
+            </div>
+          </article>
+
+          <article class="donation-card reveal">
+            <span class="donation-icon" aria-hidden="true">₿</span>
+            <h3>Native Bitcoin</h3>
+            <p>Bitcoin main network (on-chain).</p>
+            <div class="copy-row">
+              <input
+                type="text"
+                value="bc1qtu4fnl7e2qxjssqtaynjnjkgq7r4kerv0r9ljk"
+                readonly
+                aria-label="Bitcoin address"
+              />
+              <button
+                class="copy-btn"
+                type="button"
+                data-copy="bc1qtu4fnl7e2qxjssqtaynjnjkgq7r4kerv0r9ljk"
+              >
+                Copy
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <a
+          class="discord-banner reveal"
+          href="https://discord.com/invite/mwY859tcQK"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.291.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418Z" />
+          </svg>
+          <div>
+            <strong>TikLive TTS Community</strong>
+            <p>Official Discord · feedback and questions welcome</p>
+          </div>
+          <span class="go">Join →</span>
+        </a>
+
+        <div class="social-grid">
+          <a
+            class="social-card social-yt reveal"
+            href="https://www.youtube.com/@speedmucho"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+            <h3>YouTube</h3>
+            <p>@speedmucho</p>
+          </a>
+          <a
+            class="social-card social-tt reveal"
+            href="https://www.tiktok.com/@speedmucho"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+            </svg>
+            <h3>TikTok</h3>
+            <p>@speedmucho</p>
+          </a>
+          <a
+            class="social-card social-tw reveal"
+            href="https://www.twitch.tv/speedmucho"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0 1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" />
+            </svg>
+            <h3>Twitch</h3>
+            <p>@speedmucho</p>
+          </a>
+          <a
+            class="social-card social-kick reveal"
+            href="https://kick.com/speedmucho"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M1.333 0h8v5.333H12V2.667h2.667V0h8v8H20v2.667h-2.667v2.666H20V16h2.667v8h-8v-2.667H12v-2.666H9.333V24h-8Z" />
+            </svg>
+            <h3>Kick</h3>
+            <p>@speedmucho</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="download" class="download-section">
+        <p class="eyebrow">Start in minutes</p>
+        <h2>Download, connect your live and let the chat speak.</h2>
+        <div class="hero-actions">
+          <a
+            class="button button-primary"
+            href="https://github.com/iKhunsa/tiktok-tts/releases/latest"
+            target="_blank"
+            rel="noopener"
+            data-latest-exe
+          >
+            Download current version
+          </a>
+          <a
+            class="button button-secondary"
+            href="https://github.com/iKhunsa/tiktok-tts#readme"
+            target="_blank"
+            rel="noopener"
+          >
+            Read the instructions
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="#top" aria-label="TikLive TTS home">
+            <img src="../assets/logo.png" alt="" />
+            <span>TikLive TTS</span>
+          </a>
+          <p>Read your chat out loud and show OBS-ready alerts. Free and open source.</p>
+          <div class="social-row" aria-label="Social media">
+            <a
+              href="https://www.youtube.com/@speedmucho"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.tiktok.com/@speedmucho"
+              target="_blank"
+              rel="noopener"
+              aria-label="TikTok"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.twitch.tv/speedmucho"
+              target="_blank"
+              rel="noopener"
+              aria-label="Twitch"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0 1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z" />
+              </svg>
+            </a>
+            <a href="https://kick.com/speedmucho" target="_blank" rel="noopener" aria-label="Kick">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M1.333 0h8v5.333H12V2.667h2.667V0h8v8H20v2.667h-2.667v2.666H20V16h2.667v8h-8v-2.667H12v-2.666H9.333V24h-8Z" />
+              </svg>
+            </a>
+            <a
+              href="https://discord.com/invite/mwY859tcQK"
+              target="_blank"
+              rel="noopener"
+              aria-label="Discord"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.291.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.009c.12.099.246.198.373.292a.077.077 0 0 1-.006.127 12.3 12.3 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.84 19.84 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418Z" />
+              </svg>
+            </a>
+            <a
+              href="https://github.com/iKhunsa/tiktok-tts"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .5a12 12 0 0 0-3.8 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.45 11.45 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Product">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#overlays">Overlays</a>
+          <a href="#download">Download</a>
+          <a href="https://github.com/iKhunsa/tiktok-tts/releases" target="_blank" rel="noopener">Releases</a>
+        </nav>
+
+        <nav class="footer-col" aria-label="Community">
+          <h4>Community</h4>
+          <a href="https://discord.com/invite/mwY859tcQK" target="_blank" rel="noopener">Discord</a>
+          <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener">GitHub</a>
+          <a href="#support">Support the project</a>
+        </nav>
+
+        <nav class="footer-col" aria-label="Resources">
+          <h4>Resources</h4>
+          <a href="blog.html">Blog</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="../index.html" hreflang="es">Español</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> TikLive TTS</span>
+        <span>Made for streamers.</span>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

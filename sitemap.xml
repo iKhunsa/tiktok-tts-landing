@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Al desplegar: reemplaza el dominio por el definitivo -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://ikhunsa.github.io/tiktok-tts-landing/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ikhunsa.github.io/tiktok-tts-landing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ikhunsa.github.io/tiktok-tts-landing/en/" />
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://ikhunsa.github.io/tiktok-tts-landing/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ikhunsa.github.io/tiktok-tts-landing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://ikhunsa.github.io/tiktok-tts-landing/en/" />
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ikhunsa.github.io/tiktok-tts-landing/blog.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ikhunsa.github.io/tiktok-tts-landing/en/blog.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ikhunsa.github.io/tiktok-tts-landing/terminos.html</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://ikhunsa.github.io/tiktok-tts-landing/privacidad.html</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://ikhunsa.github.io/tiktok-tts-landing/en/terms.html</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://ikhunsa.github.io/tiktok-tts-landing/en/privacy.html</loc>
+    <priority>0.3</priority>
+  </url>
+</urlset>
