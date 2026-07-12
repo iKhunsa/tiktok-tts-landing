@@ -55,6 +55,23 @@ if (downloadButtons.length) {
     .catch(() => {});
 }
 
+// Conteo de estrellas del repo (siempre actualizado)
+const starCountEls = document.querySelectorAll("[data-star-count]");
+if (starCountEls.length) {
+  fetch("https://api.github.com/repos/iKhunsa/tiktok-tts")
+    .then((res) => (res.ok ? res.json() : null))
+    .then((repo) => {
+      if (!repo || typeof repo.stargazers_count !== "number") return;
+      const formatted = new Intl.NumberFormat("en-US", {
+        notation: "compact",
+      }).format(repo.stargazers_count);
+      starCountEls.forEach((el) => {
+        el.textContent = "★ " + formatted;
+      });
+    })
+    .catch(() => {});
+}
+
 // Copiar direcciones de donación
 document.querySelectorAll(".copy-btn").forEach((button) => {
   const originalText = button.textContent.trim();
