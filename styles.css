@@ -665,6 +665,74 @@ h3 {
   background: var(--surface);
 }
 
+.donation-card--main {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.donation-card--main:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.donation-cta {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--brand-strong);
+  font-weight: 760;
+  font-size: 0.92rem;
+}
+
+.crypto-label {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.crypto-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.donation-card--compact {
+  padding: 16px;
+}
+
+.donation-card--compact .donation-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.donation-card--compact h3 {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.donation-card--compact .copy-row {
+  margin-top: 8px;
+}
+
+.donation-card--compact .copy-row input {
+  min-height: 36px;
+  font-size: 0.76rem;
+}
+
+.donation-card--compact .copy-btn {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 0.8rem;
+}
+
 .donation-icon {
   display: grid;
   place-items: center;
