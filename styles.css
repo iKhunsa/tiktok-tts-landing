@@ -908,6 +908,113 @@ h3 {
   fill: #16a34a;
 }
 
+.creators-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.creator-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 28px 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  text-align: center;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.creator-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.creator-avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--brand), var(--cyan));
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 760;
+  text-transform: uppercase;
+}
+
+.creator-avatar__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.creator-name {
+  margin: 4px 0 0;
+  font-size: 1.05rem;
+}
+
+.creator-role {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.creator-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.creator-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    border-color 160ms ease;
+}
+
+.creator-chip svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.creator-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.chip-tt:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.chip-kick:hover {
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
 .download-section {
   text-align: center;
 }
@@ -1178,7 +1285,8 @@ html.js .reveal.visible {
   .app-grid,
   .feature-grid,
   .split-section,
-  .support-grid {
+  .support-grid,
+  .creators-grid {
     grid-template-columns: 1fr;
   }
 
