@@ -123,3 +123,23 @@ if (!reduceMotion && "IntersectionObserver" in window) {
 } else {
   revealEls.forEach((el) => el.classList.add("visible"));
 }
+
+// Toggle de creadores extra
+const creatorsToggle = document.getElementById("creators-toggle");
+if (creatorsToggle) {
+  const extraCards = document.querySelectorAll(".creator-card--extra");
+  const isEnglish = document.documentElement.lang === "en";
+  const labels = isEnglish
+    ? { more: "Show more creators", less: "Show fewer creators" }
+    : { more: "Ver más creadores", less: "Ver menos creadores" };
+
+  creatorsToggle.addEventListener("click", () => {
+    const expanded = creatorsToggle.getAttribute("aria-expanded") === "true";
+    extraCards.forEach((card) => {
+      card.hidden = expanded;
+      if (!expanded) card.classList.add("visible");
+    });
+    creatorsToggle.setAttribute("aria-expanded", String(!expanded));
+    creatorsToggle.querySelector("span").textContent = expanded ? labels.more : labels.less;
+  });
+}

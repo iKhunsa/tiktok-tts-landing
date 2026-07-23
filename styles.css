@@ -994,6 +994,44 @@ h3 {
     border-color 160ms ease;
 }
 
+.creator-card--extra[hidden] {
+  display: none;
+}
+
+.creators-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 24px auto 0;
+  padding: 10px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.creators-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+.creators-toggle__icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 200ms ease;
+}
+
+.creators-toggle[aria-expanded="true"] .creators-toggle__icon {
+  transform: rotate(180deg);
+}
+
 .creator-chip svg {
   width: 16px;
   height: 16px;
