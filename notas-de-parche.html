@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Notas de parche de TikLive TTS: cada cambio, corrección y función nueva de la app, versión por versión."
+    />
+    <meta name="theme-color" content="#f7f8fb" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Notas de parche - TikLive TTS" />
+    <meta
+      property="og:description"
+      content="Historial de cambios de TikLive TTS: nuevas funciones, correcciones y ajustes, versión por versión."
+    />
+    <meta property="og:image" content="assets/logo.png" />
+    <title>Notas de parche - TikLive TTS</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Saltar al contenido</a>
+
+    <header class="site-header" aria-label="Navegación principal">
+      <a class="brand" href="index.html" aria-label="TikLive TTS inicio">
+        <img src="assets/logo.png" alt="" />
+        <span>TikLive TTS</span>
+      </a>
+      <nav class="nav-links" id="nav-links" aria-label="Secciones">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#support">Apoyar</a>
+        <a href="index.html#download">Descargar</a>
+      </nav>
+      <div class="header-actions">
+        <a class="lang-link" href="en/patch-notes.html" hreflang="en" aria-label="Read in English">EN</a>
+        <a
+          class="icon-link"
+          href="https://github.com/iKhunsa/tiktok-tts"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub de TikLive TTS"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .5a12 12 0 0 0-3.8 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.45 11.45 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+          </svg>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Abrir menú"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path class="bars" d="M4 7h16M4 12h16M4 17h16" />
+            <path class="cross" d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="top" class="page-main">
+      <p class="eyebrow">Notas de parche</p>
+      <h1>Historial de cambios de TikLive TTS</h1>
+      <p>
+        Cada parche que publicamos, con sus funciones nuevas, correcciones y cambios de comportamiento.
+      </p>
+
+      <article class="post">
+        <h2>v1.5.8</h2>
+        <p class="page-meta">Julio 2026 · Parche</p>
+
+        <h3>Nueva opción: no leer el monto del regalo en el TTS</h3>
+        <p>
+          Se agrega un control para desactivar el anuncio por voz del valor en dólares de los regalos de TikTok.
+        </p>
+        <p>
+          Hasta ahora, cuando alguien enviaba un regalo, el TTS siempre decía también su equivalente en dólares (ej: <em>"Usuario envió 5 Rosa, equivale a $1.29 dólares"</em>). Para varios streamers esto resultaba molesto o poco deseado, sin forma de desactivarlo sin apagar el anuncio de regalos por completo.
+        </p>
+        <p>
+          Ahora hay un nuevo checkbox <strong>"Leer monto del regalo"</strong>, junto al de <strong>"Anunciar regalos"</strong>. Viene activado por defecto, así que el comportamiento actual no cambia para nadie a menos que lo apaguen manualmente.
+        </p>
+        <ul>
+          <li><strong>Activado (default):</strong> el TTS sigue diciendo el monto, igual que antes.</li>
+          <li><strong>Desactivado:</strong> el TTS dice solo usuario, cantidad y nombre del regalo, sin el monto.</li>
+        </ul>
+        <p><strong>Notas de comportamiento:</strong></p>
+        <ul>
+          <li>El toggle solo afecta lo que se habla. El chat visual sigue mostrando siempre el badge ≈ $X USD junto al mensaje del regalo, esté activado o no.</li>
+          <li>No afecta Twitch (bits) ni YouTube. El cambio es específico al monto en dólares de los regalos de TikTok.</li>
+          <li>El estado se guarda igual que los demás toggles (persiste entre sesiones, sincroniza con el control móvil).</li>
+        </ul>
+
+        <h3>Corrección: TTS forzaba "Usuario dice: comentario" sin opción de desactivarlo</h3>
+        <p>Corrección de bug reportado en <strong>issue #14</strong>.</p>
+        <p>
+          Un cambio reciente hizo que el TTS siempre agregara la palabra <em>"dice"</em> entre el nombre de usuario y el comentario (ej: <em>"Usuario dice: hola"</em>), sin dar forma de volver al formato anterior (<em>"Usuario: hola"</em>). Algunos streamers preferían el formato viejo y no tenían cómo cambiarlo.
+        </p>
+        <p>
+          Ahora existe un toggle independiente <strong>"Decir 'dice'"</strong>, junto al toggle existente <strong>"Decir nombre"</strong>. El username sigue controlándose por separado.
+        </p>
+        <p>
+          Además, la palabra conectora ahora se localiza según la voz TTS activa en vez de estar fija en español: <em>"says"</em> en inglés, <em>"diz"</em> en portugués, <em>"dit"</em> en francés, <em>"sagt"</em> en alemán, sufijo honorífico en japonés/coreano, y equivalentes en el resto de los 12 idiomas de voz soportados.
+        </p>
+        <p><strong>Notas de comportamiento:</strong></p>
+        <ul>
+          <li>Este fix no cambia ningún otro comportamiento del TTS ni de los filtros existentes.</li>
+          <li>El ajuste nuevo es 100% local (se guarda en la configuración del cliente) y no requiere reconfigurar canales ni voces ya guardadas.</li>
+          <li>Probado en vivo contra un stream real de TikTok en japonés, confirmando los 3 casos: conector activado (voz default), conector desactivado, y voz cambiada a japonés.</li>
+        </ul>
+
+        <h3>Nueva sección "Accesibilidad" en Configuración Avanzada</h3>
+        <p>Pensada para streamers con baja visión, sensibilidad al movimiento/fotosensibilidad, o que necesitan lectura de chat más pausada.</p>
+        <p><strong>Añadido:</strong></p>
+        <ul>
+          <li><strong>Reducir movimiento:</strong> apaga animaciones (brillos, rebotes, scroll) en los 7 overlays de OBS. Se aplica en vivo sin recargar la fuente de navegador.</li>
+          <li><strong>Tamaño de texto y botones:</strong> escala toda la app (ventana principal, panel de configuración y overlay de chat), no solo el chat. 4 niveles (Normal a Máximo).</li>
+          <li><strong>Alto contraste:</strong> refuerza bordes y texto secundario en la ventana principal y en configuración avanzada, para mejor legibilidad.</li>
+          <li><strong>TTS de voz lenta:</strong> activa lectura más pausada del narrador.</li>
+          <li><strong>Indicador de plataforma sin depender del color:</strong> el overlay de chat ahora marca TikTok/Twitch/YouTube con una letra (T/W/Y) además del color, para usuarios daltónicos.</li>
+        </ul>
+        <p><strong>Notas de comportamiento:</strong></p>
+        <ul>
+          <li>Todos los ajustes se guardan en el servidor y se sincronizan en vivo a cualquier ventana u overlay ya abierto (WebSocket), sin necesidad de recargar OBS.</li>
+          <li>Los overlays que ya usan <code>?size=</code> o <code>?speed=</code> en su URL de OBS mantienen ese valor manual. El ajuste de accesibilidad no lo pisa.</li>
+          <li>El overlay de créditos no detiene su scroll con "reducir movimiento" (es su función principal), solo lo hace más lento.</li>
+          <li>No afecta el filtro de idioma, filtro de palabras bloqueadas, ni el motor TTS. Cambios aislados a legibilidad/movimiento.</li>
+        </ul>
+
+        <h3>Corrección: Configuración ya no conecta nada</h3>
+        <p>Corrección de un problema de UX introducido por el diseño original de la app: la pantalla de "Configuración" mezclaba configurar con conectar, generando confusión sobre dónde iniciar la conexión real al chat.</p>
+        <p>
+          Antes, la vista de Configuración tenía dos puntos que disparaban una conexión en vivo: el panel <strong>"Conexión principal"</strong> (solo TikTok, atajo legacy) y un botón <strong>"Conectar todo"</strong> dentro de <strong>"Canales adicionales"</strong>. Esto duplicaba el punto de entrada real de conexión y hacía fácil conectar por accidente mientras solo se quería guardar un canal.
+        </p>
+        <p>Ahora Configuración sirve únicamente para definir qué canales usar:</p>
+        <ul>
+          <li>Se eliminó la sección "Conexión principal".</li>
+          <li>"Canales adicionales" pasa a llamarse <strong>"Canales vinculados"</strong>.</li>
+          <li>El botón para agregar un canal ahora dice <strong>"Guardar"</strong> y solo lo guarda/vincula, no dispara ninguna conexión.</li>
+          <li>Conectar de verdad ocurre únicamente desde el botón <strong>"Conectar todo"</strong> de la vista Chat, sin cambios en su comportamiento.</li>
+        </ul>
+        <p>No requiere ninguna acción del usuario. Los canales ya guardados siguen funcionando igual, solo cambia dónde vive el botón de conectar.</p>
+        <p><strong>Notas de comportamiento:</strong></p>
+        <ul>
+          <li>Este fix no toca la lógica de conexión en sí (TikTok, Twitch, YouTube) ni el pipeline de TTS/chat. Ambos siguen funcionando del lado del servidor exactamente igual.</li>
+          <li>Afecta únicamente a qué controles aparecen en la vista de Configuración.</li>
+        </ul>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> TikLive TTS</span>
+        <nav aria-label="Legal" class="footer-inline-links">
+          <a href="privacidad.html">Privacidad</a>
+          <a href="terminos.html">Términos</a>
+          <a href="index.html">Inicio</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
