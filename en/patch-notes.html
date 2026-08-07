@@ -74,6 +74,71 @@
       </p>
 
       <article class="post">
+        <h2>v1.5.9</h2>
+        <p class="page-meta">August 2026 · Patch</p>
+
+        <h3>New feature: bug report system with session logging</h3>
+        <p>
+          Until now, when a streamer hit a problem, the only way to report it was writing on Discord with no technical context: no logs, no way to know what actually happened server-side. Catching and fixing bugs depended on the user being able to describe the error well.
+        </p>
+        <p>
+          A <strong>"Report Bug"</strong> button was added to the sidebar (between "Advanced" and the language selector) that opens a simple form.
+        </p>
+        <ul>
+          <li>Discord nick and channel link (TikTok/Twitch/YouTube).</li>
+          <li>An open box to describe what happened in your own words, no technical questions.</li>
+          <li>Optional field to add anything else (error messages, when it happened, etc.).</li>
+        </ul>
+        <p>
+          On submit, the report is sent automatically to the project's Discord, attaching the full technical log of your session (from the moment you opened the app) so the problem can be diagnosed without asking you for extra steps.
+        </p>
+        <p><strong>Persistent logging</strong></p>
+        <ul>
+          <li>Event logs are now saved to disk per session, not just in memory. They used to be lost when the app closed.</li>
+          <li>Coverage expanded: uncaught errors from the server, from Electron's main process, and from the client (previously invisible) are now logged too.</li>
+          <li>Automatic 14-day retention, with a size cap per session, it doesn't grow unbounded.</li>
+          <li>The old "Logs" section inside Advanced was removed. Logging now lives integrated into the report flow, not as a separate panel to review by hand.</li>
+        </ul>
+        <p><strong>Security:</strong> the Discord webhook link is never exposed on the client or checked into the repo's source code. It lives in a local file outside git, and public builds inject it at compile time via GitHub Actions.</p>
+        <p><strong>Behavior notes:</strong></p>
+        <ul>
+          <li>This change doesn't touch connection logic (TikTok, Twitch, YouTube) or the TTS/chat pipeline. Both keep working the same.</li>
+          <li>Only affects the diagnostics/report system and the Clips view (see improved copy below).</li>
+        </ul>
+
+        <h3>New feature: guided tutorial for new users</h3>
+        <p>
+          The "Report Bug" button already existed, but nothing else was explained: a streamer installing the app for the first time had no guidance on how to link their channel and connect. They had to guess, or ask on Discord.
+        </p>
+        <p><strong>Language selector first, before anything else</strong></p>
+        <p>
+          Previously, every new popup (welcome, donation, bug report) showed directly in Spanish, regardless of the user's language. Now, on first launch a mandatory language selector appears (10 languages), with its own text already in the language detected from the browser. Only after choosing does the rest of the notices show, correctly translated.
+        </p>
+        <p><strong>Interactive guided tutorial (new)</strong></p>
+        <ul>
+          <li>Welcome notice: "Want us to show you how to connect?", with the option to start the tutorial or skip it.</li>
+          <li>6-step tutorial with an animated spotlight over the app's real buttons: Settings → Linked channels → Add channel → choose platform → enter username → Save. The last step explicitly clarifies you need to start streaming on the platform first, and only then come back and tap "Connect all", not before.</li>
+          <li>On completion: on-screen confetti and a personal message wishing you luck with the stream, with a request for a shoutout on your channel if you'd like to help more people discover the app.</li>
+        </ul>
+        <p><strong>Popup reordering:</strong> the popup chain (welcome → tutorial → bug report → donation) now always ends with the donation notice last, so it doesn't compete visually with any tutorial or functional notice.</p>
+        <p><strong>Behavior notes:</strong></p>
+        <ul>
+          <li>This change doesn't touch connection logic, TTS, or the bug report system itself. It only adds the onboarding layer and reorders when each popup appears.</li>
+          <li>The tutorial only triggers for fresh installs, without touching any of your current settings. No user action required.</li>
+        </ul>
+
+        <h3>Other changes in this pass</h3>
+        <ul>
+          <li>Improved copy in "Clip Markers": now explains that the <strong>Ctrl+Shift+M</strong> shortcut marks the exact timestamp of the live moment, so you can jump straight to those minutes in the recording while editing, without rewatching the whole stream.</li>
+          <li>"Donate" button heart is now red.</li>
+          <li>Translations: report form, Clips copy, language selector, welcome notice, 6-step tutorial and closing message are available in all 10 app languages (es/en/it/pt/fr/de/zh/ja/ko/ru).</li>
+          <li>Spotlight (driver.js) and confetti (canvas-confetti) libraries vendored locally in <code>public/vendor/</code>, no external CDN dependency, work offline.</li>
+          <li>Em dashes removed from all newly added text (looked off, replaced with regular punctuation).</li>
+          <li><strong>Fix:</strong> translatable placeholders (<code>data-i18n-placeholder</code>) were never applied on language switch. Now they are.</li>
+        </ul>
+      </article>
+
+      <article class="post">
         <h2>v1.5.8</h2>
         <p class="page-meta">July 2026 · Patch</p>
 

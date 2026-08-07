@@ -74,6 +74,71 @@
       </p>
 
       <article class="post">
+        <h2>v1.5.9</h2>
+        <p class="page-meta">Agosto 2026 · Parche</p>
+
+        <h3>Nueva funcionalidad: sistema de reporte de bugs con logging de sesión</h3>
+        <p>
+          Hasta ahora, cuando un streamer tenía un problema, la única forma de reportarlo era escribir en Discord sin contexto técnico: sin logs, sin saber qué había pasado realmente del lado del servidor. Detectar y arreglar bugs dependía de que el usuario supiera describir bien el error.
+        </p>
+        <p>
+          Se agrega un botón <strong>"Reportar Bug"</strong> en el sidebar (entre "Avanzado" y el selector de idioma) que abre un formulario simple.
+        </p>
+        <ul>
+          <li>Nick de Discord y link del canal (TikTok/Twitch/YouTube).</li>
+          <li>Una caja abierta para contar con tus propias palabras qué pasó, sin preguntas técnicas.</li>
+          <li>Campo opcional para agregar algo más (mensajes de error, cuándo pasó, etc.).</li>
+        </ul>
+        <p>
+          Al enviar, el reporte se manda automáticamente al Discord del proyecto, adjuntando el registro técnico completo de tu sesión (desde que abriste la app) para poder diagnosticar el problema sin pedirte pasos extra.
+        </p>
+        <p><strong>Logging persistente</strong></p>
+        <ul>
+          <li>El registro de eventos ahora se guarda en disco por sesión, no solo en memoria. Antes se perdía al cerrar la app.</li>
+          <li>Se amplió la cobertura: errores no capturados del servidor, del proceso principal de Electron y también del cliente (antes invisibles) ahora quedan registrados.</li>
+          <li>Retención automática de 14 días, con límite de tamaño por sesión, no crece sin control.</li>
+          <li>La vieja sección "Logs" dentro de Avanzado se eliminó. El registro ahora vive integrado en el flujo de reporte, no como panel separado para revisar a mano.</li>
+        </ul>
+        <p><strong>Seguridad:</strong> el link del webhook de Discord nunca se expone en el cliente ni queda en el código fuente del repo. Vive en un archivo local fuera de git, y en los builds públicos se inyecta al compilar vía GitHub Actions.</p>
+        <p><strong>Notas de comportamiento:</strong></p>
+        <ul>
+          <li>Este cambio no toca la lógica de conexión (TikTok, Twitch, YouTube) ni el pipeline de TTS/chat. Siguen funcionando igual.</li>
+          <li>Afecta únicamente al sistema de diagnóstico/reporte y a la vista de Clips (ver copy mejorado abajo).</li>
+        </ul>
+
+        <h3>Nueva funcionalidad: tutorial guiado para usuarios nuevos</h3>
+        <p>
+          El botón de "Reportar Bug" ya estaba, pero nadie explicaba nada más: un streamer que instala la app por primera vez no tenía ninguna guía de cómo vincular su canal y conectarse. Tocaba adivinar, o escribir a Discord para preguntar.
+        </p>
+        <p><strong>Selector de idioma primero, antes que cualquier otra cosa</strong></p>
+        <p>
+          Antes, todo popup nuevo (bienvenida, donación, reporte de bug) se mostraba directo en español, sin importar el idioma del usuario. Ahora, al abrir la app por primera vez aparece un selector de idioma obligatorio (10 idiomas), con su propio texto ya en el idioma que detecta del navegador. Recién después de elegir se muestra el resto de los avisos, ya traducidos correctamente.
+        </p>
+        <p><strong>Tutorial guiado interactivo (nuevo)</strong></p>
+        <ul>
+          <li>Aviso de bienvenida: "¿Te mostramos cómo conectar?", con opción de arrancar el tutorial o saltarlo.</li>
+          <li>Tutorial de 6 pasos con spotlight animado sobre los botones reales de la app: Configuración → Canales vinculados → Agregar canal → elegir plataforma → escribir usuario → Guardar. El último paso aclara explícitamente que hay que iniciar la transmisión en la plataforma primero, y recién ahí volver y tocar "Conectar todo", no antes.</li>
+          <li>Al terminar: confeti en pantalla y mensaje personal deseando éxito en el stream, con pedido de mención en el canal si quieren ayudar a que más gente conozca la app.</li>
+        </ul>
+        <p><strong>Reordenamiento de avisos:</strong> la cadena de popups (bienvenida → tutorial → reporte de bug → donación) ahora siempre termina con el aviso de donación al final, para que no compita visualmente con ningún tutorial o aviso funcional.</p>
+        <p><strong>Notas de comportamiento:</strong></p>
+        <ul>
+          <li>Este cambio no toca lógica de conexión, TTS ni el sistema de reporte de bugs en sí. Solo agrega la capa de onboarding y reordena cuándo aparece cada popup.</li>
+          <li>El tutorial se activa solo para instalaciones nuevas, sin tocar nada de tu configuración actual. No requiere ninguna acción del usuario.</li>
+        </ul>
+
+        <h3>Otros cambios de esta pasada</h3>
+        <ul>
+          <li>Copy mejorado en "Marcadores de Clip": ahora explica que el atajo <strong>Ctrl+Shift+M</strong> marca el timestamp exacto del momento en vivo, para poder saltar directo a esos minutos en la grabación al editar, sin tener que rever todo el stream.</li>
+          <li>Corazón del botón "Donar" en rojo.</li>
+          <li>Traducciones: formulario de reporte, copy de Clips, selector de idioma, bienvenida, tutorial de 6 pasos y mensaje de cierre disponibles en los 10 idiomas de la app (es/en/it/pt/fr/de/zh/ja/ko/ru).</li>
+          <li>Librerías de spotlight (driver.js) y confeti (canvas-confetti) vendorizadas localmente en <code>public/vendor/</code>, sin dependencia de CDN externo, funcionan offline.</li>
+          <li>Guiones em dash sacados de todos los textos nuevos (se veían feos, reemplazados por puntuación normal).</li>
+          <li><strong>Fix:</strong> los placeholders traducibles (<code>data-i18n-placeholder</code>) nunca se aplicaban al cambiar de idioma. Ahora sí.</li>
+        </ul>
+      </article>
+
+      <article class="post">
         <h2>v1.5.8</h2>
         <p class="page-meta">Julio 2026 · Parche</p>
 
