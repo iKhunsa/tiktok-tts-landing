@@ -76,6 +76,86 @@
       </p>
 
       <article class="post">
+        <h2>v1.7.0</h2>
+        <p class="page-meta">Moderación</p>
+
+        <h3>Nueva funcionalidad: moderación de espectadores</h3>
+        <p>
+          Hasta ahora, cuando alguien se portaba mal en tu chat no había nada que hacer desde la app. El TTS leía todo lo que pasara el filtro de spam, viniera de quien viniera. Bloquear una palabra significaba abandonar la vista de Chat, entrar a Avanzado y buscar el panel a mano. Y no existía ninguna noción de "quién es esta persona": cada mensaje era anónimo para la app, sin memoria de un directo al otro.
+        </p>
+        <p>
+          Esta actualización agrega una sección <strong>Moderación</strong> en el menú izquierdo y, alrededor de ella, varias formas de actuar sobre un espectador concreto.
+        </p>
+
+        <p><strong>Registro de espectadores</strong></p>
+        <p>
+          Cada persona que interactúa en tus directos queda registrada: su nombre, la plataforma y cuándo fue la última vez que apareció. El registro se guarda en disco y sobrevive a cerrar la app y a las actualizaciones.
+        </p>
+        <p>
+          La tabla tiene dos pestañas separadas, <strong>Seguidores</strong> y <strong>No seguidores</strong>, y ambas se moderan igual. Se puede buscar por nombre, filtrar por plataforma o por estado (silenciados, baneados, sin castigo) y ordenar por actividad reciente o alfabéticamente.
+        </p>
+        <p>Sobre cada espectador hay cinco acciones:</p>
+        <ul>
+          <li><strong>Silenciar:</strong> sus mensajes se siguen viendo en el chat, atenuados y con un icono, pero el TTS no los lee. 15 minutos, 1 hora o indefinido.</li>
+          <li><strong>Banear:</strong> sus mensajes no aparecen en absoluto. Tampoco llegan a los overlays de OBS ni al control móvil.</li>
+          <li><strong>★ Marcar como seguidor:</strong> para sumarlo a mano a la lista de seguidores.</li>
+          <li><strong>Quitar castigos:</strong> vuelve a cero.</li>
+          <li><strong>✕:</strong> lo saca del registro.</li>
+        </ul>
+        <p>Los castigos temporales vencen solos, aunque tengas la app cerrada cuando toque expirar.</p>
+        <p>
+          <strong>Importante:</strong> esto es moderación dentro de la app. Silenciar o banear no bloquea a nadie en TikTok, Twitch ni YouTube; solo cambia cómo se comporta el TTS y tu ventana de chat.
+        </p>
+
+        <p><strong>Moderar desde el chat, sin ir a ningún lado</strong></p>
+        <p>
+          Hacer clic en el nombre de cualquiera en el chat en vivo abre el mismo menú: silenciar, marcarlo como seguidor o bloquear una palabra. En pleno directo no hace falta cambiar de vista.
+        </p>
+
+        <p><strong>"Leer a no seguidores"</strong></p>
+        <p>
+          Nuevo interruptor en la vista de Chat. Encendido, como viene por defecto, el TTS lee a todos. Apagado, solo lee a seguidores y a quien hayas marcado a mano; el resto se sigue viendo en el chat, pero sin voz.
+        </p>
+        <p>
+          Conviene entender cómo alguien pasa a ser seguidor, porque no es obvio: la app no puede pedirle a la plataforma tu lista de seguidores. Solo se entera de un follow si lo ve pasar en vivo, mientras estás conectado. O si lo marcás vos. Eso quiere decir que quien te sigue desde hace un año va a aparecer en "No seguidores" hasta que lo marques.
+        </p>
+        <p>
+          Por eso: cuidado con apagar el interruptor el primer día. Con el registro recién estrenado, callarías a casi todo tu público habitual. Cobra sentido después de varios directos, cuando ya se juntaron follows reales.
+        </p>
+
+        <p><strong>Bloquear una palabra en segundos</strong></p>
+        <p>
+          El botón "Palabras bloqueadas" de la vista de Chat ahora abre una ventana con un solo campo. Copiás la palabra molesta del chat, la pegás, Enter, y el servidor la aplica al instante, sin reconectar y sin salir de la vista. La ventana no se cierra al agregar, así que en una racha de spam se pegan varias seguidas. Desde ahí mismo hay un enlace a Avanzado para ver y editar la lista completa.
+        </p>
+
+        <p><strong>El chat sigue lo que se está leyendo</strong></p>
+        <p>
+          Antes el chat bajaba a la fuerza con cada mensaje nuevo, lo que hacía imposible leer nada en un directo movido. Ahora persigue al mensaje que el TTS está leyendo, que normalmente va varios mensajes por detrás del último. Si scrolleás hacia arriba se queda quieto para que leas tranquilo.
+        </p>
+
+        <p><strong>Tutorial guiado</strong></p>
+        <p>
+          La primera vez que abrís Moderación arranca un recorrido de 9 pasos que explica todo lo anterior como una sola novedad, no como funciones sueltas. Se puede repetir cuando quieras con el botón "Ver tutorial" dentro de la sección.
+        </p>
+
+        <p><strong>Otros cambios de esta pasada</strong></p>
+        <ul>
+          <li>Vaciar el registro de espectadores pide escribir <strong>BORRAR</strong> en una ventana de confirmación, en vez del cuadro gris del navegador. Borra seguidores marcados, silencios y baneos, y no se puede deshacer.</li>
+          <li>Tabla restilizada: cabecera fija al scrollear, filas alternas, estados con color.</li>
+          <li>El registro no lleva la cuenta de cuántos mensajes, regalos o likes mandó cada persona. Solo guarda cuándo fue la última vez que apareció.</li>
+          <li>Traducciones: todo lo nuevo está en los 10 idiomas de la app (es/en/it/pt/fr/de/zh/ja/ko/ru).</li>
+        </ul>
+        <p>No requiere ninguna acción de tu parte. Funciona apenas actualizás, con el interruptor de no seguidores encendido para que nada cambie hasta que vos lo decidas.</p>
+
+        <p><strong>Notas de comportamiento:</strong></p>
+        <ul>
+          <li>Este parche no toca la lógica de conexión a TikTok, Twitch ni YouTube, ni el motor de voz. Un mensaje puede dejar de leerse por dos motivos nuevos, usuario silenciado o no seguidor con el filtro apagado, y por ninguno más.</li>
+          <li>En YouTube no hay eventos de follow: esos espectadores se marcan siempre a mano. En Twitch los follows con nombre requieren haber iniciado sesión con tu cuenta; sin eso, nadie pasa a seguidor automáticamente. En TikTok funciona sin configurar nada.</li>
+          <li>Si un espectador no tiene identificador estable en su plataforma, la app lo reconoce por el nombre y lo marca con ⚠ en la tabla: ese castigo se pierde si la persona se cambia el nombre.</li>
+        </ul>
+      </article>
+
+      <article class="post">
         <h2>v1.5.9</h2>
         <p class="page-meta">Agosto 2026 · Parche</p>
 

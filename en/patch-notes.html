@@ -76,6 +76,86 @@
       </p>
 
       <article class="post">
+        <h2>v1.7.0</h2>
+        <p class="page-meta">Moderation</p>
+
+        <h3>New feature: viewer moderation</h3>
+        <p>
+          Until now, there was nothing you could do from the app when someone misbehaved in your chat. The TTS read anything that passed the spam filter, no matter who sent it. Blocking a word meant leaving the Chat view, going into Advanced, and hunting for the panel by hand. And there was no notion of "who is this person": every message was anonymous to the app, with no memory from one stream to the next.
+        </p>
+        <p>
+          This update adds a <strong>Moderation</strong> section to the left menu and, around it, several ways to act on a specific viewer.
+        </p>
+
+        <p><strong>Viewer log</strong></p>
+        <p>
+          Everyone who interacts in your streams gets logged: their name, the platform, and the last time they showed up. The log is saved to disk and survives closing the app and updates.
+        </p>
+        <p>
+          The table has two separate tabs, <strong>Followers</strong> and <strong>Non-followers</strong>, both moderated the same way. You can search by name, filter by platform or status (muted, banned, no punishment), and sort by recent activity or alphabetically.
+        </p>
+        <p>Each viewer has five actions available:</p>
+        <ul>
+          <li><strong>Mute:</strong> their messages still show in chat, dimmed with an icon, but the TTS doesn't read them. 15 minutes, 1 hour, or indefinite.</li>
+          <li><strong>Ban:</strong> their messages don't show up at all. They also don't reach the OBS overlays or the mobile remote.</li>
+          <li><strong>★ Mark as follower:</strong> add them by hand to the followers list.</li>
+          <li><strong>Clear punishments:</strong> resets them back to zero.</li>
+          <li><strong>✕:</strong> removes them from the log.</li>
+        </ul>
+        <p>Temporary punishments expire on their own, even if the app is closed when they're due to expire.</p>
+        <p>
+          <strong>Important:</strong> this is in-app moderation. Muting or banning doesn't block anyone on TikTok, Twitch or YouTube; it only changes how the TTS and your chat window behave.
+        </p>
+
+        <p><strong>Moderate from chat, without going anywhere</strong></p>
+        <p>
+          Clicking anyone's name in the live chat opens the same menu: mute, mark as follower, or block a word. No need to switch views mid-stream.
+        </p>
+
+        <p><strong>"Read non-followers"</strong></p>
+        <p>
+          A new toggle in the Chat view. On, the default, the TTS reads everyone. Off, it only reads followers and anyone you've marked by hand; everyone else still shows up in chat, just without voice.
+        </p>
+        <p>
+          It's worth understanding how someone becomes a follower, because it's not obvious: the app can't ask the platform for your follower list. It only learns of a follow if it sees it happen live, while you're connected. Or if you mark it yourself. That means someone who's followed you for a year will show up under "Non-followers" until you mark them.
+        </p>
+        <p>
+          So: be careful turning the toggle off on day one. With a brand-new log, you'd silence almost your entire regular audience. It makes sense after several streams, once real follows have accumulated.
+        </p>
+
+        <p><strong>Block a word in seconds</strong></p>
+        <p>
+          The "Blocked words" button in the Chat view now opens a window with a single field. Copy the offending word from chat, paste it, hit Enter, and the server applies it instantly, no reconnecting and no leaving the view. The window doesn't close after adding one, so during a spam wave you can paste several in a row. From there, a link to Advanced lets you view and edit the full list.
+        </p>
+
+        <p><strong>Chat follows what's being read</strong></p>
+        <p>
+          Chat used to force-scroll to the bottom on every new message, making it impossible to read anything during a busy stream. Now it follows the message the TTS is currently reading, which is usually several messages behind the latest one. Scroll up and it stays put so you can read in peace.
+        </p>
+
+        <p><strong>Guided tutorial</strong></p>
+        <p>
+          The first time you open Moderation, a 9-step walkthrough starts that explains everything above as one single feature, not scattered pieces. You can replay it anytime with the "View tutorial" button inside the section.
+        </p>
+
+        <p><strong>Other changes in this pass</strong></p>
+        <ul>
+          <li>Clearing the viewer log requires typing <strong>DELETE</strong> in a confirmation window, instead of the browser's gray box. It wipes marked followers, mutes, and bans, and can't be undone.</li>
+          <li>Restyled table: sticky header on scroll, alternating rows, colored statuses.</li>
+          <li>The log doesn't track how many messages, gifts, or likes each person sent. It only stores the last time they showed up.</li>
+          <li>Translations: everything new is available in all 10 app languages (es/en/it/pt/fr/de/zh/ja/ko/ru).</li>
+        </ul>
+        <p>No action required on your part. It works as soon as you update, with the non-followers toggle on so nothing changes until you decide.</p>
+
+        <p><strong>Behavior notes:</strong></p>
+        <ul>
+          <li>This patch doesn't touch the connection logic to TikTok, Twitch or YouTube, or the voice engine. A message can now go unread for two new reasons, muted user or non-follower with the filter off, and no others.</li>
+          <li>YouTube has no follow events: those viewers are always marked by hand. On Twitch, named follows require being logged in with your own account; without that, no one becomes a follower automatically. On TikTok it works with no setup needed.</li>
+          <li>If a viewer has no stable identifier on their platform, the app recognizes them by name and flags them with ⚠ in the table: that punishment is lost if the person changes their name.</li>
+        </ul>
+      </article>
+
+      <article class="post">
         <h2>v1.5.9</h2>
         <p class="page-meta">August 2026 · Patch</p>
 
