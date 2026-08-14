@@ -76,6 +76,23 @@
       </p>
 
       <article class="post">
+        <h2>v1.7.2</h2>
+        <p class="page-meta">Fix</p>
+
+        <h3>Real app shutdown</h3>
+        <p>
+          Bug: clicking the Windows title bar X didn't close the app. It minimized to tray and stayed there — server, WebSocket, TTS, and global shortcuts, all running in the background with no visible window. Easy to miss, since the only sign was the system tray icon.
+        </p>
+        <p>
+          Now the X shuts everything down: the server closes, any in-flight telemetry gets cut, global shortcuts are released, and the process exits, with nothing left hanging in Task Manager.
+        </p>
+        <p>
+          The tray icon still exists while the app is open (to reopen the window with a double-click, or quit from its menu), it just stopped being the default destination on close.
+        </p>
+        <p>No action required on your part — the fix applies as soon as you update.</p>
+      </article>
+
+      <article class="post">
         <h2>v1.7.0</h2>
         <p class="page-meta">Moderation</p>
 

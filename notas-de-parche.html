@@ -76,6 +76,23 @@
       </p>
 
       <article class="post">
+        <h2>v1.7.2</h2>
+        <p class="page-meta">Corrección</p>
+
+        <h3>Cierre real de la app</h3>
+        <p>
+          Bug: clic en la X del semáforo de Windows no cerraba la app. Minimizaba a bandeja y ahí quedaba — servidor, WebSocket, TTS y atajos globales, todo corriendo en segundo plano sin ventana visible. Fácil de no notar, porque no había ningún indicio salvo el ícono en la bandeja del sistema.
+        </p>
+        <p>
+          Ahora la X apaga todo: se cierra el servidor, se corta la telemetría en curso, se sueltan los atajos globales y el proceso termina, sin dejar nada colgado en Task Manager.
+        </p>
+        <p>
+          El ícono de bandeja sigue existiendo mientras la app está abierta (para reabrir la ventana con doble-click o salir desde el menú), solo dejó de ser el destino por defecto al cerrar.
+        </p>
+        <p>No requiere ninguna acción de tu parte — el fix aplica solo al actualizar.</p>
+      </article>
+
+      <article class="post">
         <h2>v1.7.0</h2>
         <p class="page-meta">Moderación</p>
 
