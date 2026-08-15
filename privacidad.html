@@ -9,6 +9,21 @@
     />
     <meta name="theme-color" content="#f7f8fb" />
     <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://tiklivetts.es/privacidad.html" />
+    <link rel="alternate" hreflang="es" href="https://tiklivetts.es/privacidad.html" />
+    <link rel="alternate" hreflang="en" href="https://tiklivetts.es/en/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://tiklivetts.es/privacidad.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Política de privacidad - TikLive TTS" />
+    <meta
+      property="og:description"
+      content="Política de privacidad de TikLive TTS: la app funciona en local, no requiere cuentas y este sitio no usa cookies de rastreo."
+    />
+    <meta property="og:image" content="https://tiklivetts.es/assets/logo.png" />
+    <meta property="og:url" content="https://tiklivetts.es/privacidad.html" />
+    <meta property="og:locale" content="es_ES" />
     <title>Política de privacidad - TikLive TTS</title>
     <link rel="icon" href="assets/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,34 +80,59 @@
     <main id="top" class="page-main">
       <p class="eyebrow">Legal</p>
       <h1>Política de privacidad</h1>
-      <p class="page-meta">Última actualización: julio de 2026</p>
+      <p class="page-meta">Última actualización: agosto de 2026</p>
 
       <p>
-        La privacidad es simple aquí: <strong>TikLive TTS no recopila tus datos personales</strong>. Esta página explica qué información se procesa y dónde.
+        TikLive TTS se ejecuta en tu ordenador y <strong>no requiere crear cuentas</strong>. Desde la versión 1.7.1 la app manda datos de uso y analítica a un servidor propio del proyecto — la sección 2 explica exactamente qué, para qué y cuánto tiempo se guarda.
       </p>
 
       <h2>1. La aplicación funciona en local</h2>
       <p>
-        TikLive TTS se ejecuta en tu ordenador. Los mensajes del chat que lee provienen directamente de las plataformas que tú conectas (TikTok Live, Twitch, YouTube) y se procesan localmente para generar la voz y los overlays. La app <strong>no requiere crear cuentas</strong> ni enviar tus datos a servidores del proyecto.
+        Los mensajes del chat que lee provienen directamente de las plataformas que tú conectas (TikTok Live, Twitch, YouTube, Kick) y se procesan localmente para generar la voz y los overlays. El contenido de esos mensajes <strong>nunca sale de tu ordenador</strong> ni forma parte de la telemetría descrita abajo.
       </p>
 
-      <h2>2. Este sitio web</h2>
+      <h2>2. Telemetría y analítica</h2>
+      <p>
+        La app manda datos de uso al servidor de telemetría del proyecto (<code>telemetria.tiklivetts.es</code>), para entender cómo se usa la app, priorizar funciones y arreglar errores más rápido. Esto es lo que se recolecta:
+      </p>
+      <ul>
+        <li><strong>Identificador de máquina</strong>: un hash (huella one-way, no reversible) de tu usuario de Windows y el nombre del equipo — no es tu nombre real, solo sirve para no contar dos veces la misma instalación.</li>
+        <li><strong>Datos de sesión</strong>: cuándo abrís y cerrás la app, cuánto dura la sesión, qué versión de la app y del sistema operativo usás.</li>
+        <li><strong>Ubicación aproximada</strong>: país y ciudad calculados a partir de tu IP. No se muestra ni se comparte tu IP exacta ni tu dirección real.</li>
+        <li><strong>Conexión a plataformas</strong>: qué plataformas conectás (TikTok/Twitch/YouTube/Kick) y cuántos canales, sin el contenido del chat.</li>
+        <li><strong>Identidad del canal que conectás</strong>: tu nombre de usuario, nombre público, foto de perfil y seguidores — se piden a la API pública de esa plataforma (la misma info que cualquiera vería visitando tu canal), como máximo 2 veces por canal.</li>
+        <li><strong>Uso de funciones</strong>: conteos de cuántas veces se usó el TTS, la música, el soundpad o los filtros de moderación — nunca el contenido de los mensajes ni quién los escribió.</li>
+        <li><strong>Configuración</strong>: qué interruptores tenés activados (booleanos) — nunca tus playlists, listas de usuarios baneados ni texto libre.</li>
+        <li><strong>Errores técnicos</strong>: mensaje y traza de error si algo falla, para poder arreglarlo — recortados y sin contenido de chat.</li>
+      </ul>
+      <p>
+        Estos datos <strong>no se venden ni se comparten con terceros</strong>, y no se usan para publicidad de otros proyectos. Se guardan hasta 365 días y después se borran automáticamente.
+      </p>
+
+      <h2>3. Tus derechos</h2>
+      <p>
+        Podés pedir que se borren los datos asociados a tu instalación escribiendo por
+        <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener">GitHub</a> o en el
+        <a href="https://discord.com/invite/mwY859tcQK" target="_blank" rel="noopener">Discord de la comunidad</a>. Todavía no hay un interruptor en la app para desactivar la telemetría desde el menú; si querés pararla del todo, podés vaciar o borrar el archivo <code>telemetry.json</code> de la carpeta de datos de la app.
+      </p>
+
+      <h2>4. Este sitio web</h2>
       <p>
         Este sitio es una página estática: <strong>no usa cookies de rastreo, ni analítica, ni formularios</strong> que recojan datos personales. La tipografía se carga desde Google Fonts, por lo que tu navegador realiza una petición a los servidores de Google al cargar la página (consulta la
         <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">política de privacidad de Google</a>).
       </p>
 
-      <h2>3. Enlaces externos</h2>
+      <h2>5. Enlaces externos</h2>
       <p>
         El sitio enlaza a servicios de terceros (GitHub, Discord, YouTube, TikTok, Twitch, Kick). Cada uno tiene su propia política de privacidad, que se aplica cuando visitas esos sitios.
       </p>
 
-      <h2>4. Donaciones</h2>
+      <h2>6. Donaciones</h2>
       <p>
         Las donaciones se realizan directamente a través de la red Bitcoin o Lightning Network. Este sitio solo muestra direcciones públicas: <strong>no procesa pagos ni almacena información financiera</strong>.
       </p>
 
-      <h2>5. Contacto</h2>
+      <h2>7. Contacto</h2>
       <p>
         Para cualquier duda sobre privacidad, abre un issue en
         <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener">GitHub</a> o pregunta en el

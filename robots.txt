@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Al desplegar: reemplaza el dominio por el definitivo
-Sitemap: https://ikhunsa.github.io/tiktok-tts-landing/sitemap.xml
+Sitemap: https://tiklivetts.es/sitemap.xml

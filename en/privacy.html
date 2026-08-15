@@ -9,6 +9,21 @@
     />
     <meta name="theme-color" content="#f7f8fb" />
     <meta name="robots" content="index, follow" />
+
+    <link rel="canonical" href="https://tiklivetts.es/en/privacy.html" />
+    <link rel="alternate" hreflang="es" href="https://tiklivetts.es/privacidad.html" />
+    <link rel="alternate" hreflang="en" href="https://tiklivetts.es/en/privacy.html" />
+    <link rel="alternate" hreflang="x-default" href="https://tiklivetts.es/privacidad.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Privacy Policy - TikLive TTS" />
+    <meta
+      property="og:description"
+      content="TikLive TTS privacy policy: the app runs locally, requires no accounts, and this site uses no tracking cookies."
+    />
+    <meta property="og:image" content="https://tiklivetts.es/assets/logo.png" />
+    <meta property="og:url" content="https://tiklivetts.es/en/privacy.html" />
+    <meta property="og:locale" content="en_US" />
     <title>Privacy Policy - TikLive TTS</title>
     <link rel="icon" href="../assets/logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -65,34 +80,59 @@
     <main id="top" class="page-main">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="page-meta">Last updated: July 2026</p>
+      <p class="page-meta">Last updated: August 2026</p>
 
       <p>
-        Privacy is simple here: <strong>TikLive TTS does not collect your personal data</strong>. This page explains what information is processed and where.
+        TikLive TTS runs on your computer and <strong>requires no accounts</strong>. Since version 1.7.1 the app sends usage and analytics data to a project-run server — section 2 explains exactly what, why, and for how long it's kept.
       </p>
 
       <h2>1. The app runs locally</h2>
       <p>
-        TikLive TTS runs on your computer. The chat messages it reads come directly from the platforms you connect (TikTok Live, Twitch, YouTube) and are processed locally to generate the voice and the overlays. The app <strong>requires no accounts</strong> and sends none of your data to project servers.
+        The chat messages it reads come directly from the platforms you connect (TikTok Live, Twitch, YouTube, Kick) and are processed locally to generate the voice and the overlays. The content of those messages <strong>never leaves your computer</strong> and is not part of the telemetry described below.
       </p>
 
-      <h2>2. This website</h2>
+      <h2>2. Telemetry and analytics</h2>
+      <p>
+        The app sends usage data to the project's telemetry server (<code>telemetria.tiklivetts.es</code>), to understand how the app is used, prioritize features, and fix bugs faster. This is what's collected:
+      </p>
+      <ul>
+        <li><strong>Machine identifier</strong>: a one-way hash of your Windows username and computer name — not your real name, only used so one install isn't counted twice.</li>
+        <li><strong>Session data</strong>: when you open and close the app, session length, app version and OS version.</li>
+        <li><strong>Approximate location</strong>: country and city derived from your IP. Your exact IP and real address are never shown or shared.</li>
+        <li><strong>Platform connections</strong>: which platforms you connect (TikTok/Twitch/YouTube/Kick) and how many channels, without any chat content.</li>
+        <li><strong>Identity of the channel you connect</strong>: your username, public display name, avatar and follower count — fetched from that platform's own public API (the same info anyone would see visiting your channel), at most twice per channel.</li>
+        <li><strong>Feature usage</strong>: counts of how many times TTS, music, the soundpad, or moderation filters were used — never message content or who wrote them.</li>
+        <li><strong>Settings</strong>: which toggles you have enabled (booleans) — never your playlists, banned-user lists, or free text.</li>
+        <li><strong>Technical errors</strong>: error message and stack trace if something breaks, so it can be fixed — trimmed, with no chat content.</li>
+      </ul>
+      <p>
+        This data is <strong>never sold or shared with third parties</strong>, and is never used for advertising unrelated projects. It's kept for up to 365 days and then deleted automatically.
+      </p>
+
+      <h2>3. Your rights</h2>
+      <p>
+        You can request deletion of the data tied to your install by reaching out on
+        <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener">GitHub</a> or the
+        <a href="https://discord.com/invite/mwY859tcQK" target="_blank" rel="noopener">community Discord</a>. There's no in-app switch yet to turn telemetry off from a menu; to stop it entirely, you can clear or delete the <code>telemetry.json</code> file in the app's data folder.
+      </p>
+
+      <h2>4. This website</h2>
       <p>
         This site is a static page: it uses <strong>no tracking cookies, no analytics and no forms</strong> that collect personal data. The typography is loaded from Google Fonts, so your browser makes a request to Google's servers when the page loads (see
         <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>).
       </p>
 
-      <h2>3. External links</h2>
+      <h2>5. External links</h2>
       <p>
         The site links to third-party services (GitHub, Discord, YouTube, TikTok, Twitch, Kick). Each has its own privacy policy, which applies when you visit those sites.
       </p>
 
-      <h2>4. Donations</h2>
+      <h2>6. Donations</h2>
       <p>
         Donations are made directly through the Bitcoin network or the Lightning Network. This site only displays public addresses: it <strong>processes no payments and stores no financial information</strong>.
       </p>
 
-      <h2>5. Contact</h2>
+      <h2>7. Contact</h2>
       <p>
         For any privacy questions, open an issue on
         <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener">GitHub</a> or ask in the
