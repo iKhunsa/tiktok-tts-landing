@@ -1,0 +1,44 @@
+# TikLive TTS
+
+> TikLive TTS is a free, open-source Windows desktop app that reads TikTok Live, Twitch and YouTube Live chat out loud (text-to-speech, 13 languages) and shows OBS-ready overlays for gift alerts, likes and followers. No account or sign-up required.
+
+Official site: https://tiklivetts.es/
+Source code: https://github.com/iKhunsa/tiktok-tts
+Community: https://discord.com/invite/mwY859tcQK
+
+## Docs
+
+- [Home (Spanish)](https://tiklivetts.es/): product overview, download link, supported platforms, OBS overlays.
+- [Home (English)](https://tiklivetts.es/en/): same content in English.
+- [FAQ (Spanish)](https://tiklivetts.es/preguntas-frecuentes.html): direct answers on price, platforms, privacy, open source, moderation and OS support.
+- [FAQ (English)](https://tiklivetts.es/en/faq.html): same content in English.
+- [Blog (Spanish)](https://tiklivetts.es/blog.html): guides and project updates.
+- [Blog (English)](https://tiklivetts.es/en/blog.html): same content in English.
+- [Creators](https://tiklivetts.es/creadores.html): streamers currently using TikLive TTS live.
+- [Patch notes (Spanish)](https://tiklivetts.es/notas-de-parche.html): version history and changelog.
+- [Patch notes (English)](https://tiklivetts.es/en/patch-notes.html): same content in English.
+
+## Guides
+
+- [Unify TikTok, Twitch and YouTube chat (Spanish)](https://tiklivetts.es/unificar-chat-tiktok-twitch-youtube.html) / [English](https://tiklivetts.es/en/unify-tiktok-twitch-youtube-chat.html): how to read all three platforms' chat in one voice queue at once.
+- [TikTok Live chat text to speech (Spanish)](https://tiklivetts.es/leer-chat-tiktok-live-en-voz-alta.html) / [English](https://tiklivetts.es/en/tiktok-live-chat-text-to-speech.html)
+- [Twitch chat text to speech (Spanish)](https://tiklivetts.es/tts-twitch-chat-en-voz-alta.html) / [English](https://tiklivetts.es/en/twitch-chat-text-to-speech.html)
+- [YouTube Live chat text to speech (Spanish)](https://tiklivetts.es/tts-youtube-live-chat-en-voz-alta.html) / [English](https://tiklivetts.es/en/youtube-live-chat-text-to-speech.html)
+- [Free OBS alerts for gifts and followers (Spanish)](https://tiklivetts.es/alertas-obs-gratis-regalos-seguidores.html) / [English](https://tiklivetts.es/en/free-obs-alerts-gifts-followers.html)
+- [TikLive TTS vs TikFinity (Spanish)](https://tiklivetts.es/tiklivetts-vs-tikfinity.html) / [English](https://tiklivetts.es/en/tiklivetts-vs-tikfinity.html)
+- [TikLive TTS vs TTS.Monster (Spanish)](https://tiklivetts.es/tiklivetts-vs-tts-monster.html) / [English](https://tiklivetts.es/en/tiklivetts-vs-tts-monster.html)
+
+## Key facts
+
+- Price: free, no paid tier, no locked features. Funded by voluntary donations.
+- License: open source, full code on GitHub.
+- Platforms read simultaneously: TikTok Live, Twitch, YouTube Live.
+- Languages: 13 text-to-speech languages/voices.
+- Requires no account, no login, runs locally on Windows.
+- OBS integration via local Browser Source overlays (gift alerts, like counter, follower counter).
+- Includes anti-spam filtering, viewer moderation (mute/ban), and auto-reconnect with backoff.
+
+## Optional
+
+- [Privacy policy (Spanish)](https://tiklivetts.es/privacidad.html) / [English](https://tiklivetts.es/en/privacy.html)
+- [Terms (Spanish)](https://tiklivetts.es/terminos.html) / [English](https://tiklivetts.es/en/terms.html)

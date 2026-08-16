@@ -1243,6 +1243,43 @@ h3 {
   margin-top: 0;
 }
 
+.faq-list {
+  margin-top: 32px;
+}
+
+.faq-item {
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1.05rem;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.2em;
+  color: var(--brand-deep);
+  font-weight: 800;
+}
+
+.faq-item[open] summary::before {
+  content: "–";
+}
+
+.faq-item p {
+  margin: 12px 0 0 1.2em;
+}
+
 /* ── Reveal on scroll ── */
 
 html.js .reveal {
