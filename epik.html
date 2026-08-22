@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Epik Creative Studio — Exclusivo para usuarios de TikLive TTS</title>
+    <meta name="theme-color" content="#191919" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=League+Spartan:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --white: #ffffff;
+        --black: #191919;
+        --lime: #d4ff2a;
+        --purple: #650c99;
+        --font-head: "Archivo Black", "Arial Black", sans-serif;
+        --font-body: "League Spartan", "Helvetica Neue", Arial, sans-serif;
+        --gutter: clamp(20px, 5vw, 64px);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--white);
+        color: var(--black);
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      img,
+      svg {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      section {
+        padding: clamp(56px, 10vw, 120px) var(--gutter);
+      }
+
+      .bleed-black {
+        background: var(--black);
+        color: var(--white);
+      }
+
+      .bleed-lime {
+        background: var(--lime);
+        color: var(--black);
+      }
+
+      .eyebrow {
+        font-family: var(--font-body);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.8rem;
+        color: var(--lime);
+        margin-bottom: 16px;
+      }
+
+      .bleed-lime .eyebrow,
+      .on-white .eyebrow {
+        color: var(--purple);
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-head);
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        line-height: 1.08;
+      }
+
+      h1 {
+        font-size: clamp(2.1rem, 6vw, 4rem);
+      }
+
+      h2 {
+        font-size: clamp(1.7rem, 4.4vw, 2.8rem);
+        margin-bottom: 24px;
+      }
+
+      h3 {
+        font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+        margin-bottom: 8px;
+      }
+
+      p {
+        max-width: 62ch;
+      }
+
+      .lede {
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+        margin-top: 20px;
+        opacity: 0.92;
+      }
+
+      /* --- Top bar --- */
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: var(--black);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 12px var(--gutter);
+        border-bottom: 2px solid var(--lime);
+        flex-wrap: wrap;
+      }
+
+      .topbar p {
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        max-width: none;
+      }
+
+      /* --- Buttons --- */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-body);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        font-size: 0.95rem;
+        padding: 16px 28px;
+        border: 2px solid var(--lime);
+        background: var(--lime);
+        color: var(--black);
+        text-decoration: none;
+        white-space: nowrap;
+        transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-sm {
+        padding: 10px 18px;
+        font-size: 0.75rem;
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--lime);
+      }
+
+      .btn-outline:hover {
+        background: var(--lime);
+        color: var(--black);
+      }
+
+      .bleed-lime .btn {
+        background: var(--black);
+        color: var(--lime);
+        border-color: var(--black);
+      }
+
+      .microcopy {
+        margin-top: 14px;
+        font-size: 0.85rem;
+        opacity: 0.75;
+        max-width: 40ch;
+      }
+
+      /* --- Hero --- */
+      .hero {
+        min-height: 78vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        right: -10%;
+        bottom: -10%;
+        width: min(60vw, 420px);
+        height: min(60vw, 420px);
+        background: var(--purple);
+        clip-path: polygon(
+          0% 20%, 20% 20%, 20% 0%, 40% 0%, 40% 20%, 60% 20%, 60% 0%, 80% 0%,
+          80% 20%, 100% 20%, 100% 40%, 80% 40%, 80% 60%, 100% 60%, 100% 80%,
+          80% 80%, 80% 100%, 60% 100%, 60% 80%, 40% 80%, 40% 100%, 20% 100%,
+          20% 80%, 0% 80%, 0% 60%, 20% 60%, 20% 40%, 0% 40%
+        );
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .hero-actions {
+        margin-top: 32px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+      }
+
+      /* --- glitch divider --- */
+      .glitch-divider {
+        height: 28px;
+        width: 100%;
+        background-image: repeating-linear-gradient(
+            90deg,
+            var(--lime) 0px,
+            var(--lime) 6px,
+            transparent 6px,
+            transparent 14px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            var(--purple) 0px,
+            var(--purple) 3px,
+            transparent 3px,
+            transparent 22px
+          );
+        background-size: 100% 40%, 100% 60%;
+        background-position: top, bottom;
+        background-repeat: repeat-x;
+        background-color: var(--black);
+      }
+
+      /* --- Bridge --- */
+      .bridge {
+        max-width: 860px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .bridge p {
+        max-width: none;
+        font-size: clamp(1.1rem, 2.6vw, 1.5rem);
+        font-weight: 500;
+        line-height: 1.45;
+      }
+
+      /* --- Problem --- */
+      .problem-list {
+        margin-top: 32px;
+        display: grid;
+        gap: 2px;
+        background: var(--purple);
+        border: 2px solid var(--purple);
+      }
+
+      .problem-list li {
+        background: var(--black);
+        color: var(--white);
+        padding: 20px 24px;
+        display: flex;
+        gap: 16px;
+        font-weight: 500;
+      }
+
+      .problem-list li::before {
+        content: "✕";
+        color: var(--lime);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      /* --- Services --- */
+      .services-grid {
+        margin-top: 44px;
+        display: grid;
+        gap: 2px;
+        grid-template-columns: 1fr;
+        background: var(--black);
+      }
+
+      @media (min-width: 860px) {
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .service-card {
+        background: var(--white);
+        color: var(--black);
+        padding: 32px 28px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .service-num {
+        font-family: var(--font-head);
+        color: var(--purple);
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 18px;
+      }
+
+      .service-card p.desc {
+        max-width: none;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      .service-card ul {
+        display: grid;
+        gap: 10px;
+        margin-top: auto;
+      }
+
+      .service-card ul li {
+        font-size: 0.92rem;
+        padding-left: 18px;
+        position: relative;
+      }
+
+      .service-card ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        background: var(--lime);
+        border: 1px solid var(--purple);
+      }
+
+      /* --- Package --- */
+      .package-box {
+        max-width: 760px;
+        margin: 44px auto 0;
+        background: var(--black);
+        color: var(--white);
+        padding: clamp(28px, 5vw, 48px);
+        border: 2px solid var(--black);
+      }
+
+      .package-box ul {
+        margin: 28px 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .package-box ul li {
+        padding-left: 22px;
+        position: relative;
+        font-weight: 500;
+      }
+
+      .package-box ul li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 10px;
+        height: 10px;
+        background: var(--lime);
+      }
+
+      .package-meta {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .package-meta div span {
+        display: block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        opacity: 0.6;
+        margin-bottom: 4px;
+      }
+
+      .package-meta div strong {
+        font-family: var(--font-head);
+        font-size: 1.3rem;
+        color: var(--lime);
+      }
+
+      /* --- Steps --- */
+      .steps {
+        margin-top: 44px;
+        display: grid;
+        gap: 28px;
+      }
+
+      @media (min-width: 760px) {
+        .steps {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .step-num {
+        font-family: var(--font-head);
+        font-size: 2.6rem;
+        color: var(--lime);
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+
+      /* --- Why --- */
+      .why {
+        max-width: 860px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .why p {
+        max-width: none;
+        font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+        line-height: 1.5;
+      }
+
+      /* --- Final CTA --- */
+      .final-cta {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .final-cta .btn {
+        margin-top: 28px;
+      }
+
+      /* --- Footer --- */
+      .epik-footer {
+        background: var(--black);
+        color: rgba(255, 255, 255, 0.6);
+        text-align: center;
+        padding: 28px var(--gutter);
+        font-size: 0.85rem;
+      }
+
+      .whatsapp-fab {
+        position: fixed;
+        bottom: 18px;
+        right: 18px;
+        z-index: 60;
+        border-radius: 999px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      }
+
+      @media (min-width: 760px) {
+        .whatsapp-fab {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <p>Esta sección es exclusiva para quienes usan TikLive TTS</p>
+      <a class="btn btn-sm btn-outline" href="LINK_WHATSAPP" target="_blank" rel="noopener">Hablar por WhatsApp</a>
+    </div>
+
+    <section class="hero bleed-black">
+      <p class="eyebrow">Para streamers que usan TikLive TTS</p>
+      <h1>Vimos tu stream.<br />Y sabemos exactamente qué le falta.</h1>
+      <p class="lede">
+        Somos el mismo equipo detrás de TikLive TTS. Ahora armamos Epik Creative Studio
+        para que tu canal se vea, suene y se sienta tan profesional como tu contenido.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="LINK_WHATSAPP" target="_blank" rel="noopener">Quiero mi rebranding</a>
+      </div>
+      <p class="microcopy">Te respondemos directo por WhatsApp, sin formularios ni bots.</p>
+    </section>
+
+    <div class="glitch-divider" aria-hidden="true"></div>
+
+    <section class="bleed-lime">
+      <div class="bridge">
+        <p>
+          Si usás TikLive TTS es porque valorás las herramientas que te hacen la vida más
+          fácil sin cobrarte de más. Por eso decidimos abrirte esta sección antes que a
+          nadie: somos el estudio creativo detrás de la misma comunidad de streamers que
+          ya confía en nosotros para su TTS. Ahora ponemos ese mismo criterio al servicio
+          de tu marca personal.
+        </p>
+      </div>
+    </section>
+
+    <section class="on-white">
+      <h2>El TTS ya está resuelto.<br />¿Y el resto de tu canal?</h2>
+      <ul class="problem-list">
+        <li>Overlays genéricos que se repiten en la mitad de los streams de tu categoría</li>
+        <li>Sin una identidad visual consistente entre TikTok, Twitch y YouTube</li>
+        <li>Cero tiempo para editar tus mejores momentos y convertirlos en clips</li>
+        <li>Banners, emotes e insignias armados con plantillas gratuitas que cualquiera puede tener</li>
+      </ul>
+    </section>
+
+    <section class="bleed-black" id="servicios">
+      <h2>Lo que hacemos por tu canal</h2>
+      <div class="services-grid">
+        <article class="service-card">
+          <span class="service-num">[ 01 ]</span>
+          <h3>Branding</h3>
+          <p class="desc">Le damos una identidad real a tu canal, no un logo suelto.</p>
+          <ul>
+            <li>Logo</li>
+            <li>Tipografías</li>
+            <li>Patrones y elementos gráficos</li>
+            <li>Concepto y moodboard</li>
+            <li>Mockups</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <span class="service-num">[ 02 ]</span>
+          <h3>Stream Design</h3>
+          <p class="desc">Todo lo visual que ve tu audiencia en cada directo.</p>
+          <ul>
+            <li>Overlays y frames</li>
+            <li>Banners</li>
+            <li>Emotes e insignias</li>
+            <li>Alertas</li>
+            <li>Miniaturas</li>
+            <li>Avatar</li>
+            <li>TTS personalizado</li>
+          </ul>
+        </article>
+
+        <article class="service-card">
+          <span class="service-num">[ 03 ]</span>
+          <h3>Edición</h3>
+          <p class="desc">Tus mejores momentos, listos para publicar.</p>
+          <ul>
+            <li>Estructura narrativa (storytelling, trend, call to action)</li>
+            <li>Producción audiovisual</li>
+            <li>Edición de video, color, audio y efectos</li>
+            <li>Subtítulos</li>
+            <li>Adaptación de formatos (TikTok, Reels, Shorts)</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="on-white" id="paquete-gamer">
+      <h2>Armado para streamers, no para marcas genéricas</h2>
+      <p>
+        Identidad completa + assets de stream + edición de contenido, pensado para quien
+        vive frente a cámara y no tiene tiempo de armar todo esto solo.
+      </p>
+
+      <div class="package-box">
+        <div class="package-meta">
+          <div>
+            <span>Precio</span>
+            <strong>[PRECIO]</strong>
+          </div>
+          <div>
+            <span>Tiempo de entrega</span>
+            <strong>[TIEMPO_ENTREGA]</strong>
+          </div>
+        </div>
+        <ul>
+          <li>Branding completo de tu canal</li>
+          <li>Kit de assets para stream (overlays, alertas, banners, emotes)</li>
+          <li>Producción y edición de clips</li>
+          <li>Gestión de contenido en tus redes</li>
+        </ul>
+        <a class="btn" href="LINK_WHATSAPP" target="_blank" rel="noopener">Quiero el paquete Gamer</a>
+      </div>
+    </section>
+
+    <div class="glitch-divider" aria-hidden="true"></div>
+
+    <section class="bleed-black">
+      <h2>Cómo funciona</h2>
+      <div class="steps">
+        <div>
+          <div class="step-num">01</div>
+          <p>Nos escribís por WhatsApp y nos contás tu canal y tu objetivo</p>
+        </div>
+        <div>
+          <div class="step-num">02</div>
+          <p>Te armamos una propuesta a medida según lo que necesitás</p>
+        </div>
+        <div>
+          <div class="step-num">03</div>
+          <p>Recibís tus entregables y lo llevás directo a tu próximo stream</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="on-white">
+      <div class="why">
+        <p class="eyebrow" style="text-align:center;">Por qué Epik</p>
+        <p>
+          No somos una agencia genérica que también le vende a streamers. Armamos un
+          equipo específico para esto: dirección creativa, edición, diseño de stream y
+          gestión de contenido, todo bajo un mismo estudio que ya conoce cómo funciona tu
+          industria porque venimos de ella.
+        </p>
+      </div>
+    </section>
+
+    <section class="bleed-lime final-cta">
+      <h2>¿Listo para que tu canal se vea<br />como se merece?</h2>
+      <p>
+        Esta sección es exclusiva para usuarios de TikLive TTS. Escribinos ahora y
+        arrancamos con tu propuesta.
+      </p>
+      <a class="btn" href="LINK_WHATSAPP" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+    </section>
+
+    <footer class="epik-footer">
+      Epik Creative Studio. Un estudio creativo para streamers.
+    </footer>
+
+    <a class="btn whatsapp-fab" href="LINK_WHATSAPP" target="_blank" rel="noopener" aria-label="Hablar por WhatsApp">
+      WhatsApp
+    </a>
+  </body>
+</html>
