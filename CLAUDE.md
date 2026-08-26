@@ -27,7 +27,8 @@ Este sitio tiene versión española (raíz: `index.html`, `notas-de-parche.html`
 | `roadmap.html` | `en/roadmap.html` |
 | `privacidad.html` | `en/privacy.html` |
 | `terminos.html` | `en/terms.html` |
-| `creadores.html` | *(sin par EN todavía)* |
+| `creadores.html` | `en/creadores.html` |
+| `epik.html` | `en/epik.html` *(noindex, landing privada por WhatsApp — no está linkeada en ningún nav/footer, ES ni EN)* |
 | `tiklivetts-vs-tikfinity.html` | `en/tiklivetts-vs-tikfinity.html` |
 | `tiklivetts-vs-tts-monster.html` | `en/tiklivetts-vs-tts-monster.html` |
 | `tts-twitch-chat-en-voz-alta.html` | `en/twitch-chat-text-to-speech.html` |
