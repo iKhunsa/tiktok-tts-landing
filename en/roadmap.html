@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="TikLive TTS roadmap: what we're building right now and what's next. No dates, just the real direction of the project."
+    />
+    <meta name="theme-color" content="#171717" />
+
+    <link rel="canonical" href="https://tiklivetts.es/en/roadmap.html" />
+    <link rel="alternate" hreflang="es" href="https://tiklivetts.es/roadmap.html" />
+    <link rel="alternate" hreflang="en" href="https://tiklivetts.es/en/roadmap.html" />
+    <link rel="alternate" hreflang="x-default" href="https://tiklivetts.es/roadmap.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Roadmap - TikLive TTS" />
+    <meta
+      property="og:description"
+      content="What we're building right now and what's next for TikLive TTS. No dates, just the real direction."
+    />
+    <meta property="og:image" content="https://tiklivetts.es/assets/logo.png" />
+    <meta property="og:url" content="https://tiklivetts.es/en/roadmap.html" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Roadmap - TikLive TTS" />
+    <meta
+      name="twitter:description"
+      content="What we're building right now and what's next for TikLive TTS. No dates, just the real direction."
+    />
+    <meta name="twitter:image" content="https://tiklivetts.es/assets/logo.png" />
+    <title>Roadmap - TikLive TTS</title>
+    <link rel="icon" href="../assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin:0; background:#171717; color:#F2F2F2; font-family:"JetBrains Mono", ui-monospace, monospace; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; text-decoration:none; }
+      a:hover { color:#3ECF8E; }
+      img, svg { display:block; max-width:100%; }
+      pre { margin:0; font-family:"JetBrains Mono", ui-monospace, monospace; }
+      ::selection { background:#3ECF8E; color:#06231A; }
+      button { font-family: inherit; }
+
+      .scp0:hover { background: #5BE0A4 !important; color: #06231A !important; }
+      .scp1:hover { border-color: #3ECF8E !important; color: #3ECF8E !important; }
+      .scp2:hover { border-color: #3ECF8E !important; }
+      .scp3:hover { background: #202020 !important; }
+      .scp4:hover { background: #3ECF8E !important; color: #06231A !important; }
+
+      .nav-drawer { display: none; flex-direction: column; gap: 2px; position: absolute; top: calc(100% + 8px); right: 20px; width: min(260px, calc(100% - 40px)); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #1c1c1c; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5); z-index: 30; }
+      .nav-drawer.open { display: flex; }
+      .nav-drawer a { padding: 13px 18px; font-size: 0.78rem; letter-spacing: 0.04em; color: #F2F2F2; border-top: 1px solid rgba(255,255,255,0.08); }
+      .nav-drawer a:first-child { border-top: 0; }
+      .nav-drawer a:hover { background: #232323; color: #3ECF8E; }
+
+      html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 600ms ease, transform 600ms ease; }
+      html.js .reveal.visible { opacity: 1; transform: none; }
+      @media (prefers-reduced-motion: reduce) {
+        html.js .reveal { opacity: 1; transform: none; transition: none; }
+      }
+      .scp0, .scp1, .scp3, .scp4 { transition: transform 200ms ease, background 200ms ease, border-color 200ms ease, color 200ms ease; }
+      .scp3:hover { transform: translateY(-2px); }
+      a[class^="scp"]:active, button[class^="scp"]:active { transform: translateY(0); }
+
+      /* ── Roadmap: the whole page scrolls horizontally ── */
+
+      .rm-rail {
+        position: sticky;
+        top: 65px;
+        z-index: 15;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px min(40px, 5vw);
+        background: rgba(23, 23, 23, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .rm-rail::-webkit-scrollbar { display: none; }
+
+      .rm-rail-dot {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        padding: 6px 4px;
+        border: 0;
+        background: none;
+        color: #5a5a5a;
+        cursor: pointer;
+      }
+      .rm-rail-dot span:first-child {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1.5px solid #5a5a5a;
+        background: transparent;
+        transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      }
+      .rm-rail-dot[data-status="done"] span:first-child { border-color: #3ecf8e; background: #3ecf8e; }
+      .rm-rail-dot[data-status="progress"] span:first-child { border-color: #12d8e8; background: #12d8e8; }
+      .rm-rail-dot.is-active span:first-child { transform: scale(1.7); }
+      .rm-rail-dot span:last-child {
+        font-size: 0.66rem;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+        max-width: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-width 220ms ease, opacity 180ms ease;
+      }
+      .rm-rail-dot.is-active { color: #f2f2f2; }
+      .rm-rail-dot.is-active span:last-child { max-width: 220px; opacity: 1; margin-left: 2px; }
+      .rm-rail-line { flex: 1 1 16px; min-width: 16px; height: 1px; background: rgba(255,255,255,0.14); }
+
+      .rm-stage {
+        position: relative;
+      }
+
+      .rm-scroller {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        cursor: grab;
+        -webkit-overflow-scrolling: touch;
+      }
+      .rm-scroller.is-grabbing { cursor: grabbing; }
+      .rm-scroller::-webkit-scrollbar { display: none; }
+      .rm-scroller { scrollbar-width: none; }
+
+      .rm-slide {
+        flex: 0 0 100vw;
+        width: 100vw;
+        height: calc(100vh - 130px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px min(64px, 8vw);
+        overflow-y: auto;
+        scroll-snap-align: start;
+      }
+
+      .rm-slide-inner { max-width: 720px; margin: auto 0; padding: 24px 0; }
+      .rm-slide-intro p { max-width: 560px; }
+
+      .rm-legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 26px 0 6px; }
+      .rm-legend-item { display: flex; align-items: center; gap: 8px; color: #8a8a8a; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; }
+      .rm-legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+      .rm-legend-dot.is-done { background: #3ecf8e; }
+      .rm-legend-dot.is-progress { background: #12d8e8; }
+      .rm-legend-dot.is-planned { border: 1.5px solid #5a5a5a; background: transparent; }
+
+      .rm-slide-item .rm-slide-inner { max-width: 820px; }
+
+      .rm-item-top { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-bottom: clamp(20px, 2vh, 32px); }
+      .rm-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 15px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8a8a8a; }
+      .rm-badge-dot { width: 8px; height: 8px; border-radius: 50%; }
+      .rm-slide-item[data-status="done"] .rm-badge { border-color: rgba(62,207,142,0.4); color: #3ecf8e; }
+      .rm-slide-item[data-status="done"] .rm-badge-dot { background: #3ecf8e; }
+      .rm-slide-item[data-status="progress"] .rm-badge { border-color: rgba(18,216,232,0.4); color: #12d8e8; }
+      .rm-slide-item[data-status="progress"] .rm-badge-dot { background: #12d8e8; }
+      .rm-slide-item[data-status="planned"] .rm-badge { border-color: rgba(255,255,255,0.14); color: #8a8a8a; }
+      .rm-slide-item[data-status="planned"] .rm-badge-dot { border: 1.5px solid #5a5a5a; }
+
+      .rm-item-index { color: #5a5a5a; font-size: 0.88rem; letter-spacing: 0.08em; }
+
+      .rm-slide-item h2 {
+        margin: 0 0 clamp(20px, 2.6vh, 34px);
+        font-family: "Space Grotesk", ui-sans-serif, sans-serif;
+        font-weight: 300;
+        font-size: clamp(2rem, 2.2vw + 2.4vh, 3.8rem);
+        letter-spacing: -0.02em;
+        line-height: 1.08;
+      }
+
+      .rm-slide-item p { margin: 0; color: #8a8a8a; font-size: clamp(1.05rem, 0.4vw + 1vh, 1.35rem); line-height: 1.85; }
+      .rm-slide-item p + p { margin-top: clamp(14px, 1.6vh, 22px); }
+
+      .rm-item-list { margin: clamp(16px, 2vh, 26px) 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: clamp(10px, 1.4vh, 16px); }
+      .rm-item-list li {
+        position: relative;
+        padding-left: 24px;
+        color: #8a8a8a;
+        font-size: clamp(0.95rem, 0.3vw + 0.9vh, 1.15rem);
+        line-height: 1.7;
+      }
+      .rm-item-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #12d8e8;
+      }
+
+      .rm-arrow {
+        position: fixed;
+        top: 50%;
+        z-index: 15;
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        margin-top: -22px;
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 50%;
+        background: rgba(23,23,23,0.85);
+        backdrop-filter: blur(6px);
+        color: #f2f2f2;
+        cursor: pointer;
+      }
+      .rm-arrow:hover { border-color: #3ecf8e; color: #3ecf8e; }
+      .rm-arrow-prev { left: 16px; }
+      .rm-arrow-next { right: 16px; }
+      .rm-arrow svg { width: 18px; height: 18px; }
+      .rm-arrow:disabled { opacity: 0.2; cursor: default; }
+      .rm-arrow:disabled:hover { border-color: rgba(255,255,255,0.14); color: #f2f2f2; }
+
+      .rm-hint {
+        position: sticky;
+        left: 0;
+        margin: 0 min(64px, 8vw) 8px;
+        color: #5a5a5a;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 640px) {
+        /* On mobile everything stacks vertically with normal page scroll.
+           Scroll is no longer "hijacked" (no snap, no wheel/drag): each
+           point is just another section. */
+        .rm-arrow { display: none; }
+        .rm-hint { display: none; }
+
+        .rm-scroller {
+          display: block;
+          overflow: visible;
+          scroll-snap-type: none;
+          cursor: default;
+        }
+
+        .rm-slide {
+          flex: none;
+          width: 100%;
+          height: auto;
+          min-height: 0;
+          display: block;
+          padding: 32px 24px;
+          overflow: visible;
+          scroll-snap-align: none;
+          scroll-margin-top: 100px;
+        }
+
+        .rm-slide-inner { margin: 0; padding: 0; }
+
+        .rm-rail { top: 57px; padding: 12px 16px; }
+        .rm-slide-intro h1 { font-size: clamp(2rem, 11vw, 3.2rem); line-height: 1.18; }
+        .rm-slide-item h2 { font-size: clamp(1.5rem, 8vw, 2.2rem); line-height: 1.2; }
+      }
+    </style>
+  </head>
+  <body>
+    <header style="position: sticky; top: 0px; z-index: 20; background: rgba(23, 23, 23, 0.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; width: min(1180px, 100% - 40px); margin: 0px auto; padding: 14px 0px;">
+        <a href="index.html" style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">
+          <img src="../assets/logo.png" alt="" style="width: 26px; height: 26px; object-fit: contain;">
+          <span>TikLive TTS</span>
+        </a>
+
+        <div style="display: flex; align-items: center; gap: 8px; position: relative;">
+          <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; min-height: 36px; padding: 0px 16px; background: rgb(62, 207, 142); color: rgb(6, 35, 26); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">Download</a>
+
+          <a href="../roadmap.html" hreflang="es" aria-label="View in Spanish" class="scp1" style="display: grid; place-items: center; width: 36px; height: 36px; padding: 0px; border: 1px solid rgba(255, 255, 255, 0.14); background: transparent; color: rgb(242, 242, 242); cursor: pointer;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"></path></svg></a>
+
+          <button type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer" id="nav-toggle" class="scp1" style="display: grid; place-items: center; width: 36px; height: 36px; padding: 0px; border: 1px solid rgba(255, 255, 255, 0.14); background: transparent; color: rgb(242, 242, 242); font-family: inherit; font-size: 0.8rem; cursor: pointer;"><span id="nav-toggle-glyph">≡</span></button>
+
+          <nav class="nav-drawer" id="nav-drawer" aria-label="Sections">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#overlays">Overlays</a>
+            <a href="index.html#support">Support</a>
+            <a href="index.html#download">Download</a>
+            <a href="blog.html">Blog</a>
+            <a href="faq.html">FAQ</a>
+            <a href="roadmap.html">Roadmap</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <nav class="rm-rail" id="rm-rail" aria-label="Jump to a roadmap point"></nav>
+
+    <div class="rm-stage">
+      <button type="button" class="rm-arrow rm-arrow-prev" id="rm-prev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="rm-arrow rm-arrow-next" id="rm-next" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <p class="rm-hint">Scroll with your wheel, drag, or use the arrows →</p>
+
+      <div class="rm-scroller" id="rm-scroller" tabindex="0" role="region" aria-label="Roadmap, scrolls horizontally">
+        <div class="rm-slide rm-slide-intro">
+          <div class="rm-slide-inner">
+            <p class="eyebrow">Roadmap</p>
+            <h1>What we're building</h1>
+            <p>
+              No dates: promising a date and missing it is worse than not promising one at all. This is what's on our mind and what we're actively working on right now, in order.
+            </p>
+            <div class="rm-legend">
+              <span class="rm-legend-item"><span class="rm-legend-dot is-progress"></span> In progress</span>
+              <span class="rm-legend-item"><span class="rm-legend-dot is-planned"></span> Planned</span>
+            </div>
+          </div>
+        </div>
+        <!-- per-item slides injected by JS -->
+      </div>
+    </div>
+
+    <footer style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <div style="width: min(1180px, 100% - 40px); margin: 0px auto; padding: clamp(40px, 6vw, 72px) 0px 28px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: clamp(28px, 4vw, 40px); margin-bottom: clamp(36px, 5vw, 56px);">
+        <div>
+          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Product</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#overlays">Overlays</a>
+            <a href="index.html#download">Download</a>
+            <a href="https://github.com/iKhunsa/tiktok-tts/releases" target="_blank" rel="noopener">Releases</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Community</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
+            <a href="https://discord.com/invite/mwY859tcQK" target="_blank" rel="noopener">Discord</a>
+            <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener">GitHub</a>
+            <a href="index.html#support">Support</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Resources</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
+            <a href="blog.html">Blog</a>
+            <a href="faq.html">FAQ</a>
+            <a href="patch-notes.html">Patch notes</a>
+            <a href="roadmap.html">Roadmap</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="../roadmap.html" hreflang="es">Español</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Channels</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
+            <a href="https://www.youtube.com/@br0k3ny" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.tiktok.com/@soykurorai" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://www.twitch.tv/soykurorai" target="_blank" rel="noopener">Twitch</a>
+            <a href="https://kick.com/speedmucho" target="_blank" rel="noopener">Kick</a>
+          </div>
+        </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">
+          <span>© 2026 TikLive TTS</span>
+          <span>Made for streamers</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+      // Roadmap content. Edit this array by hand to move it forward
+      // (bump an item from "planned" to "progress" to "done") or add new ones.
+      // Keep in sync with roadmap.html (Spanish) — same order and status.
+      var RM_ITEMS = [
+        {
+          status: "progress",
+          title: "Full TTS engine refactor and Kick support",
+          desc: [
+            "We're rebuilding TikLiveTTS's core from scratch to get it ready for what's coming. The current system works, but it's built as a single block, which limits how fast we can ship new features without risking the stability of everything else. That's why we're moving to a modular architecture, where each feature lives in its own independent module.",
+            "What does this mean for you? Faster updates, fewer bugs bleeding across features, and a solid foundation for everything else on this roadmap.",
+            "As part of this same phase, we already added Kick support, so you can now use TikLiveTTS on your Kick streams too."
+          ]
+        },
+        {
+          status: "planned",
+          title: "New reporting/telemetry APIs and color customization",
+          desc: [
+            "We're renewing the APIs that power TikLiveTTS's reports and usage data, aiming to give you more accurate and reliable information about what's happening in your streams.",
+            "Alongside this, we're adding color customization to the app's interface, so you can match TikLiveTTS's look to your own style and visual identity as a creator."
+          ]
+        },
+        {
+          status: "planned",
+          title: "AI-powered smart chat moderation",
+          desc: [
+            "We're building an AI moderation system that automatically detects and censors inappropriate language in your live chat, without you having to configure word lists by hand. That means a cleaner, safer chat with a lot less effort on your end.",
+            "In parallel, we're also evaluating an update to the traditional (non-AI) moderation system as a complementary option. This second update is still pending internal testing before it ships."
+          ]
+        },
+        {
+          status: "planned",
+          title: "Full Overlays rebuild and AI agent integration (MCP)",
+          desc: [
+            "This is one of the biggest updates on the roadmap. We're redesigning and rebuilding the Overlay section from the ground up, with a modular data architecture that allows much deeper customization than today: you'll be able to fine-tune every detail of your overlays.",
+            "We're also rolling out MCP support across the whole app. This opens the door for AI agents like Claude or Codex to interact directly with TikLiveTTS, taking actions on your behalf and working alongside the Overlay section.",
+            "As part of this integration, there's a surprise waiting: a feature designed to catch you off guard with new ways to customize your stream (if you're the analytical type, you can probably guess it — the hint is AI agents)."
+          ]
+        },
+        {
+          status: "planned",
+          title: "Voice Lab: a studio for creating and cloning voices",
+          desc: [
+            "We're in the research phase of a dedicated voice lab, with the ultimate goal of removing the limit on available voices and letting you create or clone the ones you want for TikLiveTTS. This is a big project, so we're running it in clear phases:"
+          ],
+          list: [
+            "Phase 1: Architecture study. Researching the tools and technology needed to build this feature solidly.",
+            "Phase 2: Prototyping. Building the first working versions to validate the approach.",
+            "Phase 3: Testing. Thoroughly testing before getting anywhere near a release.",
+            "Phase 4: Release. Shipping the feature publicly.",
+            "Phase 5: Polish and iteration. Refining based on real usage and looping back to Phase 2 to keep improving."
+          ]
+        }
+      ];
+
+      (function () {
+        document.documentElement.classList.add("js");
+
+        var scroller = document.getElementById("rm-scroller");
+        var rail = document.getElementById("rm-rail");
+        var prevBtn = document.getElementById("rm-prev");
+        var nextBtn = document.getElementById("rm-next");
+
+        var statusLabel = { done: "Done", progress: "In progress", planned: "Planned" };
+        var slides = [scroller.querySelector(".rm-slide-intro")];
+        var railDots = [];
+
+        // Intro slide in the rail
+        var introDot = document.createElement("button");
+        introDot.type = "button";
+        introDot.className = "rm-rail-dot is-active";
+        introDot.dataset.status = "intro";
+        introDot.innerHTML = "<span></span><span>Intro</span>";
+        introDot.addEventListener("click", function () { goTo(0, true); });
+        rail.appendChild(introDot);
+        railDots.push(introDot);
+
+        RM_ITEMS.forEach(function (item, i) {
+          var line = document.createElement("span");
+          line.className = "rm-rail-line";
+          rail.appendChild(line);
+
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "rm-rail-dot";
+          dot.dataset.status = item.status;
+          dot.innerHTML = "<span></span><span>" + item.title + "</span>";
+          dot.addEventListener("click", function () { goTo(i + 1, true); });
+          rail.appendChild(dot);
+          railDots.push(dot);
+
+          var slide = document.createElement("div");
+          slide.className = "rm-slide rm-slide-item";
+          slide.dataset.status = item.status;
+          slide.innerHTML =
+            '<div class="rm-slide-inner">' +
+              '<div class="rm-item-top">' +
+                '<span class="rm-badge"><span class="rm-badge-dot"></span>' + statusLabel[item.status] + '</span>' +
+                '<span class="rm-item-index">' + String(i + 1).padStart(2, "0") + ' / ' + String(RM_ITEMS.length).padStart(2, "0") + '</span>' +
+              '</div>' +
+              '<h2>' + item.title + '</h2>' +
+              item.desc.map(function (p) { return "<p>" + p + "</p>"; }).join("") +
+              (item.list ? '<ul class="rm-item-list">' + item.list.map(function (li) { return "<li>" + li + "</li>"; }).join("") + '</ul>' : "") +
+            '</div>';
+          scroller.appendChild(slide);
+          slides.push(slide);
+        });
+
+        var current = 0;
+        var mobileQuery = window.matchMedia("(max-width: 640px)");
+        function isMobile() { return mobileQuery.matches; }
+
+        function setActive(i) {
+          current = i;
+          railDots.forEach(function (d, idx) { d.classList.toggle("is-active", idx === i); });
+          prevBtn.disabled = i === 0;
+          nextBtn.disabled = i === slides.length - 1;
+        }
+
+        // Custom horizontal scroll with a short, fixed-duration ease
+        // (~340ms). Native scrollIntoView/scrollTo "smooth" scales its
+        // duration with distance: jumping several slides at once feels
+        // slow and sluggish. This keeps the same snappy feel regardless
+        // of how far it has to travel.
+        var scrollAnim = null;
+        function animateScrollLeft(target, duration) {
+          if (scrollAnim) cancelAnimationFrame(scrollAnim.raf);
+          var startLeft = scroller.scrollLeft;
+          var change = target - startLeft;
+          if (!duration || Math.abs(change) < 1) {
+            scroller.scrollLeft = target;
+            scrollAnim = null;
+            return;
+          }
+          var startTime = null;
+          var token = {};
+          scrollAnim = token;
+          function step(ts) {
+            if (startTime === null) startTime = ts;
+            var t = Math.min(1, (ts - startTime) / duration);
+            var eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+            scroller.scrollLeft = startLeft + change * eased;
+            if (t < 1 && scrollAnim === token) {
+              token.raf = requestAnimationFrame(step);
+            } else if (scrollAnim === token) {
+              scrollAnim = null;
+            }
+          }
+          token.raf = requestAnimationFrame(step);
+        }
+
+        function goTo(i, smooth) {
+          i = Math.max(0, Math.min(slides.length - 1, i));
+          if (isMobile()) {
+            slides[i].scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+          } else {
+            animateScrollLeft(slides[i].offsetLeft, smooth ? 340 : 0);
+          }
+          setActive(i);
+        }
+
+        // Desktop: which slide is closest to the scroller's horizontal center.
+        function nearestIndexDesktop() {
+          var center = scroller.scrollLeft + scroller.clientWidth / 2;
+          var best = 0, bestDist = Infinity;
+          slides.forEach(function (s, idx) {
+            var mid = s.offsetLeft + s.offsetWidth / 2;
+            var dist = Math.abs(mid - center);
+            if (dist < bestDist) { bestDist = dist; best = idx; }
+          });
+          return best;
+        }
+
+        // Mobile: everything stacks vertically with normal page scroll,
+        // so measure against the window instead of the scroller.
+        function nearestIndexMobile() {
+          var centerY = window.innerHeight / 2;
+          var best = 0, bestDist = Infinity;
+          slides.forEach(function (s, idx) {
+            var r = s.getBoundingClientRect();
+            var dist = Math.abs((r.top + r.height / 2) - centerY);
+            if (dist < bestDist) { bestDist = dist; best = idx; }
+          });
+          return best;
+        }
+
+        var scrollTimer;
+        scroller.addEventListener("scroll", function () {
+          if (isMobile()) return;
+          clearTimeout(scrollTimer);
+          scrollTimer = setTimeout(function () { setActive(nearestIndexDesktop()); }, 80);
+        });
+        window.addEventListener("scroll", function () {
+          if (!isMobile()) return;
+          clearTimeout(scrollTimer);
+          scrollTimer = setTimeout(function () { setActive(nearestIndexMobile()); }, 80);
+        }, { passive: true });
+
+        prevBtn.addEventListener("click", function () { goTo(current - 1, true); });
+        nextBtn.addEventListener("click", function () { goTo(current + 1, true); });
+
+        // Mouse wheel/trackpad -> advances or goes back one whole slide.
+        // (repeatedly nudging scrollLeft += delta clashes with
+        // scroll-behavior:smooth and feels stuck; instead each wheel
+        // "tick" moves a full slide, like the arrows/rail). Once we're
+        // on the first/last slide, normal page scroll is allowed through
+        // so you can reach the footer.
+        var wheelLocked = false;
+        scroller.addEventListener("wheel", function (e) {
+          if (isMobile()) return;
+          var isVertical = Math.abs(e.deltaY) >= Math.abs(e.deltaX);
+          var delta = isVertical ? e.deltaY : e.deltaX;
+          if (Math.abs(delta) < 2) return;
+          var dir = delta > 0 ? 1 : -1;
+
+          // If the active slide has content taller than the screen, let it
+          // scroll vertically inside first (native). Only jump slides once
+          // it hits the top/bottom.
+          if (isVertical) {
+            var active = slides[current];
+            var canScrollDown = active.scrollTop + active.clientHeight < active.scrollHeight - 1;
+            var canScrollUp = active.scrollTop > 1;
+            if ((dir === 1 && canScrollDown) || (dir === -1 && canScrollUp)) return;
+          }
+
+          var target = current + dir;
+          if (target < 0 || target > slides.length - 1) return;
+          e.preventDefault();
+          if (wheelLocked) return;
+          wheelLocked = true;
+          goTo(target, true);
+          setTimeout(function () { wheelLocked = false; }, 340);
+        }, { passive: false });
+
+        // Mouse drag
+        var isDown = false, startX = 0, startScroll = 0, dragged = false;
+        scroller.addEventListener("mousedown", function (e) {
+          if (isMobile()) return;
+          if (scrollAnim) { cancelAnimationFrame(scrollAnim.raf); scrollAnim = null; }
+          isDown = true;
+          dragged = false;
+          scroller.classList.add("is-grabbing");
+          startX = e.pageX;
+          startScroll = scroller.scrollLeft;
+        });
+        window.addEventListener("mouseup", function () {
+          isDown = false;
+          scroller.classList.remove("is-grabbing");
+        });
+        window.addEventListener("mousemove", function (e) {
+          if (!isDown) return;
+          e.preventDefault();
+          if (Math.abs(e.pageX - startX) > 4) dragged = true;
+          scroller.scrollLeft = startScroll - (e.pageX - startX);
+        });
+        scroller.addEventListener("click", function (e) {
+          if (dragged) { e.preventDefault(); e.stopPropagation(); }
+        }, true);
+
+        setActive(0);
+
+        // ── Nav menu (same as the rest of the site) ──
+        var navToggle = document.getElementById("nav-toggle");
+        var navDrawer = document.getElementById("nav-drawer");
+        if (navToggle && navDrawer) {
+          navToggle.addEventListener("click", function () {
+            var open = navDrawer.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          });
+          document.addEventListener("click", function (e) {
+            if (!navDrawer.contains(e.target) && !navToggle.contains(e.target)) {
+              navDrawer.classList.remove("open");
+              navToggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

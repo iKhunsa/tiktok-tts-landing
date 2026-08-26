@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Roadmap de TikLive TTS: qué estamos construyendo ahora mismo y qué viene después. Sin fechas, solo el rumbo real del proyecto."
+    />
+    <meta name="theme-color" content="#171717" />
+
+    <link rel="canonical" href="https://tiklivetts.es/roadmap.html" />
+    <link rel="alternate" hreflang="es" href="https://tiklivetts.es/roadmap.html" />
+    <link rel="alternate" hreflang="en" href="https://tiklivetts.es/en/roadmap.html" />
+    <link rel="alternate" hreflang="x-default" href="https://tiklivetts.es/roadmap.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Roadmap - TikLive TTS" />
+    <meta
+      property="og:description"
+      content="Qué estamos construyendo ahora mismo y qué viene después para TikLive TTS. Sin fechas, solo el rumbo real."
+    />
+    <meta property="og:image" content="https://tiklivetts.es/assets/logo.png" />
+    <meta property="og:url" content="https://tiklivetts.es/roadmap.html" />
+    <meta property="og:locale" content="es_ES" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Roadmap - TikLive TTS" />
+    <meta
+      name="twitter:description"
+      content="Qué estamos construyendo ahora mismo y qué viene después para TikLive TTS. Sin fechas, solo el rumbo real."
+    />
+    <meta name="twitter:image" content="https://tiklivetts.es/assets/logo.png" />
+    <title>Roadmap - TikLive TTS</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+    <script defer src="/_vercel/insights/script.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin:0; background:#171717; color:#F2F2F2; font-family:"JetBrains Mono", ui-monospace, monospace; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; text-decoration:none; }
+      a:hover { color:#3ECF8E; }
+      img, svg { display:block; max-width:100%; }
+      pre { margin:0; font-family:"JetBrains Mono", ui-monospace, monospace; }
+      ::selection { background:#3ECF8E; color:#06231A; }
+      button { font-family: inherit; }
+
+      .scp0:hover { background: #5BE0A4 !important; color: #06231A !important; }
+      .scp1:hover { border-color: #3ECF8E !important; color: #3ECF8E !important; }
+      .scp2:hover { border-color: #3ECF8E !important; }
+      .scp3:hover { background: #202020 !important; }
+      .scp4:hover { background: #3ECF8E !important; color: #06231A !important; }
+
+      .nav-drawer { display: none; flex-direction: column; gap: 2px; position: absolute; top: calc(100% + 8px); right: 20px; width: min(260px, calc(100% - 40px)); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #1c1c1c; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5); z-index: 30; }
+      .nav-drawer.open { display: flex; }
+      .nav-drawer a { padding: 13px 18px; font-size: 0.78rem; letter-spacing: 0.04em; color: #F2F2F2; border-top: 1px solid rgba(255,255,255,0.08); }
+      .nav-drawer a:first-child { border-top: 0; }
+      .nav-drawer a:hover { background: #232323; color: #3ECF8E; }
+
+      html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 600ms ease, transform 600ms ease; }
+      html.js .reveal.visible { opacity: 1; transform: none; }
+      @media (prefers-reduced-motion: reduce) {
+        html.js .reveal { opacity: 1; transform: none; transition: none; }
+      }
+      .scp0, .scp1, .scp3, .scp4 { transition: transform 200ms ease, background 200ms ease, border-color 200ms ease, color 200ms ease; }
+      .scp3:hover { transform: translateY(-2px); }
+      a[class^="scp"]:active, button[class^="scp"]:active { transform: translateY(0); }
+
+      /* ── Roadmap: toda la página se recorre en horizontal ── */
+
+      .rm-rail {
+        position: sticky;
+        top: 65px;
+        z-index: 15;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px min(40px, 5vw);
+        background: rgba(23, 23, 23, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .rm-rail::-webkit-scrollbar { display: none; }
+
+      .rm-rail-dot {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        padding: 6px 4px;
+        border: 0;
+        background: none;
+        color: #5a5a5a;
+        cursor: pointer;
+      }
+      .rm-rail-dot span:first-child {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1.5px solid #5a5a5a;
+        background: transparent;
+        transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      }
+      .rm-rail-dot[data-status="done"] span:first-child { border-color: #3ecf8e; background: #3ecf8e; }
+      .rm-rail-dot[data-status="progress"] span:first-child { border-color: #12d8e8; background: #12d8e8; }
+      .rm-rail-dot.is-active span:first-child { transform: scale(1.7); }
+      .rm-rail-dot span:last-child {
+        font-size: 0.66rem;
+        letter-spacing: 0.04em;
+        white-space: nowrap;
+        max-width: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-width 220ms ease, opacity 180ms ease;
+      }
+      .rm-rail-dot.is-active { color: #f2f2f2; }
+      .rm-rail-dot.is-active span:last-child { max-width: 220px; opacity: 1; margin-left: 2px; }
+      .rm-rail-line { flex: 1 1 16px; min-width: 16px; height: 1px; background: rgba(255,255,255,0.14); }
+
+      .rm-stage {
+        position: relative;
+      }
+
+      .rm-scroller {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        cursor: grab;
+        -webkit-overflow-scrolling: touch;
+      }
+      .rm-scroller.is-grabbing { cursor: grabbing; }
+      .rm-scroller::-webkit-scrollbar { display: none; }
+      .rm-scroller { scrollbar-width: none; }
+
+      .rm-slide {
+        flex: 0 0 100vw;
+        width: 100vw;
+        height: calc(100vh - 130px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px min(64px, 8vw);
+        overflow-y: auto;
+        scroll-snap-align: start;
+      }
+
+      .rm-slide-inner { max-width: 720px; margin: auto 0; padding: 24px 0; }
+      .rm-slide-intro p { max-width: 560px; }
+
+      .rm-legend { display: flex; flex-wrap: wrap; gap: 18px; margin: 26px 0 6px; }
+      .rm-legend-item { display: flex; align-items: center; gap: 8px; color: #8a8a8a; font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; }
+      .rm-legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+      .rm-legend-dot.is-done { background: #3ecf8e; }
+      .rm-legend-dot.is-progress { background: #12d8e8; }
+      .rm-legend-dot.is-planned { border: 1.5px solid #5a5a5a; background: transparent; }
+
+      .rm-slide-item .rm-slide-inner { max-width: 820px; }
+
+      .rm-item-top { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-bottom: clamp(20px, 2vh, 32px); }
+      .rm-badge { display: inline-flex; align-items: center; gap: 8px; padding: 7px 15px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #8a8a8a; }
+      .rm-badge-dot { width: 8px; height: 8px; border-radius: 50%; }
+      .rm-slide-item[data-status="done"] .rm-badge { border-color: rgba(62,207,142,0.4); color: #3ecf8e; }
+      .rm-slide-item[data-status="done"] .rm-badge-dot { background: #3ecf8e; }
+      .rm-slide-item[data-status="progress"] .rm-badge { border-color: rgba(18,216,232,0.4); color: #12d8e8; }
+      .rm-slide-item[data-status="progress"] .rm-badge-dot { background: #12d8e8; }
+      .rm-slide-item[data-status="planned"] .rm-badge { border-color: rgba(255,255,255,0.14); color: #8a8a8a; }
+      .rm-slide-item[data-status="planned"] .rm-badge-dot { border: 1.5px solid #5a5a5a; }
+
+      .rm-item-index { color: #5a5a5a; font-size: 0.88rem; letter-spacing: 0.08em; }
+
+      .rm-slide-item h2 {
+        margin: 0 0 clamp(20px, 2.6vh, 34px);
+        font-family: "Space Grotesk", ui-sans-serif, sans-serif;
+        font-weight: 300;
+        font-size: clamp(2rem, 2.2vw + 2.4vh, 3.8rem);
+        letter-spacing: -0.02em;
+        line-height: 1.08;
+      }
+
+      .rm-slide-item p { margin: 0; color: #8a8a8a; font-size: clamp(1.05rem, 0.4vw + 1vh, 1.35rem); line-height: 1.85; }
+      .rm-slide-item p + p { margin-top: clamp(14px, 1.6vh, 22px); }
+
+      .rm-item-list { margin: clamp(16px, 2vh, 26px) 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: clamp(10px, 1.4vh, 16px); }
+      .rm-item-list li {
+        position: relative;
+        padding-left: 24px;
+        color: #8a8a8a;
+        font-size: clamp(0.95rem, 0.3vw + 0.9vh, 1.15rem);
+        line-height: 1.7;
+      }
+      .rm-item-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #12d8e8;
+      }
+
+      .rm-arrow {
+        position: fixed;
+        top: 50%;
+        z-index: 15;
+        display: grid;
+        place-items: center;
+        width: 44px;
+        height: 44px;
+        margin-top: -22px;
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 50%;
+        background: rgba(23,23,23,0.85);
+        backdrop-filter: blur(6px);
+        color: #f2f2f2;
+        cursor: pointer;
+      }
+      .rm-arrow:hover { border-color: #3ecf8e; color: #3ecf8e; }
+      .rm-arrow-prev { left: 16px; }
+      .rm-arrow-next { right: 16px; }
+      .rm-arrow svg { width: 18px; height: 18px; }
+      .rm-arrow:disabled { opacity: 0.2; cursor: default; }
+      .rm-arrow:disabled:hover { border-color: rgba(255,255,255,0.14); color: #f2f2f2; }
+
+      .rm-hint {
+        position: sticky;
+        left: 0;
+        margin: 0 min(64px, 8vw) 8px;
+        color: #5a5a5a;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 640px) {
+        /* En mobile todo se ve apilado en vertical, con el scroll normal
+           de la página. Se deja de "secuestrar" el scroll (sin snap, sin
+           rueda/drag horizontal): cada punto es una sección más. */
+        .rm-arrow { display: none; }
+        .rm-hint { display: none; }
+
+        .rm-scroller {
+          display: block;
+          overflow: visible;
+          scroll-snap-type: none;
+          cursor: default;
+        }
+
+        .rm-slide {
+          flex: none;
+          width: 100%;
+          height: auto;
+          min-height: 0;
+          display: block;
+          padding: 32px 24px;
+          overflow: visible;
+          scroll-snap-align: none;
+          scroll-margin-top: 100px;
+        }
+
+        .rm-slide-inner { margin: 0; padding: 0; }
+
+        .rm-rail { top: 57px; padding: 12px 16px; }
+        .rm-slide-intro h1 { font-size: clamp(2rem, 11vw, 3.2rem); line-height: 1.18; }
+        .rm-slide-item h2 { font-size: clamp(1.5rem, 8vw, 2.2rem); line-height: 1.2; }
+      }
+    </style>
+  </head>
+  <body>
+    <header style="position: sticky; top: 0px; z-index: 20; background: rgba(23, 23, 23, 0.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; width: min(1180px, 100% - 40px); margin: 0px auto; padding: 14px 0px;">
+        <a href="index.html" style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">
+          <img src="assets/logo.png" alt="" style="width: 26px; height: 26px; object-fit: contain;">
+          <span>TikLive TTS</span>
+        </a>
+
+        <div style="display: flex; align-items: center; gap: 8px; position: relative;">
+          <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; min-height: 36px; padding: 0px 16px; background: rgb(62, 207, 142); color: rgb(6, 35, 26); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">Descargar</a>
+
+          <a href="en/roadmap.html" hreflang="en" aria-label="Ver en inglés" class="scp1" style="display: grid; place-items: center; width: 36px; height: 36px; padding: 0px; border: 1px solid rgba(255, 255, 255, 0.14); background: transparent; color: rgb(242, 242, 242); cursor: pointer;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"></path></svg></a>
+
+          <button type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-drawer" id="nav-toggle" class="scp1" style="display: grid; place-items: center; width: 36px; height: 36px; padding: 0px; border: 1px solid rgba(255, 255, 255, 0.14); background: transparent; color: rgb(242, 242, 242); font-family: inherit; font-size: 0.8rem; cursor: pointer;"><span id="nav-toggle-glyph">≡</span></button>
+
+          <nav class="nav-drawer" id="nav-drawer" aria-label="Secciones">
+            <a href="index.html#features">Funciones</a>
+            <a href="index.html#overlays">Overlays</a>
+            <a href="creadores.html">Creadores</a>
+            <a href="index.html#support">Apoyar</a>
+            <a href="index.html#download">Descargar</a>
+            <a href="blog.html">Blog</a>
+            <a href="preguntas-frecuentes.html">FAQ</a>
+            <a href="roadmap.html">Roadmap</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <nav class="rm-rail" id="rm-rail" aria-label="Ir a un punto del roadmap"></nav>
+
+    <div class="rm-stage">
+      <button type="button" class="rm-arrow rm-arrow-prev" id="rm-prev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="rm-arrow rm-arrow-next" id="rm-next" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <p class="rm-hint">Desplazá con la rueda, arrastrá o usá las flechas →</p>
+
+      <div class="rm-scroller" id="rm-scroller" tabindex="0" role="region" aria-label="Roadmap, desplazable horizontalmente">
+        <div class="rm-slide rm-slide-intro">
+          <div class="rm-slide-inner">
+            <p class="eyebrow">Roadmap</p>
+            <h1>Qué estamos construyendo</h1>
+            <p>
+              Sin fechas: prometer una fecha y no cumplirla es peor que no prometer nada. Esto es lo que tenemos en mente y en qué estamos trabajando ahora mismo, en orden.
+            </p>
+            <div class="rm-legend">
+              <span class="rm-legend-item"><span class="rm-legend-dot is-progress"></span> En curso</span>
+              <span class="rm-legend-item"><span class="rm-legend-dot is-planned"></span> Planeado</span>
+            </div>
+          </div>
+        </div>
+        <!-- slides de cada item inyectadas por JS -->
+      </div>
+    </div>
+
+    <footer style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+      <div style="width: min(1180px, 100% - 40px); margin: 0px auto; padding: clamp(40px, 6vw, 72px) 0px 28px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: clamp(28px, 4vw, 40px); margin-bottom: clamp(36px, 5vw, 56px);">
+        <div>
+          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Producto</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
+            <a href="index.html#features">Funciones</a>
+            <a href="index.html#overlays">Overlays</a>
+            <a href="index.html#download">Descargar</a>
+            <a href="https://github.com/iKhunsa/tiktok-tts/releases" target="_blank" rel="noopener">Releases</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Comunidad</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
+            <a href="https://discord.com/invite/mwY859tcQK" target="_blank" rel="noopener">Discord</a>
+            <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener">GitHub</a>
+            <a href="creadores.html">Creadores</a>
+            <a href="index.html#support">Apoyar</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Recursos</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
+            <a href="blog.html">Blog</a>
+            <a href="preguntas-frecuentes.html">FAQ</a>
+            <a href="notas-de-parche.html">Notas de parche</a>
+            <a href="roadmap.html">Roadmap</a>
+            <a href="privacidad.html">Privacidad</a>
+            <a href="terminos.html">Términos</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Canales</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
+            <a href="https://www.youtube.com/@br0k3ny" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.tiktok.com/@soykurorai" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://www.twitch.tv/soykurorai" target="_blank" rel="noopener">Twitch</a>
+            <a href="https://kick.com/speedmucho" target="_blank" rel="noopener">Kick</a>
+          </div>
+        </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">
+          <span>© 2026 TikLive TTS</span>
+          <span>Hecho para streamers</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Contenido del roadmap. Editar este array a mano para hacerlo avanzar
+      // (mover un item de "planned" a "progress" a "done") o agregar nuevos.
+      var RM_ITEMS = [
+        {
+          status: "progress",
+          title: "Refactorización completa del motor de TTS y soporte para Kick",
+          desc: [
+            "Estamos reconstruyendo desde cero el núcleo de TikLiveTTS para dejarlo preparado para el crecimiento que viene. El sistema actual funciona, pero está pensado como un bloque único, lo que limita qué tan rápido podemos sumar funciones nuevas sin arriesgar la estabilidad del resto de la app. Por eso estamos migrando a una arquitectura modular, donde cada función vive en su propio módulo independiente.",
+            "¿Qué significa esto para ustedes? Actualizaciones más rápidas, menos bugs cruzados entre funciones y una base sólida para todo lo que viene después en este roadmap.",
+            "Como parte de esta misma etapa, ya sumamos soporte para Kick, así que ahora pueden usar TikLiveTTS también en sus transmisiones de esa plataforma."
+          ]
+        },
+        {
+          status: "planned",
+          title: "Nuevas APIs de reportes y telemetría, y personalización de color",
+          desc: [
+            "Estamos renovando las APIs que alimentan los reportes y los datos de uso de TikLiveTTS, con el objetivo de darles información más precisa y confiable sobre lo que pasa en sus transmisiones.",
+            "Junto con esto, sumamos personalización de color en la interfaz de la app, para que puedan adaptar la apariencia de TikLiveTTS a su gusto y su identidad visual como creadores."
+          ]
+        },
+        {
+          status: "planned",
+          title: "Moderación inteligente con IA para el chat",
+          desc: [
+            "Estamos implementando un sistema de moderación con inteligencia artificial que va a detectar y censurar automáticamente el lenguaje inapropiado en su chat en vivo, sin que ustedes tengan que configurar listas de palabras manualmente. Esto les da un chat más limpio y seguro con mucho menos esfuerzo de su parte.",
+            "En paralelo, también estamos evaluando una actualización al sistema de moderación tradicional (sin IA), como alternativa complementaria. Esta segunda actualización todavía está sujeta a que termine de pasar nuestras pruebas internas antes de lanzarla."
+          ]
+        },
+        {
+          status: "planned",
+          title: "Renovación total de Overlays e integración con agentes de IA (MCP)",
+          desc: [
+            "Esta es una de las actualizaciones más grandes del roadmap. Vamos a rediseñar y reconstruir por completo la sección de Overlay, con una arquitectura de datos modular que permite una personalización mucho más profunda que la actual: van a poder ajustar cada detalle de sus overlays a su medida.",
+            "Además, estamos incorporando funciones de MCP en toda la aplicación. Esto abre la puerta a que agentes de IA como Claude o Codex puedan interactuar directamente con TikLiveTTS, ejecutando acciones por ustedes y trabajando junto a la sección de Overlay.",
+            "Como parte de esta integración, adjunto les espera una sorpresa: una función pensada para sorprenderlos con nuevas formas de personalizar su transmisión (pero si son analíticos, se lo pueden imaginar — la pista son los agentes de IA)."
+          ]
+        },
+        {
+          status: "planned",
+          title: "Voice Lab: estudio para la creación y clonación de voces",
+          desc: [
+            "Estamos en la fase de investigación de un laboratorio de voces dedicado, cuyo objetivo final es eliminar el límite de voces disponibles y permitirles crear o clonar las que quieran para usar en TikLiveTTS. Este es un proyecto grande, así que lo estamos llevando en fases claras:"
+          ],
+          list: [
+            "Fase 1: Estudio de arquitectura. Investigamos las herramientas y la tecnología necesarias para construir esta función de forma sólida.",
+            "Fase 2: Prototipado. Construimos las primeras versiones funcionales para validar el enfoque.",
+            "Fase 3: Pruebas. Testeamos a fondo antes de acercarnos a cualquier lanzamiento.",
+            "Fase 4: Publicación. Lanzamos la función al público.",
+            "Fase 5: Pulido e iteración. Refinamos en base al uso real y volvemos a la Fase 2 para seguir mejorando de forma continua."
+          ]
+        }
+      ];
+
+      (function () {
+        document.documentElement.classList.add("js");
+
+        var scroller = document.getElementById("rm-scroller");
+        var rail = document.getElementById("rm-rail");
+        var prevBtn = document.getElementById("rm-prev");
+        var nextBtn = document.getElementById("rm-next");
+
+        var statusLabel = { done: "Hecho", progress: "En curso", planned: "Planeado" };
+        var slides = [scroller.querySelector(".rm-slide-intro")];
+        var railDots = [];
+
+        // Slide de intro en el riel
+        var introDot = document.createElement("button");
+        introDot.type = "button";
+        introDot.className = "rm-rail-dot is-active";
+        introDot.dataset.status = "intro";
+        introDot.innerHTML = "<span></span><span>Intro</span>";
+        introDot.addEventListener("click", function () { goTo(0, true); });
+        rail.appendChild(introDot);
+        railDots.push(introDot);
+
+        RM_ITEMS.forEach(function (item, i) {
+          var line = document.createElement("span");
+          line.className = "rm-rail-line";
+          rail.appendChild(line);
+
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "rm-rail-dot";
+          dot.dataset.status = item.status;
+          dot.innerHTML = "<span></span><span>" + item.title + "</span>";
+          dot.addEventListener("click", function () { goTo(i + 1, true); });
+          rail.appendChild(dot);
+          railDots.push(dot);
+
+          var slide = document.createElement("div");
+          slide.className = "rm-slide rm-slide-item";
+          slide.dataset.status = item.status;
+          slide.innerHTML =
+            '<div class="rm-slide-inner">' +
+              '<div class="rm-item-top">' +
+                '<span class="rm-badge"><span class="rm-badge-dot"></span>' + statusLabel[item.status] + '</span>' +
+                '<span class="rm-item-index">' + String(i + 1).padStart(2, "0") + ' / ' + String(RM_ITEMS.length).padStart(2, "0") + '</span>' +
+              '</div>' +
+              '<h2>' + item.title + '</h2>' +
+              item.desc.map(function (p) { return "<p>" + p + "</p>"; }).join("") +
+              (item.list ? '<ul class="rm-item-list">' + item.list.map(function (li) { return "<li>" + li + "</li>"; }).join("") + '</ul>' : "") +
+            '</div>';
+          scroller.appendChild(slide);
+          slides.push(slide);
+        });
+
+        var current = 0;
+        var mobileQuery = window.matchMedia("(max-width: 640px)");
+        function isMobile() { return mobileQuery.matches; }
+
+        function setActive(i) {
+          current = i;
+          railDots.forEach(function (d, idx) { d.classList.toggle("is-active", idx === i); });
+          prevBtn.disabled = i === 0;
+          nextBtn.disabled = i === slides.length - 1;
+        }
+
+        // Scroll horizontal propio, con easing corto y de duración fija
+        // (~340ms). El scrollIntoView/scrollTo "smooth" nativo escala la
+        // duración según la distancia: saltar varios slides de una se
+        // siente lento y trabado. Esto mantiene siempre la misma
+        // sensación rápida, sin importar cuánto haya que recorrer.
+        var scrollAnim = null;
+        function animateScrollLeft(target, duration) {
+          if (scrollAnim) cancelAnimationFrame(scrollAnim.raf);
+          var startLeft = scroller.scrollLeft;
+          var change = target - startLeft;
+          if (!duration || Math.abs(change) < 1) {
+            scroller.scrollLeft = target;
+            scrollAnim = null;
+            return;
+          }
+          var startTime = null;
+          var token = {};
+          scrollAnim = token;
+          function step(ts) {
+            if (startTime === null) startTime = ts;
+            var t = Math.min(1, (ts - startTime) / duration);
+            var eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+            scroller.scrollLeft = startLeft + change * eased;
+            if (t < 1 && scrollAnim === token) {
+              token.raf = requestAnimationFrame(step);
+            } else if (scrollAnim === token) {
+              scrollAnim = null;
+            }
+          }
+          token.raf = requestAnimationFrame(step);
+        }
+
+        function goTo(i, smooth) {
+          i = Math.max(0, Math.min(slides.length - 1, i));
+          if (isMobile()) {
+            slides[i].scrollIntoView({ behavior: smooth ? "smooth" : "auto", block: "start" });
+          } else {
+            animateScrollLeft(slides[i].offsetLeft, smooth ? 340 : 0);
+          }
+          setActive(i);
+        }
+
+        // Desktop: qué slide está más cerca del centro horizontal del scroller.
+        function nearestIndexDesktop() {
+          var center = scroller.scrollLeft + scroller.clientWidth / 2;
+          var best = 0, bestDist = Infinity;
+          slides.forEach(function (s, idx) {
+            var mid = s.offsetLeft + s.offsetWidth / 2;
+            var dist = Math.abs(mid - center);
+            if (dist < bestDist) { bestDist = dist; best = idx; }
+          });
+          return best;
+        }
+
+        // Mobile: todo apilado en vertical con scroll normal de la página,
+        // así que se mide contra la ventana en vez del scroller.
+        function nearestIndexMobile() {
+          var centerY = window.innerHeight / 2;
+          var best = 0, bestDist = Infinity;
+          slides.forEach(function (s, idx) {
+            var r = s.getBoundingClientRect();
+            var dist = Math.abs((r.top + r.height / 2) - centerY);
+            if (dist < bestDist) { bestDist = dist; best = idx; }
+          });
+          return best;
+        }
+
+        var scrollTimer;
+        scroller.addEventListener("scroll", function () {
+          if (isMobile()) return;
+          clearTimeout(scrollTimer);
+          scrollTimer = setTimeout(function () { setActive(nearestIndexDesktop()); }, 80);
+        });
+        window.addEventListener("scroll", function () {
+          if (!isMobile()) return;
+          clearTimeout(scrollTimer);
+          scrollTimer = setTimeout(function () { setActive(nearestIndexMobile()); }, 80);
+        }, { passive: true });
+
+        prevBtn.addEventListener("click", function () { goTo(current - 1, true); });
+        nextBtn.addEventListener("click", function () { goTo(current + 1, true); });
+
+        // Rueda del mouse/trackpad -> avanza o retrocede un slide entero.
+        // (scrollLeft += delta a repetición choca con scroll-behavior:smooth
+        // y se siente trabado; en cambio cada "click" de rueda mueve un
+        // slide completo, como flecha/riel). Si ya estamos en el primer o
+        // último slide, se deja pasar el scroll normal para llegar al footer.
+        var wheelLocked = false;
+        scroller.addEventListener("wheel", function (e) {
+          if (isMobile()) return;
+          var isVertical = Math.abs(e.deltaY) >= Math.abs(e.deltaX);
+          var delta = isVertical ? e.deltaY : e.deltaX;
+          if (Math.abs(delta) < 2) return;
+          var dir = delta > 0 ? 1 : -1;
+
+          // Si el slide activo tiene contenido más alto que la pantalla,
+          // primero dejamos que se desplace verticalmente adentro (nativo).
+          // Recién cuando llega a su tope/final saltamos de slide.
+          if (isVertical) {
+            var active = slides[current];
+            var canScrollDown = active.scrollTop + active.clientHeight < active.scrollHeight - 1;
+            var canScrollUp = active.scrollTop > 1;
+            if ((dir === 1 && canScrollDown) || (dir === -1 && canScrollUp)) return;
+          }
+
+          var target = current + dir;
+          if (target < 0 || target > slides.length - 1) return;
+          e.preventDefault();
+          if (wheelLocked) return;
+          wheelLocked = true;
+          goTo(target, true);
+          setTimeout(function () { wheelLocked = false; }, 340);
+        }, { passive: false });
+
+        // Arrastrar con mouse
+        var isDown = false, startX = 0, startScroll = 0, dragged = false;
+        scroller.addEventListener("mousedown", function (e) {
+          if (isMobile()) return;
+          if (scrollAnim) { cancelAnimationFrame(scrollAnim.raf); scrollAnim = null; }
+          isDown = true;
+          dragged = false;
+          scroller.classList.add("is-grabbing");
+          startX = e.pageX;
+          startScroll = scroller.scrollLeft;
+        });
+        window.addEventListener("mouseup", function () {
+          isDown = false;
+          scroller.classList.remove("is-grabbing");
+        });
+        window.addEventListener("mousemove", function (e) {
+          if (!isDown) return;
+          e.preventDefault();
+          if (Math.abs(e.pageX - startX) > 4) dragged = true;
+          scroller.scrollLeft = startScroll - (e.pageX - startX);
+        });
+        scroller.addEventListener("click", function (e) {
+          if (dragged) { e.preventDefault(); e.stopPropagation(); }
+        }, true);
+
+        setActive(0);
+
+        // ── Menú de navegación (igual que el resto del sitio) ──
+        var navToggle = document.getElementById("nav-toggle");
+        var navDrawer = document.getElementById("nav-drawer");
+        if (navToggle && navDrawer) {
+          navToggle.addEventListener("click", function () {
+            var open = navDrawer.classList.toggle("open");
+            navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+          });
+          document.addEventListener("click", function (e) {
+            if (!navDrawer.contains(e.target) && !navToggle.contains(e.target)) {
+              navDrawer.classList.remove("open");
+              navToggle.setAttribute("aria-expanded", "false");
+            }
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
