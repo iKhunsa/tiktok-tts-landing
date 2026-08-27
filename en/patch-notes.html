@@ -109,6 +109,122 @@
       </p>
 
       <article class="post">
+        <h2>v1.8.0</h2>
+        <p class="page-meta">New backend</p>
+
+        <h3>The biggest update so far</h3>
+        <p>
+          Under the hood, the entire server that runs inside the app was rewritten from scratch. On the outside: Kick arrives as a fourth platform, a side menu you arrange however you want, the Music Bot redesigned with YouTube playlists, automatic announcements during the stream, and a pile of translation gaps closed so the voice always speaks in your language.
+        </p>
+
+        <p><strong>Kick, fourth platform</strong></p>
+        <p>
+          Until now the app read TikTok, Twitch and YouTube. Kick was ruled out: its site blocks any direct connection from the app. Now it works: the app opens a hidden window that reads your channel's chat and feeds it into the same flow as the other three. From the platform selector you add your Kick channel just like any other.
+        </p>
+        <p>What comes through from Kick:</p>
+        <ul>
+          <li>Chat messages, with their emotes.</li>
+          <li>TTS: the voice reads them in the same queue as everything else.</li>
+          <li>Moderation: mute, ban and everything else in the Moderation view.</li>
+          <li>Platform badge on every message, filters in the chat overlay, mobile control.</li>
+        </ul>
+        <p>What does <strong>not</strong> come through from Kick: subscriptions, gifts and raids. Chat only.</p>
+        <p>
+          The Kick connection relies on a third-party service. It's more fragile than the other platforms; if that service changes or goes down, Kick chat cuts out until it's fixed from the app. The other platforms are unaffected. The app retries on its own if Kick goes quiet.
+        </p>
+
+        <p><strong>More tools: the side menu, your way</strong></p>
+        <p>
+          The left menu was fixed: every section, always, in the same order. Now there's a new section, <strong>More tools</strong>, with a store-style view of all the app's tools (Overlays, Music Bot, Clips, Soundpad, Mobile control, Moderation), each with its preview image and a description.
+        </p>
+        <ul>
+          <li>Show or hide each tool in the side menu.</li>
+          <li>Reorder the menu by dragging items, Trello-style.</li>
+          <li>Chat and Settings stay fixed: they can't be hidden or moved.</li>
+        </ul>
+        <p>
+          On new installs, Clips and Mobile control start hidden so the menu is cleaner out of the box; add them from here when you need them. If you were already using them, they stay where they were. The first time you open the section there's a guided tour that explains it.
+        </p>
+
+        <p><strong>Music Bot redesigned</strong></p>
+        <p>
+          The view was redesigned entirely: an iOS-style switch instead of the old chip, the request queue and the bot rules in two columns (one on narrow screens), a progress bar that moves in real time, a button to remove each track from the queue, and now you can see how many songs a playlist has.
+        </p>
+        <p>
+          It also <strong>supports YouTube playlist links</strong>. Before it only accepted individual tracks; now if you paste (or someone requests) a playlist URL, the bot expands it and queues every track. Chat <code>!p</code> commands are no longer read aloud on any platform; before they could slip into the TTS.
+        </p>
+
+        <p><strong>Automatic announcements during the stream</strong></p>
+        <p>
+          A new announcement plays through the TTS voice inviting your audience to download the app. It fires by stream time:
+        </p>
+        <ul>
+          <li>First announcement 15 minutes after connecting the first channel.</li>
+          <li>Next at one hour of session.</li>
+          <li>Next at two hours.</li>
+          <li>From then on, every 90 minutes.</li>
+        </ul>
+        <p>
+          The counter starts when you connect the first channel, on any platform, and stops when you disconnect them all. Adding a platform mid-stream doesn't reset the count. Disconnecting and reconnecting counts as a new session. The text is spoken in your TTS voice's language, not fixed in Spanish.
+        </p>
+        <p>
+          Along the same lines: the "the creator just joined" announcement is now unique per session. Before, if the admin typed on several platforms at once, it played once for each. Now it plays a single time and only resets on reconnect.
+        </p>
+
+        <p><strong>Making the voice always speak your language</strong></p>
+        <p>Several gaps were closed where the app bypassed its own translation system:</p>
+        <ul>
+          <li><strong>Emojis and emotes.</strong> They're now painted as an image in the chat and filtered out of the TTS equally across all four platforms. Before, Twitch read out the <code>:name:</code> of its emotes.</li>
+          <li><strong>Event announcements.</strong> The text the app builds for the TTS on detecting a gift, a join, a follow, a sub, a cheer, a raid, a like or a share was hardcoded in Spanish. Now it's spoken in your voice's language.</li>
+          <li><strong>OBS alerts overlay.</strong> It was almost all in Spanish inside the code; now translated to the app's 10 languages.</li>
+          <li><strong>Likes and followers overlays.</strong> The number is now formatted according to the active language, not fixed to Spanish format.</li>
+          <li><strong>Main window.</strong> Around 15 loose strings that had gone untranslated (notices, clip counter, Twitch authorization, etc.).</li>
+          <li><strong>Server errors.</strong> The error messages you see as a popup notice are now translated too.</li>
+        </ul>
+        <p>The 10 languages are now level, each with the same number of strings.</p>
+
+        <p><strong>Voice queue fixes</strong></p>
+        <ul>
+          <li><strong>Real order.</strong> The queue is now sorted by the moment each message was written, not by the order it reached the app. Since chat messages pass through moderation (with variable delay) and joins and gifts don't, before a "so-and-so joined" or your own message could jump ahead of earlier messages still in moderation.</li>
+          <li><strong>Resume on re-enable.</strong> If you turned off the global TTS switch with pending messages and turned it back on, those messages got stuck and the voice stayed silent until the next new message. Now the pending queue resumes on re-enable.</li>
+        </ul>
+
+        <p><strong>YouTube no longer goes silently mute</strong></p>
+        <p>
+          YouTube sometimes stops sending messages without any error: an internal token expires and the app doesn't notice. Before, YouTube chat went mute forever, with no warning. Now there's a watchdog: if 4 minutes pass without a single YouTube message, it forces automatic reconnection with the same retries it already used on an error. It doesn't touch TikTok, Twitch or Kick.
+        </p>
+
+        <p><strong>Under the hood: backend rebuilt from scratch</strong></p>
+        <p>
+          The entire server that runs inside the app was rewritten, from a monolithic file to 16 independent parts by area (settings, language, moderation, channels, chat, overlays, mobile, sound, bot, clips, telemetry, announcements, etc.).
+        </p>
+        <ul>
+          <li>A part that fails to start no longer takes the others down.</li>
+          <li>It was reviewed function by function against the old server. Along the way real bugs surfaced and got fixed: the save and moderation actions accepted requests from any origin; the Status panel in Advanced didn't show whether a TikTok channel was connected; like counters from an already-disconnected channel could trigger a phantom flicker in the overlay.</li>
+          <li>Settings are saved atomically: they don't get corrupted if the power cuts out mid-save.</li>
+          <li>The Music Bot downloader now closes cleanly on Windows when you quit.</li>
+          <li>Every version goes through automated tests and a style review before it's built.</li>
+        </ul>
+        <p>None of this changes how you use the app.</p>
+
+        <p><strong>Other changes</strong></p>
+        <ul>
+          <li>Smooth animation when switching views, in the main window, the mobile panel and the new store. It respects the "reduce motion" setting.</li>
+          <li>The tools' preview images were optimized (from around 11 MB to half a MB total).</li>
+          <li>From here on, interface icons are vector graphics, not emojis.</li>
+        </ul>
+
+        <p><strong>Behavior notes:</strong></p>
+        <ul>
+          <li>The voice engine and the connection logic for TikTok, Twitch and YouTube don't change. A message can stop being read for the same reasons as before (muted, non-follower with the filter off, spam, language) and no new ones.</li>
+          <li>Kick viewers without a stable identifier are moderated by name and marked with ⚠, same as already happened on the other platforms: that penalty is lost if the person changes their name.</li>
+          <li>The self-promo voice announcement plays on its own, by stream time, with no switch to turn it off.</li>
+          <li>Marking a clip from mobile now only saves the OBS replay. The local desktop clip marker is no longer recorded in that case; before it was saved twice.</li>
+          <li>New installs start with Clips and Mobile control hidden from the menu.</li>
+        </ul>
+      </article>
+
+      <article class="post">
         <h2>v1.7.2</h2>
         <p class="page-meta">Fix</p>
 

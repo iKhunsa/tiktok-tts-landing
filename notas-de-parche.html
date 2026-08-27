@@ -107,6 +107,122 @@
         Cada parche que publicamos, con sus funciones nuevas, correcciones y cambios de comportamiento.
       </p>
 
+      <article class="post" id="v1-8-0">
+        <h2>v1.8.0</h2>
+        <p class="page-meta">Nuevo backend</p>
+
+        <h3>La actualización más grande hasta ahora</h3>
+        <p>
+          Por dentro, todo el servidor que corre dentro de la app se reescribió de cero. Por fuera, llega Kick como cuarta plataforma, un menú lateral que armás a tu gusto, el Bot de Música renovado con playlists de YouTube, avisos automáticos durante el directo y un montón de huecos de traducción cerrados para que la voz hable siempre en tu idioma.
+        </p>
+
+        <p><strong>Kick, cuarta plataforma</strong></p>
+        <p>
+          Hasta ahora la app leía TikTok, Twitch y YouTube. Kick estaba descartado: su web bloquea cualquier conexión directa desde la app. Ahora funciona: la app abre una ventana oculta que lee el chat de tu canal y lo mete en el mismo flujo que las otras tres. Desde el selector de plataforma agregás tu canal de Kick igual que cualquier otro.
+        </p>
+        <p>Lo que llega de Kick:</p>
+        <ul>
+          <li>Mensajes del chat, con sus emotes.</li>
+          <li>TTS: la voz los lee en la misma cola que el resto.</li>
+          <li>Moderación: silenciar, banear y todo lo demás de la vista Moderación.</li>
+          <li>Badge de plataforma en cada mensaje, filtros en el overlay de chat, control móvil.</li>
+        </ul>
+        <p>Lo que <strong>no</strong> llega de Kick: suscripciones, regalos y raids. Es solo chat.</p>
+        <p>
+          La conexión con Kick se apoya en un servicio de terceros. Es más frágil que las otras plataformas; si ese servicio cambia o se cae, el chat de Kick se corta hasta que se arregle desde la app. El resto de plataformas no se ve afectado. La app reintenta sola si Kick se queda en silencio.
+        </p>
+
+        <p><strong>Más herramientas: el menú lateral a tu medida</strong></p>
+        <p>
+          El menú de la izquierda era fijo: todas las secciones, siempre, en el mismo orden. Ahora hay una sección nueva, <strong>Más herramientas</strong>, con una vista tipo tienda de todas las herramientas de la app (Overlays, Bot de Música, Clips, Soundpad, Control móvil, Moderación), cada una con su imagen de vista previa y una descripción.
+        </p>
+        <ul>
+          <li>Mostrás u ocultás cada herramienta del menú lateral.</li>
+          <li>Reordenás el menú arrastrando los ítems, estilo Trello.</li>
+          <li>Chat y Configuración quedan fijos: no se pueden ocultar ni mover.</li>
+        </ul>
+        <p>
+          En instalaciones nuevas, Clips y Control móvil arrancan ocultos para que el menú esté más limpio de entrada; se agregan desde acá cuando los necesites. Si ya los venías usando, siguen donde estaban. La primera vez que entrás hay un recorrido guiado que lo explica.
+        </p>
+
+        <p><strong>Bot de Música renovado</strong></p>
+        <p>
+          La vista se rediseñó entera: interruptor estilo iOS en vez del chip de antes, la cola de peticiones y las reglas del bot en dos columnas (una sola en pantallas angostas), barra de progreso en tiempo real, un botón para quitar cada tema de la cola, y ahora se ve cuántas canciones tiene una playlist.
+        </p>
+        <p>
+          Además, <strong>soporta enlaces de playlist de YouTube</strong>. Antes solo aceptaba temas sueltos; ahora si pegás (o alguien pide) una URL de playlist, el bot la expande y encola todos los temas. Los comandos <code>!p</code> del chat ya no se leen por voz en ninguna plataforma; antes podían colarse al TTS.
+        </p>
+
+        <p><strong>Avisos automáticos durante el directo</strong></p>
+        <p>
+          Se agrega un aviso que suena por la voz TTS invitando a tu audiencia a descargar la app. Se dispara por tiempo de directo:
+        </p>
+        <ul>
+          <li>Primer aviso a los 15 minutos de conectar el primer canal.</li>
+          <li>Siguiente a la hora de sesión.</li>
+          <li>Siguiente a las dos horas.</li>
+          <li>De ahí en más, cada 90 minutos.</li>
+        </ul>
+        <p>
+          El contador arranca cuando conectás el primer canal, de cualquier plataforma, y se corta cuando desconectás todos. Sumar una plataforma a mitad del directo no reinicia el conteo. Desconectar y volver a conectar cuenta como sesión nueva. El texto se dice en el idioma de tu voz TTS, no fijo en español.
+        </p>
+        <p>
+          En la misma línea: el aviso de "el creador acaba de ingresar" ahora es único por sesión. Antes, si el admin escribía en varias plataformas a la vez, sonaba una vez por cada una. Ahora suena una sola vez y se reinicia recién al reconectar.
+        </p>
+
+        <p><strong>Que la voz hable siempre en tu idioma</strong></p>
+        <p>Se cerraron varios huecos donde la app se salteaba su propio sistema de traducción:</p>
+        <ul>
+          <li><strong>Emojis y emotes.</strong> Ahora se pintan como imagen en el chat y se filtran del TTS por igual en las cuatro plataformas. Antes Twitch leía en voz alta los <code>:nombre:</code> de sus emotes.</li>
+          <li><strong>Anuncios de eventos.</strong> Los textos que arma la app para el TTS al detectar un regalo, una entrada, un follow, una sub, un cheer, un raid, un like o un share estaban fijos en español. Ahora se dicen en el idioma de tu voz.</li>
+          <li><strong>Overlay de alertas de OBS.</strong> Estaba casi todo en español dentro del código; ahora traducido a los 10 idiomas de la app.</li>
+          <li><strong>Overlays de likes y seguidores.</strong> El número ahora se formatea según el idioma activo, no fijo en formato español.</li>
+          <li><strong>Ventana principal.</strong> Unos 15 textos sueltos que se habían quedado sin traducir (avisos, contador de clips, autorización de Twitch, etc.).</li>
+          <li><strong>Errores del servidor.</strong> Los mensajes de error que ves como aviso emergente ahora también se traducen.</li>
+        </ul>
+        <p>Los 10 idiomas quedan a la par, con la misma cantidad de textos cada uno.</p>
+
+        <p><strong>Arreglos en la cola de voz</strong></p>
+        <ul>
+          <li><strong>Orden real.</strong> La cola ahora se ordena por el momento en que se escribió cada mensaje, no por el orden en que llegó a la app. Como los mensajes de chat pasan por moderación (con demora variable) y las entradas y regalos no, antes un "entró fulano" o tu propio mensaje se podían colar delante de mensajes anteriores que todavía estaban en moderación.</li>
+          <li><strong>Retomar al reactivar.</strong> Si apagabas el interruptor global de TTS con mensajes pendientes y lo volvías a encender, esos mensajes quedaban atrapados y la voz se quedaba muda hasta el siguiente mensaje nuevo. Ahora la cola pendiente se retoma al reactivar.</li>
+        </ul>
+
+        <p><strong>YouTube ya no se queda mudo en silencio</strong></p>
+        <p>
+          YouTube a veces deja de mandar mensajes sin dar ningún error: se le vence un token interno y la app no se entera. Antes el chat de YouTube se quedaba mudo para siempre, sin aviso. Ahora hay un vigía: si pasan 4 minutos sin un solo mensaje de YouTube, fuerza la reconexión automática con los mismos reintentos que ya usaba ante un error. No toca TikTok, Twitch ni Kick.
+        </p>
+
+        <p><strong>Por dentro: backend reconstruido de cero</strong></p>
+        <p>
+          Todo el servidor que corre dentro de la app se reescribió, de un archivo monolítico a 16 partes independientes por área (configuración, idioma, moderación, canales, chat, overlays, móvil, sonido, bot, clips, telemetría, avisos, etc.).
+        </p>
+        <ul>
+          <li>Una parte que falla al arrancar ya no tumba a las demás.</li>
+          <li>Se revisó función por función contra el servidor viejo. En el camino aparecieron y se arreglaron fallos reales: las acciones de guardado y moderación aceptaban pedidos de cualquier origen; el panel de Estado de Avanzado no mostraba si había un canal de TikTok conectado; contadores de likes de un canal ya desconectado podían disparar un parpadeo fantasma en el overlay.</li>
+          <li>La configuración se guarda de forma atómica: no se corrompe si se corta la luz justo mientras guarda.</li>
+          <li>El descargador del Bot de Música ahora se cierra bien en Windows al salir.</li>
+          <li>Cada versión pasa por pruebas automáticas y revisión de estilo antes de compilarse.</li>
+        </ul>
+        <p>Nada de esto cambia cómo se usa la app.</p>
+
+        <p><strong>Otros cambios</strong></p>
+        <ul>
+          <li>Animación suave al cambiar de vista, tanto en la ventana principal como en el panel móvil y la nueva tienda. Respeta el ajuste de "reducir movimiento".</li>
+          <li>Las imágenes de vista previa de las herramientas se optimizaron (de unos 11 MB a medio MB en total).</li>
+          <li>De acá en adelante, los íconos de la interfaz son gráficos vectoriales, no emojis.</li>
+        </ul>
+
+        <p><strong>Notas de comportamiento:</strong></p>
+        <ul>
+          <li>El motor de voz y la lógica de conexión a TikTok, Twitch y YouTube no cambian. Un mensaje puede dejar de leerse por los mismos motivos que antes (silenciado, no seguidor con el filtro apagado, spam, idioma) y por ninguno nuevo.</li>
+          <li>Los espectadores de Kick sin identificador estable se moderan por nombre y se marcan con ⚠, igual que ya pasaba en las otras plataformas: ese castigo se pierde si la persona se cambia el nombre.</li>
+          <li>El aviso de autopromoción por voz suena solo, por tiempo de directo, sin interruptor para apagarlo.</li>
+          <li>Marcar un clip desde el móvil ahora solo guarda el replay en OBS. El marcador local de clip en el escritorio ya no se registra en ese caso; antes se guardaba por duplicado.</li>
+          <li>Las instalaciones nuevas arrancan con Clips y Control móvil ocultos del menú.</li>
+        </ul>
+      </article>
+
       <article class="post" id="v1-7-2">
         <h2>v1.7.2</h2>
         <p class="page-meta">Corrección</p>
