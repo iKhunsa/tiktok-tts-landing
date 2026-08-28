@@ -14,18 +14,18 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="TikLive TTS - Chat en voz alta para streamers">
   <meta property="og:description" content="Lee tu chat en voz alta, mezcla TikTok Live, Twitch y YouTube, y muestra alertas listas para OBS. Gratis y open source.">
-  <meta property="og:image" content="https://tiklivetts.es/assets/logo.png">
+  <meta property="og:image" content="https://tiklivetts.es/assets/icon.svg">
   <meta property="og:url" content="https://tiklivetts.es/">
   <meta property="og:locale" content="es_ES">
   <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="TikLive TTS - Chat en voz alta para streamers">
   <meta name="twitter:description" content="Lee tu chat en voz alta, mezcla TikTok Live, Twitch y YouTube, y muestra alertas listas para OBS. Gratis y open source.">
-  <meta name="twitter:image" content="https://tiklivetts.es/assets/logo.png">
+  <meta name="twitter:image" content="https://tiklivetts.es/assets/icon.svg">
 
   <title>TikLive TTS - Chat en voz alta para streamers</title>
-  <link rel="icon" href="assets/logo.png">
-  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="icon" href="assets/icon.svg">
+  <link rel="apple-touch-icon" href="assets/icon.svg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,7 +63,7 @@
       "@type": "Organization",
       "name": "TikLive TTS",
       "url": "https://tiklivetts.es/",
-      "logo": "https://tiklivetts.es/assets/logo.png",
+      "logo": "https://tiklivetts.es/assets/icon.svg",
       "sameAs": ["https://github.com/iKhunsa/tiktok-tts", "https://discord.com/invite/mwY859tcQK"]
     }
   </script>
@@ -75,23 +75,23 @@
     html { scroll-behavior: smooth; }
     body { margin:0; background:#171717; color:#F2F2F2; font-family:"JetBrains Mono", ui-monospace, monospace; -webkit-font-smoothing:antialiased; }
     a { color:inherit; text-decoration:none; }
-    a:hover { color:#3ECF8E; }
+    a:hover { color:#F0213A; }
     img, svg { display:block; max-width:100%; }
     pre { margin:0; font-family:"JetBrains Mono", ui-monospace, monospace; }
-    ::selection { background:#3ECF8E; color:#06231A; }
+    ::selection { background:#F0213A; color:#ffffff; }
     button { font-family: inherit; }
 
-    .scp0:hover { background: #5BE0A4 !important; color: #06231A !important; }
-    .scp1:hover { border-color: #3ECF8E !important; color: #3ECF8E !important; }
-    .scp2:hover { border-color: #3ECF8E !important; }
+    .scp0:hover { background: #F4415A !important; color: #ffffff !important; }
+    .scp1:hover { border-color: #F0213A !important; color: #F0213A !important; }
+    .scp2:hover { border-color: #F0213A !important; }
     .scp3:hover { background: #202020 !important; }
-    .scp4:hover { background: #3ECF8E !important; color: #06231A !important; }
+    .scp4:hover { background: #F0213A !important; color: #ffffff !important; }
 
     .nav-drawer { display: none; flex-direction: column; gap: 2px; position: absolute; top: calc(100% + 8px); right: 20px; width: min(260px, calc(100% - 40px)); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #1c1c1c; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5); z-index: 30; }
     .nav-drawer.open { display: flex; }
     .nav-drawer a { padding: 13px 18px; font-size: 0.78rem; letter-spacing: 0.04em; color: #F2F2F2; border-top: 1px solid rgba(255,255,255,0.08); }
     .nav-drawer a:first-child { border-top: 0; }
-    .nav-drawer a:hover { background: #232323; color: #3ECF8E; }
+    .nav-drawer a:hover { background: #232323; color: #F0213A; }
 
     html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity 600ms ease, transform 600ms ease; }
     html.js .reveal.visible { opacity: 1; transform: none; }
@@ -117,12 +117,11 @@
   <header style="position: sticky; top: 0px; z-index: 20; background: rgba(23, 23, 23, 0.88); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
     <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; width: min(1180px, 100% - 40px); margin: 0px auto; padding: 14px 0px;">
       <a href="#top" style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">
-        <img src="assets/logo.png" alt="" style="width: 26px; height: 26px; object-fit: contain;">
-        <span>TikLive TTS</span>
+        <img src="assets/logo.svg" alt="TikLive TTS" style="height: 20px; width: auto; object-fit: contain;">
       </a>
 
       <div style="display: flex; align-items: center; gap: 8px; position: relative;">
-        <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; min-height: 36px; padding: 0px 16px; background: rgb(62, 207, 142); color: rgb(6, 35, 26); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">Descargar</a>
+        <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; min-height: 36px; padding: 0px 16px; background: rgb(240, 33, 58); color: #ffffff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">Descargar</a>
 
         <a href="en/index.html" hreflang="en" aria-label="Ver en inglés" class="scp1" style="display: grid; place-items: center; width: 36px; height: 36px; padding: 0px; border: 1px solid rgba(255, 255, 255, 0.14); background: transparent; color: rgb(242, 242, 242); cursor: pointer;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"></path></svg></a>
 
@@ -146,20 +145,21 @@
 
     <section style="position: relative; overflow: hidden; width: min(1180px, 100% - 40px); margin: 0px auto; padding: clamp(44px, 7vw, 88px) 0px clamp(48px, 7vw, 96px); text-align: center; border-radius: 12px;">
       <video autoplay muted loop playsinline aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-        <source src="assets/video/hero-loop.mp4" type="video/mp4">
+        <source src="assets/video/hero-new.mp4" type="video/mp4">
       </video>
+      <div style="position: absolute; inset: 0; z-index: 1; background: #F0213A; mix-blend-mode: color; pointer-events: none;"></div>
       <div style="position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse 55% 55% at 50% 40%, rgba(23,23,23,0.1) 0%, rgba(23,23,23,0.8) 55%, rgb(23,23,23) 78%);"></div>
       <div style="position: relative; z-index: 2;">
-      <h1 style="margin: 0px auto 24px; max-width: 20ch; font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: clamp(2.4rem, 7.4vw, 5.4rem); line-height: 1.02; letter-spacing: -0.025em; text-wrap: balance;">Instálalo en un minuto<br><span style="color: rgb(62, 207, 142);">deja que tu chat hable</span></h1>
-      <p style="margin: 0px auto clamp(28px, 4vw, 40px); max-width: 60ch; color: rgb(138, 138, 138); font-size: clamp(0.82rem, 1.6vw, 0.94rem); line-height: 1.9;">TikLive TTS es una app de escritorio gratuita que lee en voz alta el chat de TikTok Live, Twitch y YouTube en un solo lugar y te ayuda en muchas más cosas.</p>
+      <h1 style="margin: 0px auto 24px; max-width: 20ch; font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: clamp(2.4rem, 7.4vw, 5.4rem); line-height: 1.02; letter-spacing: -0.025em; text-wrap: balance;">Instálalo en un minuto<br><span style="color: rgb(240, 33, 58);">deja que tu chat hable</span></h1>
+      <p style="margin: 0px auto clamp(28px, 4vw, 40px); max-width: 60ch; color: rgb(138, 138, 138); font-size: clamp(0.82rem, 1.6vw, 0.94rem); line-height: 1.9;">TikLive TTS es una app de escritorio gratuita que lee en voz alta el chat de <span style="color: rgb(240, 33, 58);">TikTok Live</span>, <span style="color: rgb(240, 33, 58);">Twitch</span>, <span style="color: rgb(240, 33, 58);">YouTube</span> y <span style="color: rgb(240, 33, 58);">Kick</span> en un solo lugar y te ayuda en muchas más cosas.</p>
 
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: clamp(18px, 3vw, 26px);">
-        <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0px 24px; border-radius: 6px; background: rgb(62, 207, 142); color: rgb(6, 35, 26); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Descargar para Windows</a>
+        <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0px 24px; border-radius: 6px; background: rgb(240, 33, 58); color: #ffffff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Descargar para Windows</a>
         <a href="https://github.com/iKhunsa/tiktok-tts#readme" target="_blank" rel="noopener" class="scp1" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0px 24px; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 6px; color: rgb(242, 242, 242); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Documentación</a>
       </div>
 
-      <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener" class="star-link" style="display: inline-flex; align-items: center; gap: 6px; color: rgb(90, 90, 90); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">
-        <span style="color: rgb(245, 166, 35);">★</span> Danos una estrella en GitHub<span data-star-count style="color: rgb(62, 207, 142);"></span>
+      <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener" class="star-link" style="display: inline-flex; align-items: center; gap: 6px; color: rgb(255, 255, 255); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">
+        <span style="color: rgb(255, 187, 0);">★</span> Danos una estrella en GitHub<span data-star-count style="color: rgb(255, 187, 0);"></span>
       </a>
       </div>
     </section>
@@ -198,15 +198,13 @@
         <article class="reveal" style="flex: 2 1 320px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 300px; padding: clamp(22px, 3vw, 34px); background: rgb(28, 28, 28);">
           <div>
             <h3 style="margin: 0px 0px 12px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Cola de voz unificada</h3>
-            <p style="margin: 0px; max-width: 44ch; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Los tres chats entran en una sola cola ordenada, con etiqueta de origen en cada mensaje. Nunca dos voces encima.</p>
+            <p style="margin: 0px; max-width: 44ch; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Los cuatro chats entran en una sola cola ordenada, con etiqueta de origen en cada mensaje. Nunca dos voces encima.</p>
           </div>
-          <div style="overflow: hidden;">
-            <pre aria-hidden="true" style="color: rgb(62, 207, 142); font-size: clamp(4px, 0.85vw, 9px); line-height: 1.3; letter-spacing: 0.14em; opacity: 0.85; white-space: pre;">                                   ·
-                              ·  ···  ·
-                        ·   ·:·····:·   ·
-              ·    ·   ·:·  ·:::::::·  ·:·   ·    ·
-      ·   ·:· ·:::·:::·:::::::::::::::::::·:::·:::· ·:·   ·
-··:···:·:::·:::::::::::::::::::::::::::::::::::::::::::::·:::·:·:···:</pre>
+          <div aria-hidden="true" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 10px 2px;">
+            <span style="display: inline-flex; padding: 9px 17px; border: 1px solid rgba(254, 44, 85, 0.4); border-radius: 999px; background: rgba(254, 44, 85, 0.12); color: rgb(254, 44, 85); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transform: rotate(-4deg);">TikTok</span>
+            <span style="display: inline-flex; padding: 7px 14px; border: 1px solid rgba(145, 70, 255, 0.4); border-radius: 999px; background: rgba(145, 70, 255, 0.12); color: rgb(145, 70, 255); font-size: 0.9rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transform: rotate(3deg) translateY(-5px);">Twitch</span>
+            <span style="display: inline-flex; padding: 6px 13px; border: 1px solid rgba(62, 207, 142, 0.4); border-radius: 999px; background: rgba(62, 207, 142, 0.12); color: rgb(62, 207, 142); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transform: rotate(-2deg) translateY(6px);">Kick</span>
+            <span style="display: inline-flex; padding: 5px 11px; border: 1px solid rgba(242, 242, 242, 0.35); border-radius: 999px; background: rgba(242, 242, 242, 0.1); color: rgb(242, 242, 242); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transform: rotate(5deg);">YouTube</span>
           </div>
         </article>
 
@@ -215,11 +213,10 @@
             <h3 style="margin: 0px 0px 12px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Comandos con un clic</h3>
             <p style="margin: 0px; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Anuncia regalos, likes, follows, entradas y compartidos con un botón. Lee el nombre de quien escribe o activa un sonido con una palabra.</p>
           </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px;">
-            <span style="padding: 4px 8px; border: 1px solid rgba(62, 207, 142, 0.35); border-radius: 999px; color: rgb(62, 207, 142); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;">Regalos</span>
-            <span style="padding: 4px 8px; border: 1px solid rgba(62, 207, 142, 0.35); border-radius: 999px; color: rgb(62, 207, 142); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;">Likes</span>
-            <span style="padding: 4px 8px; border: 1px solid rgba(62, 207, 142, 0.35); border-radius: 999px; color: rgb(62, 207, 142); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;">Follows</span>
-            <span style="padding: 4px 8px; border: 1px solid rgba(62, 207, 142, 0.35); border-radius: 999px; color: rgb(62, 207, 142); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase;">Nombre</span>
+          <div aria-hidden="true" style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; padding: 10px 2px;">
+            <span style="display: inline-flex; padding: 9px 17px; border: 1px solid rgba(240, 33, 58, 0.4); border-radius: 999px; background: rgba(240, 33, 58, 0.12); color: rgb(240, 33, 58); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transform: rotate(-4deg);">Regalos</span>
+            <span style="display: inline-flex; padding: 7px 14px; border: 1px solid rgba(240, 33, 58, 0.4); border-radius: 999px; background: rgba(240, 33, 58, 0.12); color: rgb(240, 33, 58); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transform: rotate(3deg) translateY(6px);">Follows</span>
+            <span style="display: inline-flex; padding: 6px 12px; border: 1px solid rgba(240, 33, 58, 0.4); border-radius: 999px; background: rgba(240, 33, 58, 0.12); color: rgb(240, 33, 58); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; transform: rotate(-2deg);">Nombre</span>
           </div>
         </article>
 
@@ -228,22 +225,18 @@
             <h3 style="margin: 0px 0px 12px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Filtro anti-spam</h3>
             <p style="margin: 0px; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Descarta repetidos, textos kilométricos y palabras bloqueadas antes de que suenen.</p>
           </div>
-          <pre aria-hidden="true" style="color: rgb(62, 207, 142); font-size: 0.62rem; line-height: 1.35; letter-spacing: 0.22em; opacity: 0.85; white-space: pre;">·········
-:::   :::
-··· · ···
-:::   :::
-·········</pre>
+          <div aria-hidden="true" style="display: flex; flex-direction: column; gap: 8px; max-width: 230px;">
+            <div style="display: flex; align-items: center; padding: 10px 12px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 8px; background: rgb(23, 23, 23); color: rgb(138, 138, 138); font-size: 0.72rem;">palabra a bloquear<span style="margin-left: 1px; color: rgb(240, 33, 58);">|</span></div>
+            <span style="display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 8px; background: rgb(240, 33, 58); color: #ffffff; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; transform: rotate(-3deg);">Bloquear</span>
+          </div>
         </article>
 
-        <article class="reveal" style="flex: 1 1 240px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 300px; padding: clamp(22px, 3vw, 34px); background: rgb(28, 28, 28);">
+        <article class="reveal" style="flex: 2 1 320px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 300px; padding: clamp(22px, 3vw, 34px); background: rgb(28, 28, 28);">
           <div>
             <h3 style="margin: 0px 0px 12px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Moderación</h3>
             <p style="margin: 0px; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Registro completo de espectadores con follows detectados en vivo. Silencia, banea o bloquea una palabra en segundos.</p>
           </div>
-          <pre aria-hidden="true" style="color: rgb(62, 207, 142); font-size: 0.62rem; line-height: 1.35; letter-spacing: 0.22em; opacity: 0.85; white-space: pre;">★ ·   ·
-·   · ·
-·  ★   ·
-·   ·  ★</pre>
+          <img src="assets/mod.png" alt="" aria-hidden="true" style="width: 100%; max-width: none; height: auto; display: block;">
         </article>
 
         <article class="reveal" style="flex: 2 1 320px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 300px; padding: clamp(22px, 3vw, 34px); background: rgb(28, 28, 28);">
@@ -252,8 +245,8 @@
             <p style="margin: 0px; max-width: 46ch; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Si una plataforma corta el directo o cambia de estado, la app reintenta sola. Tú no te enteras, el chat sigue sonando.</p>
           </div>
           <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.7rem; color: rgb(138, 138, 138);">
-            <span><span style="color: rgb(62, 207, 142);">[TT]</span> conectado · 00:41:12</span>
-            <span><span style="color: rgb(62, 207, 142);">[TW]</span> conectado · 00:41:09</span>
+            <span><span style="color: rgb(240, 33, 58);">[TT]</span> conectado · 00:41:12</span>
+            <span><span style="color: rgb(240, 33, 58);">[TW]</span> conectado · 00:41:09</span>
             <span><span style="color: rgb(90, 90, 90);">[YT]</span> reintentando en 4s…</span>
           </div>
         </article>
@@ -264,27 +257,26 @@
             <p style="margin: 0px; max-width: 46ch; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Color de acento, opacidad de fondo, tamaño de texto y qué plataformas mostrar. Sube tu propia imagen de fondo para cada overlay.</p>
           </div>
           <div style="display: flex; align-items: center; gap: 12px;">
-            <span style="width: 22px; height: 22px; border-radius: 6px; background: rgb(62, 207, 142);"></span>
-            <div style="flex: 1; height: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.1); overflow: hidden;"><span style="display: block; width: 82%; height: 100%; background: rgb(62, 207, 142);"></span></div>
+            <span style="width: 22px; height: 22px; border-radius: 6px; background: rgb(240, 33, 58);"></span>
+            <div style="flex: 1; height: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.1); overflow: hidden;"><span style="display: block; width: 82%; height: 100%; background: rgb(240, 33, 58);"></span></div>
             <span style="color: rgb(90, 90, 90); font-size: 0.66rem;">82%</span>
           </div>
         </article>
 
-        <article class="reveal" style="flex: 1 1 240px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 300px; padding: clamp(22px, 3vw, 34px); background: rgb(28, 28, 28);">
+        <article class="reveal" style="flex: 2 1 320px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 300px; padding: clamp(22px, 3vw, 34px); background: rgb(28, 28, 28);">
           <div>
             <h3 style="margin: 0px 0px 12px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Marcadores de clip</h3>
             <p style="margin: 0px; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Marca el momento exacto con Ctrl+Shift+M, aunque la app esté minimizada. Al terminar, vas directo a esos momentos sin revisar la grabación entera.</p>
           </div>
-          <pre aria-hidden="true" style="color: rgb(62, 207, 142); font-size: 0.85rem; letter-spacing: 0.08em;">00:00:00</pre>
+          <img src="assets/clip-markers.png" alt="" aria-hidden="true" style="width: 100%; max-width: none; height: auto; display: block;">
         </article>
 
-        <article class="reveal" style="flex: 1 1 240px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 300px; padding: clamp(22px, 3vw, 34px); background: rgb(28, 28, 28);">
+        <article class="reveal" style="flex: 2 1 320px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 300px; padding: clamp(22px, 3vw, 34px); background: rgb(28, 28, 28);">
           <div>
             <h3 style="margin: 0px 0px 12px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Soundboard</h3>
             <p style="margin: 0px; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Sube tus sonidos y reprodúcelos con un clic o un atajo de teclado, incluso con el juego en pantalla completa.</p>
           </div>
-          <pre aria-hidden="true" style="color: rgb(62, 207, 142); font-size: 0.62rem; line-height: 1.35; letter-spacing: 0.14em; opacity: 0.85; white-space: pre;">▷ ───────
-Ctrl+0</pre>
+          <img src="assets/sound.png" alt="" aria-hidden="true" style="width: 100%; max-width: none; height: auto; display: block;">
         </article>
 
         <article class="reveal" style="flex: 1 1 240px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 300px; padding: clamp(22px, 3vw, 34px); background: rgb(28, 28, 28);">
@@ -292,10 +284,7 @@ Ctrl+0</pre>
             <h3 style="margin: 0px 0px 12px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Control desde el celular</h3>
             <p style="margin: 0px; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Escanea un código QR y controla el TTS desde tu teléfono en la misma red WiFi: chat en vivo, pausa, saltar y marcadores de clip.</p>
           </div>
-          <pre aria-hidden="true" style="color: rgb(62, 207, 142); font-size: 0.5rem; line-height: 1.15; letter-spacing: 0.05em; white-space: pre;">█▀▀▀▀▀█ ▄▀ █▀▀▀▀▀█
-█ ███ █ ▀█ █ ███ █
-█ ▀▀▀ █ █▀ █ ▀▀▀ █
-▀▀▀▀▀▀▀ █ █ ▀▀▀▀▀▀▀</pre>
+          <img src="assets/phone-control.png" alt="" aria-hidden="true" style="width: 100%; max-width: none; height: auto; display: block;">
         </article>
 
         <article class="reveal" style="flex: 2 1 320px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 300px; padding: clamp(22px, 3vw, 34px); background: rgb(28, 28, 28);">
@@ -304,7 +293,7 @@ Ctrl+0</pre>
             <p style="margin: 0px; max-width: 46ch; color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.85;">Tu chat pide canciones con <code style="padding: 1px 5px; border-radius: 3px; background: rgb(23, 23, 23); color: rgb(242, 242, 242);">!p nombre</code> o un link de YouTube. Tu propia playlist suena de fondo cuando no hay peticiones.</p>
           </div>
           <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.7rem; color: rgb(138, 138, 138);">
-            <span><span style="color: rgb(62, 207, 142);">▷</span> reproduciendo ahora · vol 60%</span>
+            <span><span style="color: rgb(240, 33, 58);">▷</span> reproduciendo ahora · vol 60%</span>
             <span><span style="color: rgb(90, 90, 90);">▤</span> cola de peticiones: 0</span>
           </div>
         </article>
@@ -328,32 +317,12 @@ Ctrl+0</pre>
     <section id="overlays" style="width: min(1180px, 100% - 40px); margin: 0px auto; padding: 0px 0px clamp(52px, 8vw, 100px); scroll-margin-top: 90px;">
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: clamp(28px, 5vw, 64px); align-items: center;">
         <div>
-          <p style="margin: 0px 0px 18px; color: rgb(62, 207, 142); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;">[ Listo para OBS ]</p>
+          <p style="margin: 0px 0px 18px; color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;">[ Listo para OBS ]</p>
           <h2 style="margin: 0px 0px 20px; max-width: 22ch; font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: clamp(1.7rem, 4.2vw, 3rem); line-height: 1.08; letter-spacing: -0.02em;">Overlays que pegas y funcionan</h2>
           <p style="margin: 0px 0px 26px; max-width: 48ch; color: rgb(138, 138, 138); font-size: 0.82rem; line-height: 1.9;">Siete fuentes de Browser Source servidas desde tu máquina: chat unificado, alertas de regalos, likes, seguidores, créditos y más. Ajusta color, opacidad y tamaño de texto, y sube tu propio fondo. Sin servicios externos.</p>
-          <a href="alertas-obs-gratis-regalos-seguidores.html" style="display: inline-flex; color: rgb(62, 207, 142); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">Ver la guía de OBS →</a>
+          <a href="alertas-obs-gratis-regalos-seguidores.html" style="display: inline-flex; color: rgb(240, 33, 58); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">Ver la guía de OBS →</a>
         </div>
-        <div class="reveal" style="border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgb(28, 28, 28); overflow: hidden;">
-          <div style="display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">
-            <span style="color: rgb(62, 207, 142);">Alertas</span>
-            <span>Likes</span>
-            <span>Seguidores</span>
-          </div>
-          <div style="padding: clamp(18px, 2.6vw, 26px); display: flex; flex-direction: column; gap: 16px; font-size: 0.72rem; line-height: 1.7;">
-            <p style="margin: 0px; color: rgb(90, 90, 90);">$ localhost:3000/alerts</p>
-            <p style="margin: 0px; color: rgb(90, 90, 90);">$ localhost:3000/likes</p>
-            <p style="margin: 0px; color: rgb(90, 90, 90);">$ localhost:3000/followers</p>
-            <div style="display: grid; grid-template-columns: 52px minmax(0px, 1fr); gap: 14px; align-items: center; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, 0.08);">
-              <pre aria-hidden="true" style="color: rgb(62, 207, 142); font-size: 0.58rem; line-height: 1.3; letter-spacing: 0.2em; white-space: pre;">·:·:·
-:···:
-·:·:·</pre>
-              <div>
-                <p style="margin: 0px 0px 4px; color: rgb(242, 242, 242); font-size: 0.8rem;">@luna envió un regalo</p>
-                <p style="margin: 0px; color: rgb(138, 138, 138); font-size: 0.72rem;">La alerta salta en OBS mientras el TTS sigue leyendo.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img src="assets/overl.png" alt="" aria-hidden="true" class="reveal" style="width: 100%; height: auto; display: block; border-radius: 8px;">
       </div>
     </section>
 
@@ -393,7 +362,7 @@ Ctrl+0</pre>
         </a>
 
         <a href="creadores.html" class="scp3 reveal" style="display: flex; flex-direction: column; justify-content: flex-end; gap: 16px; padding: clamp(22px, 3vw, 30px); background: rgb(28, 28, 28); cursor: pointer;">
-          <p style="margin: 0px; color: rgb(62, 207, 142); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;">Ver todos →</p>
+          <p style="margin: 0px; color: rgb(240, 33, 58); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;">Ver todos →</p>
         </a>
       </div>
     </section>
@@ -407,76 +376,34 @@ Ctrl+0</pre>
         <a href="unificar-chat-tiktok-twitch-youtube.html" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 3vw, 30px); background: rgb(28, 28, 28); cursor: pointer;">
           <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 01 ]</span>
           <span style="font-size: 0.86rem; line-height: 1.5;">Unificar el chat de TikTok, Twitch y YouTube</span>
-          <span style="color: rgb(62, 207, 142); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Leer guía →</span>
+          <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Leer guía →</span>
         </a>
         <a href="alertas-obs-gratis-regalos-seguidores.html" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 3vw, 30px); background: rgb(28, 28, 28); cursor: pointer;">
           <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 02 ]</span>
           <span style="font-size: 0.86rem; line-height: 1.5;">Alertas de OBS gratis para regalos y seguidores</span>
-          <span style="color: rgb(62, 207, 142); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Leer guía →</span>
+          <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Leer guía →</span>
         </a>
         <a href="tts-twitch-chat-en-voz-alta.html" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 3vw, 30px); background: rgb(28, 28, 28); cursor: pointer;">
           <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 03 ]</span>
           <span style="font-size: 0.86rem; line-height: 1.5;">TTS para Twitch: leer el chat en voz alta</span>
-          <span style="color: rgb(62, 207, 142); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Leer guía →</span>
+          <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Leer guía →</span>
         </a>
         <a href="preguntas-frecuentes.html" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 3vw, 30px); background: rgb(28, 28, 28); cursor: pointer;">
           <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 04 ]</span>
           <span style="font-size: 0.86rem; line-height: 1.5;">Preguntas frecuentes: precio, privacidad y plataformas</span>
-          <span style="color: rgb(62, 207, 142); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Ver FAQ →</span>
+          <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Ver FAQ →</span>
         </a>
       </div>
     </section>
 
     <section style="width: min(1180px, 100% - 40px); margin: 0px auto; padding: 0px 0px clamp(52px, 8vw, 100px);">
-      <h2 style="margin: 0px 0px clamp(24px, 4vw, 40px); max-width: 26ch; font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: clamp(1.7rem, 4.2vw, 3rem); line-height: 1.08; letter-spacing: -0.02em;">Todo el directo en una ventana</h2>
-      <div class="reveal" style="border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; background: rgb(28, 28, 28); overflow: hidden;">
-        <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 18px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">
-          <span>tiklive-tts — cola de voz</span>
-          <span style="color: rgb(62, 207, 142);">● en vivo</span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: rgba(255, 255, 255, 0.08);">
-          <div style="background: rgb(28, 28, 28); padding: clamp(18px, 2.6vw, 28px);">
-            <p style="margin: 0px 0px 18px; color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase;">Chat unificado</p>
-            <div style="display: flex; flex-direction: column; gap: 14px; font-size: clamp(0.7rem, 1.5vw, 0.8rem); line-height: 1.6;">
-              <div style="display: grid; grid-template-columns: 44px minmax(0px, 1fr); gap: 14px; align-items: baseline;">
-                <span style="color: rgb(62, 207, 142);">[TT]</span>
-                <span><span style="color: rgb(242, 242, 242);">@sofi_stream</span> <span style="color: rgb(138, 138, 138);">nuevo regalo, ¡gracias por el directo!</span></span>
-              </div>
-              <div style="display: grid; grid-template-columns: 44px minmax(0px, 1fr); gap: 14px; align-items: baseline;">
-                <span style="color: rgb(90, 90, 90);">[TW]</span>
-                <span><span style="color: rgb(242, 242, 242);">@pixeldev</span> <span style="color: rgb(138, 138, 138);">lee este mensaje con voz en español</span></span>
-              </div>
-              <div style="display: grid; grid-template-columns: 44px minmax(0px, 1fr); gap: 14px; align-items: baseline;">
-                <span style="color: rgb(90, 90, 90);">[YT]</span>
-                <span><span style="color: rgb(242, 242, 242);">@neo_live</span> <span style="color: rgb(138, 138, 138);">saludos desde el chat de YouTube</span></span>
-              </div>
-              <div style="display: grid; grid-template-columns: 44px minmax(0px, 1fr); gap: 14px; align-items: baseline; opacity: 0.45;">
-                <span style="color: rgb(90, 90, 90);">[TT]</span>
-                <span><span style="color: rgb(242, 242, 242);">@kuro_dev</span> <span style="color: rgb(138, 138, 138);">bloqueado por filtro anti-spam</span></span>
-              </div>
-            </div>
-          </div>
-          <div style="background: rgb(28, 28, 28); padding: clamp(18px, 2.6vw, 28px); display: flex; flex-direction: column; gap: 26px;">
-            <div>
-              <p style="margin: 0px 0px 10px; color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase;">Voz activa</p>
-              <p style="margin: 0px 0px 10px; font-size: 0.86rem;">Español Latino</p>
-              <pre aria-hidden="true" style="color: rgb(62, 207, 142); font-size: 0.7rem; letter-spacing: 0.1em;">●●●●●●●●●●●●●<span style="color: rgb(58, 58, 58);">○○○○○</span></pre>
-            </div>
-            <div>
-              <p style="margin: 0px 0px 10px; color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase;">Cola TTS</p>
-              <p style="margin: 0px; font-size: 0.86rem;">3 mensajes</p>
-            </div>
-            <div>
-              <p style="margin: 0px 0px 10px; color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase;">Overlay OBS</p>
-              <p style="margin: 0px; font-size: 0.86rem; color: rgb(62, 207, 142);">localhost:3000</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h2 style="margin: 0px 0px 14px; max-width: 26ch; font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: clamp(1.7rem, 4.2vw, 3rem); line-height: 1.08; letter-spacing: -0.02em;">Todo el directo en una ventana</h2>
+      <p style="margin: 0px 0px clamp(24px, 4vw, 40px); max-width: 52ch; color: rgb(138, 138, 138); font-size: 0.82rem; line-height: 1.9;">Chat unificado, cola de voz, overlays de OBS y moderación — todo en la misma ventana, sin cambiar de app.</p>
+      <img src="assets/window-demo.png" alt="" aria-hidden="true" class="reveal" style="width: 100%; height: auto; display: block; border-radius: 8px; -webkit-mask-image: linear-gradient(to bottom, #000 68%, transparent 100%); mask-image: linear-gradient(to bottom, #000 68%, transparent 100%);">
     </section>
 
     <section id="support" style="width: min(1180px, 100% - 40px); margin: 0px auto; padding: 0px 0px clamp(52px, 8vw, 100px); scroll-margin-top: 90px;">
-      <p style="margin: 0px 0px 18px; color: rgb(62, 207, 142); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;">[ Proyecto independiente ]</p>
+      <p style="margin: 0px 0px 18px; color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase;">[ Proyecto independiente ]</p>
       <h2 style="margin: 0px 0px 20px; max-width: 22ch; font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: clamp(1.7rem, 4.2vw, 3rem); line-height: 1.08; letter-spacing: -0.02em;">Gratis, y sigue siendo gratis</h2>
       <p style="margin: 0px 0px clamp(26px, 4vw, 40px); max-width: 52ch; color: rgb(138, 138, 138); font-size: 0.82rem; line-height: 1.9;">Sin versión de pago ni funciones bloqueadas. Si te sirve en tus directos, puedes apoyar el desarrollo de forma voluntaria.</p>
 
@@ -484,49 +411,54 @@ Ctrl+0</pre>
         <a href="https://paypal.me/KhunsaUwU" target="_blank" rel="noopener" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28);">
           <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 01 ]</span>
           <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: 1.4rem;">PayPal</span>
-          <span style="color: rgb(62, 207, 142); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Donar →</span>
+          <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Donar →</span>
         </a>
         <a href="https://ko-fi.com/ikhunsa" target="_blank" rel="noopener" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28);">
           <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 02 ]</span>
           <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: 1.4rem;">Ko-fi</span>
-          <span style="color: rgb(62, 207, 142); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Donar →</span>
+          <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Donar →</span>
         </a>
         <article class="reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28);">
           <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 03 ] Lightning</span>
           <code style="padding: 10px 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; background: rgb(23, 23, 23); font-size: 0.7rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Khunsa@coinos.io</code>
-          <button type="button" class="scp4 copy-btn" data-copy="Khunsa@coinos.io" style="align-self: flex-start; min-height: 36px; padding: 0px 14px; border: 1px solid rgba(62, 207, 142, 0.5); border-radius: 4px; background: transparent; color: rgb(62, 207, 142); font-family: inherit; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">Copiar</button>
+          <button type="button" class="scp4 copy-btn" data-copy="Khunsa@coinos.io" style="align-self: flex-start; min-height: 36px; padding: 0px 14px; border: 1px solid rgba(240, 33, 58, 0.5); border-radius: 4px; background: transparent; color: rgb(240, 33, 58); font-family: inherit; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">Copiar</button>
         </article>
         <article class="reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28);">
           <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 04 ] Bitcoin</span>
           <code style="padding: 10px 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; background: rgb(23, 23, 23); font-size: 0.7rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">bc1qtu4fnl7e2qxjssqtaynjnjkgq7r4kerv0r9ljk</code>
-          <button type="button" class="scp4 copy-btn" data-copy="bc1qtu4fnl7e2qxjssqtaynjnjkgq7r4kerv0r9ljk" style="align-self: flex-start; min-height: 36px; padding: 0px 14px; border: 1px solid rgba(62, 207, 142, 0.5); border-radius: 4px; background: transparent; color: rgb(62, 207, 142); font-family: inherit; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">Copiar</button>
+          <button type="button" class="scp4 copy-btn" data-copy="bc1qtu4fnl7e2qxjssqtaynjnjkgq7r4kerv0r9ljk" style="align-self: flex-start; min-height: 36px; padding: 0px 14px; border: 1px solid rgba(240, 33, 58, 0.5); border-radius: 4px; background: transparent; color: rgb(240, 33, 58); font-family: inherit; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">Copiar</button>
         </article>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; overflow: hidden;">
         <a href="notas-de-parche.html#v1-7-2" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28); cursor: pointer;">
-          <span style="color: rgb(62, 207, 142); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">v1.7.2</span>
+          <span style="color: rgb(240, 33, 58); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">v1.7.2</span>
           <span style="color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.8;">La X de Windows ahora cierra la app de verdad, sin dejar procesos colgados.</span>
           <span style="color: rgb(242, 242, 242); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Leer más →</span>
         </a>
         <a href="notas-de-parche.html#v1-7-0" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28); cursor: pointer;">
-          <span style="color: rgb(62, 207, 142); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">v1.7.0</span>
+          <span style="color: rgb(240, 33, 58); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">v1.7.0</span>
           <span style="color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.8;">Moderación de espectadores: registro, silenciar, banear y palabras bloqueadas.</span>
           <span style="color: rgb(242, 242, 242); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Leer más →</span>
         </a>
         <a href="notas-de-parche.html#v1-5-9" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28); cursor: pointer;">
-          <span style="color: rgb(62, 207, 142); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">v1.5.9</span>
+          <span style="color: rgb(240, 33, 58); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">v1.5.9</span>
           <span style="color: rgb(138, 138, 138); font-size: 0.78rem; line-height: 1.8;">Reporte de bugs con logging de sesión y tutorial guiado para nuevos.</span>
           <span style="color: rgb(242, 242, 242); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Leer más →</span>
         </a>
       </div>
     </section>
 
-    <section id="download" style="border-top: 1px solid rgba(255, 255, 255, 0.08); scroll-margin-top: 90px;">
-      <div style="width: min(1180px, 100% - 40px); margin: 0px auto; padding: clamp(56px, 9vw, 120px) 0px; text-align: center;">
-        <h2 style="margin: 0px auto 28px; max-width: 24ch; font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: clamp(1.9rem, 5.4vw, 3.8rem); line-height: 1.06; letter-spacing: -0.025em; text-wrap: balance;">Instálalo en un minuto, <span style="color: rgb(62, 207, 142);">deja que tu chat hable</span></h2>
+    <section id="download" style="position: relative; overflow: hidden; border-top: 1px solid rgba(255, 255, 255, 0.08); scroll-margin-top: 90px;">
+      <video autoplay muted loop playsinline aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.75;">
+        <source src="assets/video/hero-loop.mp4" type="video/mp4">
+      </video>
+      <div style="position: absolute; inset: 0; z-index: 1; background: #F0213A; mix-blend-mode: color; pointer-events: none;"></div>
+      <div style="position: absolute; inset: 0; z-index: 1; background: radial-gradient(ellipse 55% 55% at 50% 40%, rgba(23,23,23,0.1) 0%, rgba(23,23,23,0.8) 55%, rgb(23,23,23) 78%);"></div>
+      <div style="position: relative; z-index: 2; width: min(1180px, 100% - 40px); margin: 0px auto; padding: clamp(56px, 9vw, 120px) 0px; text-align: center;">
+        <h2 style="margin: 0px auto 28px; max-width: 24ch; font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: clamp(1.9rem, 5.4vw, 3.8rem); line-height: 1.06; letter-spacing: -0.025em; text-wrap: balance;">Instálalo en un minuto, <span style="color: rgb(240, 33, 58);">deja que tu chat hable</span></h2>
         <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
-          <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0px 24px; border-radius: 6px; background: rgb(62, 207, 142); color: rgb(6, 35, 26); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Descargar para Windows</a>
+          <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0px 24px; border-radius: 6px; background: rgb(240, 33, 58); color: #ffffff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Descargar para Windows</a>
           <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener" class="scp1" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0px 24px; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 6px; color: rgb(242, 242, 242); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">Ver en GitHub ↗</a>
         </div>
       </div>

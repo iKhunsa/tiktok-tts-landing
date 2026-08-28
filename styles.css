@@ -9,11 +9,11 @@
   --line-soft: rgba(255, 255, 255, 0.08);
   --red: #ff5a4e;
   --cyan: #12d8e8;
-  --green: #3ecf8e;
-  --brand: #3ecf8e;
-  --brand-strong: #34c283;
-  --brand-deep: #2bb673;
-  --brand-ink: #06231a;
+  --green: #F0213A;
+  --brand: #F0213A;
+  --brand-strong: #d81a32;
+  --brand-deep: #c01328;
+  --brand-ink: #ffffff;
   --discord: #5865f2;
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
   --shadow-soft: 0 12px 26px rgba(0, 0, 0, 0.3);
@@ -273,11 +273,11 @@ h1 {
   border-color: var(--brand-strong);
   background: var(--brand);
   color: var(--brand-ink);
-  box-shadow: 0 12px 26px rgba(62, 207, 142, 0.32);
+  box-shadow: 0 12px 26px rgba(240, 33, 58, 0.32);
 }
 
 .button-primary:hover {
-  background: #34c283;
+  background: #d81a32;
 }
 
 .button-secondary {
@@ -359,7 +359,7 @@ h1 {
   border-radius: 8px;
   background:
     radial-gradient(circle at 20% 18%, rgba(18, 216, 232, 0.16), transparent 32%),
-    radial-gradient(circle at 80% 8%, rgba(62, 207, 142, 0.18), transparent 28%),
+    radial-gradient(circle at 80% 8%, rgba(240, 33, 58, 0.18), transparent 28%),
     var(--bg);
   box-shadow: var(--shadow);
   text-align: left;
@@ -443,7 +443,7 @@ h1 {
   height: 9px;
   border-radius: 50%;
   background: var(--green);
-  box-shadow: 0 0 0 5px rgba(43, 182, 115, 0.14);
+  box-shadow: 0 0 0 5px rgba(240, 33, 58, 0.14);
 }
 
 .chat-message {
@@ -630,7 +630,7 @@ h3 {
   gap: 12px;
   padding: 16px;
   background:
-    linear-gradient(135deg, rgba(18, 216, 232, 0.12), rgba(62, 207, 142, 0.12)),
+    linear-gradient(135deg, rgba(18, 216, 232, 0.12), rgba(240, 33, 58, 0.12)),
     var(--surface);
 }
 
