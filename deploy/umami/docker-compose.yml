@@ -1,0 +1,39 @@
+# Umami analytics — self-hosted en el VPS (Coolify)
+# Sirve en https://umami.tiklivetts.es y recibe eventos del loader de script.js.
+# Los valores ${...} los inyecta Coolify desde las variables de entorno del recurso.
+services:
+  umami:
+    image: 'ghcr.io/umami-software/umami:postgresql-latest'
+    restart: unless-stopped
+    ports:
+      - '3000'
+    environment:
+      DATABASE_TYPE: postgresql
+      DATABASE_URL: 'postgresql://umami:${UMAMI_DB_PW}@db:5432/umami'
+      APP_SECRET: '${UMAMI_APP_SECRET}'
+      DISABLE_TELEMETRY: '1'
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ['CMD-SHELL', 'curl -f http://localhost:3000/api/heartbeat || exit 1']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 40s
+  db:
+    image: 'postgres:16-alpine'
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: '${UMAMI_DB_PW}'
+    volumes:
+      - 'umami-db-data:/var/lib/postgresql/data'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U umami -d umami']
+      interval: 10s
+      timeout: 5s
+      retries: 10
+volumes:
+  umami-db-data:
