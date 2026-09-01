@@ -4,7 +4,7 @@ document.documentElement.classList.add("js");
 // Rellenar UMAMI_WEBSITE_ID con el ID del sitio creado en el panel de Umami
 // (Settings > Websites > el sitio > Edit). Mientras tenga "__" no carga nada.
 var UMAMI_SRC = "https://umami.tiklivetts.es/script.js";
-var UMAMI_WEBSITE_ID = "bb47c0a5-57fc-4da3-b30d-08d8fdd35baa";
+var UMAMI_WEBSITE_ID = "84331c44-8dec-4ca4-8d81-e2fb6369738a";
 if (UMAMI_WEBSITE_ID.indexOf("__") === -1) {
   var umamiScript = document.createElement("script");
   umamiScript.defer = true;
@@ -144,80 +144,3 @@ document.querySelectorAll(".copy-btn").forEach((button) => {
     }, 1600);
   });
 });
-
-// Aviso flotante de ayuda tras iniciar la descarga
-if (downloadButtons.length) {
-  const isEnglish = document.documentElement.lang === "en";
-  const YOUTUBE_TUTORIAL_URL = "https://www.youtube.com/@br0k3ny"; // TODO: reemplazar con URL real del tutorial
-  const DISCORD_URL = "https://discord.gg/UwCV4F6nkE";
-
-  const copy = isEnglish
-    ? {
-        title: "Trouble installing?",
-        body: "If Windows shows a warning or something's not working, watch the quick tutorial or get help in our Discord.",
-        tutorial: "Watch tutorial",
-        discord: "Discord",
-        close: "Close",
-      }
-    : {
-        title: "¿Problemas instalando?",
-        body: "Si Windows te muestra una advertencia o algo no funciona, mira el tutorial rápido o pide ayuda en nuestro Discord.",
-        tutorial: "Ver tutorial",
-        discord: "Discord",
-        close: "Cerrar",
-      };
-
-  let toastEl = null;
-  let hideTimer = null;
-
-  const showInstallToast = () => {
-    if (toastEl) {
-      clearTimeout(hideTimer);
-      toastEl.remove();
-      toastEl = null;
-    }
-
-    toastEl = document.createElement("div");
-    toastEl.className = "install-toast";
-    toastEl.setAttribute("role", "status");
-    toastEl.innerHTML = `
-      <div class="install-toast-head">
-        <div class="install-toast-icon">🛟</div>
-        <div class="install-toast-body">
-          <strong>${copy.title}</strong>
-          <p>${copy.body}</p>
-        </div>
-        <button type="button" class="install-toast-close" aria-label="${copy.close}">×</button>
-      </div>
-      <div class="install-toast-actions">
-        <a class="tutorial" href="${YOUTUBE_TUTORIAL_URL}" target="_blank" rel="noopener">${copy.tutorial}</a>
-        <a class="discord" href="${DISCORD_URL}" target="_blank" rel="noopener">${copy.discord}</a>
-      </div>
-    `;
-    document.body.appendChild(toastEl);
-
-    requestAnimationFrame(() => toastEl.classList.add("visible"));
-
-    const hideToast = () => {
-      if (!toastEl) return;
-      const el = toastEl;
-      el.classList.remove("visible");
-      clearTimeout(hideTimer);
-      setTimeout(() => el.remove(), 320);
-      toastEl = null;
-    };
-
-    toastEl.querySelector(".install-toast-close").addEventListener("click", hideToast);
-    hideTimer = setTimeout(hideToast, 20000);
-  };
-
-  if (new URLSearchParams(location.search).has("toast")) {
-    showInstallToast();
-  }
-
-  downloadButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      showInstallToast();
-    });
-  });
-}
