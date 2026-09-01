@@ -12,6 +12,7 @@ services:
       DATABASE_URL: 'postgresql://umami:${UMAMI_DB_PW}@db:5432/umami'
       APP_SECRET: '${UMAMI_APP_SECRET}'
       DISABLE_TELEMETRY: '1'
+      TZ: America/Guayaquil
     depends_on:
       db:
         condition: service_healthy
@@ -28,6 +29,7 @@ services:
       POSTGRES_DB: umami
       POSTGRES_USER: umami
       POSTGRES_PASSWORD: '${UMAMI_DB_PW}'
+      TZ: America/Guayaquil
     volumes:
       - 'umami-db-data:/var/lib/postgresql/data'
     healthcheck:
@@ -35,5 +37,28 @@ services:
       interval: 10s
       timeout: 5s
       retries: 10
+  # Dump diario de la BD con rotacion (7 dias / 4 semanas / 6 meses).
+  # Escribe .sql.gz en el volumen umami-db-backups; ese volumen queda dentro
+  # del snapshot semanal del VPS de Hostinger -> doble capa.
+  db-backup:
+    image: 'prodrigestivill/postgres-backup-local:16-alpine'
+    restart: unless-stopped
+    environment:
+      POSTGRES_HOST: db
+      POSTGRES_DB: umami
+      POSTGRES_USER: umami
+      POSTGRES_PASSWORD: '${UMAMI_DB_PW}'
+      SCHEDULE: '@daily'
+      BACKUP_KEEP_DAYS: '7'
+      BACKUP_KEEP_WEEKS: '4'
+      BACKUP_KEEP_MONTHS: '6'
+      HEALTHCHECK_PORT: '8080'
+      TZ: America/Guayaquil
+    volumes:
+      - 'umami-db-backups:/backups'
+    depends_on:
+      db:
+        condition: service_healthy
 volumes:
   umami-db-data:
+  umami-db-backups:
