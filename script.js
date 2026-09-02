@@ -1,16 +1,20 @@
 document.documentElement.classList.add("js");
 
 // --- Umami analytics (self-hosted en el VPS) -------------------------------
-// Rellenar UMAMI_WEBSITE_ID con el ID del sitio creado en el panel de Umami
-// (Settings > Websites > el sitio > Edit). Mientras tenga "__" no carga nada.
-var UMAMI_SRC = "https://umami.tiklivetts.es/script.js";
+// UMAMI_WEBSITE_ID = ID del sitio en el panel de Umami (Websites > Edit).
+// Mientras tenga "__" no carga nada.
+// script.js  -> pageviews + eventos + Web Vitals (Performance) automáticos.
+// recorder.js -> Replays + Heatmaps (activados en el panel: Replays & Heatmaps).
+var UMAMI_HOST = "https://umami.tiklivetts.es";
 var UMAMI_WEBSITE_ID = "84331c44-8dec-4ca4-8d81-e2fb6369738a";
 if (UMAMI_WEBSITE_ID.indexOf("__") === -1) {
-  var umamiScript = document.createElement("script");
-  umamiScript.defer = true;
-  umamiScript.src = UMAMI_SRC;
-  umamiScript.setAttribute("data-website-id", UMAMI_WEBSITE_ID);
-  document.head.appendChild(umamiScript);
+  ["/script.js", "/recorder.js"].forEach(function (path) {
+    var s = document.createElement("script");
+    s.defer = true;
+    s.src = UMAMI_HOST + path;
+    s.setAttribute("data-website-id", UMAMI_WEBSITE_ID);
+    document.head.appendChild(s);
+  });
 }
 // -------------------------------------------------------------------------
 
