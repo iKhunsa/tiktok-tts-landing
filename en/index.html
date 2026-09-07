@@ -14,14 +14,16 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="TikLive TTS - Read your chat out loud">
   <meta property="og:description" content="Read your chat out loud, mix TikTok Live, Twitch and YouTube, and show OBS-ready alerts. Free and open source.">
-  <meta property="og:image" content="https://tiklivetts.es/assets/icon.svg">
+  <meta property="og:image" content="https://tiklivetts.es/assets/og-cover-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://tiklivetts.es/en/">
   <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="es_ES">
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="TikLive TTS - Read your chat out loud">
   <meta name="twitter:description" content="Read your chat out loud, mix TikTok Live, Twitch and YouTube, and show OBS-ready alerts. Free and open source.">
-  <meta name="twitter:image" content="https://tiklivetts.es/assets/icon.svg">
+  <meta name="twitter:image" content="https://tiklivetts.es/assets/og-cover-en.png">
 
   <title>TikLive TTS - Read your chat out loud, made for streamers</title>
   <link rel="icon" href="../assets/icon.svg">
@@ -111,6 +113,23 @@
     @media (prefers-reduced-motion: reduce) {
       .platform-marquee-track { animation: none; }
     }
+
+    .install-toast { position: fixed; z-index: 200; right: 20px; bottom: 20px; width: 360px; max-width: calc(100vw - 40px); padding: 18px; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; background: rgba(28, 28, 28, 0.88); backdrop-filter: blur(20px) saturate(160%); -webkit-backdrop-filter: blur(20px) saturate(160%); box-shadow: 0 24px 70px rgba(0,0,0,0.45); opacity: 0; transform: translateY(24px) scale(0.96); transition: opacity 320ms cubic-bezier(0.22,1,0.36,1), transform 320ms cubic-bezier(0.22,1,0.36,1); pointer-events: none; }
+    .install-toast.visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+    .install-toast-head { display: flex; align-items: flex-start; gap: 12px; }
+    .install-toast-icon { flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px; background: #F0213A; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .install-toast-body { flex: 1; min-width: 0; }
+    .install-toast-body strong { display: block; font-family: "Space Grotesk", "JetBrains Mono", sans-serif; font-size: 0.95rem; }
+    .install-toast-body p { margin: 4px 0 0; color: #8a8a8a; font-size: 0.82rem; line-height: 1.4; }
+    .install-toast-close { flex-shrink: 0; width: 24px; height: 24px; border: none; border-radius: 50%; background: #232323; color: #8a8a8a; font-size: 0.9rem; line-height: 1; cursor: pointer; }
+    .install-toast-close:hover { color: #F2F2F2; }
+    .install-toast-actions { display: flex; gap: 10px; margin-top: 14px; }
+    .install-toast-actions a { flex: 1; text-align: center; padding: 10px 12px; border-radius: 10px; font-size: 0.78rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+    .install-toast-actions a.tutorial { background: #F0213A; color: #ffffff; }
+    .install-toast-actions a.discord { background: #232323; border: 1px solid rgba(255,255,255,0.1); color: #F2F2F2; }
+    @media (max-width: 520px) {
+      .install-toast { left: 20px; right: 20px; width: auto; }
+    }
   </style>
 </head>
 <body>
@@ -126,7 +145,7 @@
       <div style="display: flex; align-items: center; gap: 8px; position: relative;">
         <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; min-height: 36px; padding: 0px 16px; background: rgb(240, 33, 58); color: #ffffff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">Download</a>
 
-        <a href="../index.html" hreflang="es" aria-label="View in Spanish" class="scp1" style="display: grid; place-items: center; width: 36px; height: 36px; padding: 0px; border: 1px solid rgba(255, 255, 255, 0.14); background: transparent; color: rgb(242, 242, 242); cursor: pointer;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"></path></svg></a>
+        <a href="https://tiklivetts.es/" hreflang="es" aria-label="View in Spanish" class="scp1" style="display: grid; place-items: center; width: 36px; height: 36px; padding: 0px; border: 1px solid rgba(255, 255, 255, 0.14); background: transparent; color: rgb(242, 242, 242); cursor: pointer;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"></path></svg></a>
 
                   <button type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-drawer" id="nav-toggle" class="scp1" style="display: grid; place-items: center; width: 36px; height: 36px; padding: 0px; border: 1px solid rgba(255, 255, 255, 0.14); background: transparent; color: rgb(242, 242, 242); font-family: inherit; font-size: 0.8rem; cursor: pointer;"><span id="nav-toggle-glyph">≡</span></button>
 
@@ -168,7 +187,7 @@
     </section>
 
     <section style="width: min(1180px, 100% - 40px); margin: 0px auto; padding: 0px 0px clamp(52px, 8vw, 100px);">
-      <p style="margin: 0px 0px clamp(20px, 3vw, 30px); text-align: center; color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase;">Reads and moderates the chat of</p>
+      <p style="margin: 0px 0px clamp(20px, 3vw, 30px); text-align: center; color: rgb(138, 138, 138); font-size: 0.64rem; letter-spacing: 0.2em; text-transform: uppercase;">Reads and moderates the chat of</p>
       <div class="platform-marquee" style="position: relative; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent); mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);">
         <div class="platform-marquee-track">
           <img src="../assets/platforms/tiktok.png" alt="TikTok Live" style="height: 22px; width: auto; opacity: 0.5;">
@@ -250,7 +269,7 @@
           <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.7rem; color: rgb(138, 138, 138);">
             <span><span style="color: rgb(240, 33, 58);">[TT]</span> connected · 00:41:12</span>
             <span><span style="color: rgb(240, 33, 58);">[TW]</span> connected · 00:41:09</span>
-            <span><span style="color: rgb(90, 90, 90);">[YT]</span> retrying in 4s…</span>
+            <span><span style="color: rgb(138, 138, 138);">[YT]</span> retrying in 4s…</span>
           </div>
         </article>
 
@@ -262,7 +281,7 @@
           <div style="display: flex; align-items: center; gap: 12px;">
             <span style="width: 22px; height: 22px; border-radius: 6px; background: rgb(240, 33, 58);"></span>
             <div style="flex: 1; height: 4px; border-radius: 999px; background: rgba(255, 255, 255, 0.1); overflow: hidden;"><span style="display: block; width: 82%; height: 100%; background: rgb(240, 33, 58);"></span></div>
-            <span style="color: rgb(90, 90, 90); font-size: 0.66rem;">82%</span>
+            <span style="color: rgb(138, 138, 138); font-size: 0.66rem;">82%</span>
           </div>
         </article>
 
@@ -297,7 +316,7 @@
           </div>
           <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.7rem; color: rgb(138, 138, 138);">
             <span><span style="color: rgb(240, 33, 58);">▷</span> now playing · vol 60%</span>
-            <span><span style="color: rgb(90, 90, 90);">▤</span> request queue: 0</span>
+            <span><span style="color: rgb(138, 138, 138);">▤</span> request queue: 0</span>
           </div>
         </article>
 
@@ -344,7 +363,7 @@
           <img src="../assets/creators/fabi_col.jpg" alt="" loading="lazy" onerror="this.remove()" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; filter: grayscale(1) contrast(1.08); border: 1px solid rgba(255, 255, 255, 0.14);">
           <div>
             <p style="margin: 0px 0px 6px; font-size: 0.82rem;">@fabi_col</p>
-            <p style="margin: 0px; color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">TikTok</p>
+            <p style="margin: 0px; color: rgb(138, 138, 138); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">TikTok</p>
           </div>
         </a>
 
@@ -352,7 +371,7 @@
           <img src="../assets/creators/a_shadow_vt.jpg" alt="" loading="lazy" onerror="this.remove()" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; filter: grayscale(1) contrast(1.08); border: 1px solid rgba(255, 255, 255, 0.14);">
           <div>
             <p style="margin: 0px 0px 6px; font-size: 0.82rem;">@a.shadow.vt</p>
-            <p style="margin: 0px; color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">TikTok · Kick</p>
+            <p style="margin: 0px; color: rgb(138, 138, 138); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">TikTok · Kick</p>
           </div>
         </a>
 
@@ -360,7 +379,7 @@
           <img src="../assets/creators/igmangooo.jpg" alt="" loading="lazy" onerror="this.remove()" style="width: 52px; height: 52px; border-radius: 50%; object-fit: cover; filter: grayscale(1) contrast(1.08); border: 1px solid rgba(255, 255, 255, 0.14);">
           <div>
             <p style="margin: 0px 0px 6px; font-size: 0.82rem;">@igmangooo</p>
-            <p style="margin: 0px; color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">TikTok</p>
+            <p style="margin: 0px; color: rgb(138, 138, 138); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">TikTok</p>
           </div>
         </a>
 
@@ -377,22 +396,22 @@
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; overflow: hidden;">
         <a href="unify-tiktok-twitch-youtube-chat.html" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 3vw, 30px); background: rgb(28, 28, 28); cursor: pointer;">
-          <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 01 ]</span>
+          <span style="color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 01 ]</span>
           <span style="font-size: 0.86rem; line-height: 1.5;">Unify TikTok, Twitch and YouTube chat</span>
           <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Read guide →</span>
         </a>
         <a href="free-obs-alerts-gifts-followers.html" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 3vw, 30px); background: rgb(28, 28, 28); cursor: pointer;">
-          <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 02 ]</span>
+          <span style="color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 02 ]</span>
           <span style="font-size: 0.86rem; line-height: 1.5;">Free OBS alerts for gifts and followers</span>
           <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Read guide →</span>
         </a>
         <a href="twitch-chat-text-to-speech.html" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 3vw, 30px); background: rgb(28, 28, 28); cursor: pointer;">
-          <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 03 ]</span>
+          <span style="color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 03 ]</span>
           <span style="font-size: 0.86rem; line-height: 1.5;">Twitch text-to-speech: read the chat out loud</span>
           <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Read guide →</span>
         </a>
         <a href="faq.html" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 3vw, 30px); background: rgb(28, 28, 28); cursor: pointer;">
-          <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 04 ]</span>
+          <span style="color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 04 ]</span>
           <span style="font-size: 0.86rem; line-height: 1.5;">FAQ: pricing, privacy and platforms</span>
           <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">View FAQ →</span>
         </a>
@@ -412,22 +431,22 @@
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; overflow: hidden; margin-bottom: clamp(20px, 3vw, 32px);">
         <a href="https://paypal.me/KhunsaUwU" target="_blank" rel="noopener" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28);">
-          <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 01 ]</span>
+          <span style="color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 01 ]</span>
           <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: 1.4rem;">PayPal</span>
           <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Donate →</span>
         </a>
         <a href="https://ko-fi.com/ikhunsa" target="_blank" rel="noopener" class="scp3 reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28);">
-          <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 02 ]</span>
+          <span style="color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 02 ]</span>
           <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 300; font-size: 1.4rem;">Ko-fi</span>
           <span style="color: rgb(240, 33, 58); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase;">Donate →</span>
         </a>
         <article class="reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28);">
-          <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 03 ] Lightning</span>
+          <span style="color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 03 ] Lightning</span>
           <code style="padding: 10px 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; background: rgb(23, 23, 23); font-size: 0.7rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Khunsa@coinos.io</code>
           <button type="button" class="scp4 copy-btn" data-copy="Khunsa@coinos.io" style="align-self: flex-start; min-height: 36px; padding: 0px 14px; border: 1px solid rgba(240, 33, 58, 0.5); border-radius: 4px; background: transparent; color: rgb(240, 33, 58); font-family: inherit; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">Copy</button>
         </article>
         <article class="reveal" style="display: flex; flex-direction: column; gap: 12px; padding: clamp(22px, 3vw, 32px); background: rgb(28, 28, 28);">
-          <span style="color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 04 ] Bitcoin</span>
+          <span style="color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">[ 04 ] Bitcoin</span>
           <code style="padding: 10px 12px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; background: rgb(23, 23, 23); font-size: 0.7rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">bc1qtu4fnl7e2qxjssqtaynjnjkgq7r4kerv0r9ljk</code>
           <button type="button" class="scp4 copy-btn" data-copy="bc1qtu4fnl7e2qxjssqtaynjnjkgq7r4kerv0r9ljk" style="align-self: flex-start; min-height: 36px; padding: 0px 14px; border: 1px solid rgba(240, 33, 58, 0.5); border-radius: 4px; background: transparent; color: rgb(240, 33, 58); font-family: inherit; font-size: 0.64rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; cursor: pointer;">Copy</button>
         </article>
@@ -479,7 +498,7 @@
         </div>
 
         <div>
-          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Product</p>
+          <p style="margin: 0px 0px 16px; color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Product</p>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
             <a href="#features">Features</a>
             <a href="#overlays">Overlays</a>
@@ -489,7 +508,7 @@
         </div>
 
         <div>
-          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Community</p>
+          <p style="margin: 0px 0px 16px; color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Community</p>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
             <a href="https://discord.com/invite/mwY859tcQK" target="_blank" rel="noopener">Discord</a>
             <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener">GitHub</a>
@@ -499,7 +518,7 @@
         </div>
 
         <div>
-          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Resources</p>
+          <p style="margin: 0px 0px 16px; color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Resources</p>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
             <a href="blog.html">Blog</a>
             <a href="faq.html">FAQ</a>
@@ -507,12 +526,12 @@
             <a href="roadmap.html">Roadmap</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
-            <a href="../index.html" hreflang="es">Español</a>
+            <a href="https://tiklivetts.es/" hreflang="es">Español</a>
           </div>
         </div>
 
         <div>
-          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Channels</p>
+          <p style="margin: 0px 0px 16px; color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Channels</p>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
             <a href="https://www.youtube.com/@br0k3ny" target="_blank" rel="noopener">YouTube</a>
             <a href="https://www.tiktok.com/@soykurorai" target="_blank" rel="noopener">TikTok</a>
@@ -522,7 +541,7 @@
         </div>
       </div>
 
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: rgb(138, 138, 138); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">
         <span>© 2026 TikLive TTS</span>
         <span>Made for streamers</span>
       </div>
@@ -530,6 +549,6 @@
   </footer>
 </div>
 
-<script src="../script.js"></script>
+<script src="../script.js?v=3"></script>
 </body>
 </html>

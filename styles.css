@@ -4,7 +4,7 @@
   --surface-soft: #232323;
   --ink: #f2f2f2;
   --muted: #8a8a8a;
-  --dim: #5a5a5a;
+  --dim: #8a8a8a;
   --line: rgba(255, 255, 255, 0.1);
   --line-soft: rgba(255, 255, 255, 0.08);
   --red: #ff5a4e;
@@ -877,6 +877,121 @@ h3 {
   color: var(--discord);
   font-weight: 760;
   white-space: nowrap;
+}
+
+.install-toast {
+  position: fixed;
+  z-index: 200;
+  right: 20px;
+  bottom: 20px;
+  width: 360px;
+  max-width: calc(100vw - 40px);
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: rgba(28, 28, 28, 0.88);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  transition: opacity 320ms cubic-bezier(0.22, 1, 0.36, 1), transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.install-toast.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.install-toast-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.install-toast-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.install-toast-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.install-toast-body strong {
+  display: block;
+  font-family: "Space Grotesk", "JetBrains Mono", sans-serif;
+  font-size: 0.95rem;
+}
+
+.install-toast-body p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.install-toast-close {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  background: var(--surface-soft);
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.install-toast-close:hover {
+  color: var(--ink);
+}
+
+.install-toast-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.install-toast-actions a {
+  flex: 1;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.install-toast-actions a.tutorial {
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+
+.install-toast-actions a.discord {
+  background: var(--surface-soft);
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+@media (max-width: 520px) {
+  .install-toast {
+    left: 20px;
+    right: 20px;
+    width: auto;
+  }
 }
 
 .social-grid {

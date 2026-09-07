@@ -20,16 +20,18 @@
       property="og:description"
       content="Historial de cambios de TikLive TTS: nuevas funciones, correcciones y ajustes, versión por versión."
     />
-    <meta property="og:image" content="https://tiklivetts.es/assets/icon.svg" />
+    <meta property="og:image" content="https://tiklivetts.es/assets/og-cover.png" />
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://tiklivetts.es/notas-de-parche.html" />
     <meta property="og:locale" content="es_ES" />
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Notas de parche - TikLive TTS" />
     <meta
       name="twitter:description"
       content="Historial de cambios de TikLive TTS: nuevas funciones, correcciones y ajustes, versión por versión."
     />
-    <meta name="twitter:image" content="https://tiklivetts.es/assets/icon.svg" />
+    <meta name="twitter:image" content="https://tiklivetts.es/assets/og-cover.png" />
     <title>Notas de parche - TikLive TTS</title>
     <link rel="icon" href="assets/icon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,7 +40,7 @@
       href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="styles.css?v=3" />
     <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
@@ -106,18 +108,18 @@
         Cada parche que publicamos, con sus funciones nuevas, correcciones y cambios de comportamiento.
       </p>
 
-      <article class="post" id="v1-8-0">
-        <h2>v1.8.0</h2>
+      <article class="post" id="v1-8-6">
+        <h2>v1.8.6</h2>
         <p class="page-meta">Nuevo backend</p>
 
         <h3>La actualización más grande hasta ahora</h3>
         <p>
-          Por dentro, todo el servidor que corre dentro de la app se reescribió de cero. Por fuera, llega Kick como cuarta plataforma, un menú lateral que armás a tu gusto, el Bot de Música renovado con playlists de YouTube, avisos automáticos durante el directo y un montón de huecos de traducción cerrados para que la voz hable siempre en tu idioma.
+          Por dentro, todo el servidor que corre dentro de la app se reescribió de cero. Por fuera, llega Kick como cuarta plataforma, un menú lateral que armás a tu gusto, una sección para que un asistente de IA opere la app por vos, el Bot de Música renovado con playlists de YouTube, avisos automáticos durante el directo, una voz que aguanta mucho mejor los cortes del servicio de Google, y un montón de huecos de traducción cerrados para que la voz hable siempre en tu idioma.
         </p>
 
         <p><strong>Kick, cuarta plataforma</strong></p>
         <p>
-          Hasta ahora la app leía TikTok, Twitch y YouTube. Kick estaba descartado: su web bloquea cualquier conexión directa desde la app. Ahora funciona: la app abre una ventana oculta que lee el chat de tu canal y lo mete en el mismo flujo que las otras tres. Desde el selector de plataforma agregás tu canal de Kick igual que cualquier otro.
+          Hasta ahora la app leía TikTok, Twitch y YouTube. Kick estaba descartado: su web bloqueaba cualquier conexión directa desde la app. Ahora funciona: la app se conecta directo a Kick y mete su chat en el mismo flujo que las otras tres. Desde el selector de plataforma agregás tu canal de Kick igual que cualquier otro.
         </p>
         <p>Lo que llega de Kick:</p>
         <ul>
@@ -128,12 +130,12 @@
         </ul>
         <p>Lo que <strong>no</strong> llega de Kick: suscripciones, regalos y raids. Es solo chat.</p>
         <p>
-          La conexión con Kick se apoya en un servicio de terceros. Es más frágil que las otras plataformas; si ese servicio cambia o se cae, el chat de Kick se corta hasta que se arregle desde la app. El resto de plataformas no se ve afectado. La app reintenta sola si Kick se queda en silencio.
+          El chat de Kick viaja por un canal público de Kick, sin autenticación. Es algo más frágil que las otras plataformas: si Kick cambia su web, la conexión se corta hasta que se parchee desde la app. El resto de plataformas no se ve afectado. Hay un vigía que reconecta solo si Kick se queda 5 minutos sin mandar un mensaje.
         </p>
 
         <p><strong>Más herramientas: el menú lateral a tu medida</strong></p>
         <p>
-          El menú de la izquierda era fijo: todas las secciones, siempre, en el mismo orden. Ahora hay una sección nueva, <strong>Más herramientas</strong>, con una vista tipo tienda de todas las herramientas de la app (Overlays, Bot de Música, Clips, Soundpad, Control móvil, Moderación), cada una con su imagen de vista previa y una descripción.
+          El menú de la izquierda era fijo: todas las secciones, siempre, en el mismo orden. Ahora hay una sección nueva, <strong>Más herramientas</strong>, con una vista tipo tienda de todas las herramientas de la app (Overlays, Bot de Música, Clips, Soundpad, Control móvil, Moderación, Agente MCP), cada una con su imagen de vista previa y una descripción.
         </p>
         <ul>
           <li>Mostrás u ocultás cada herramienta del menú lateral.</li>
@@ -143,6 +145,17 @@
         <p>
           En instalaciones nuevas, Clips y Control móvil arrancan ocultos para que el menú esté más limpio de entrada; se agregan desde acá cuando los necesites. Si ya los venías usando, siguen donde estaban. La primera vez que entrás hay un recorrido guiado que lo explica.
         </p>
+
+        <p><strong>Agente MCP (avanzado)</strong></p>
+        <p>
+          Nueva sección <strong>Agente MCP</strong> dentro de Más herramientas. Deja que un asistente de IA (Claude Desktop, Claude Code) opere la app por vos: leer el chat, moderar, manejar la música, consultar el estado del directo.
+        </p>
+        <ul>
+          <li>Viene activo, pero <strong>solo acepta conexiones desde tu propia PC</strong>.</li>
+          <li>Las acciones que rompen algo (banear, silenciar, desconectar, cambiar configuración) están detrás de un <strong>segundo interruptor que arranca apagado</strong>.</li>
+          <li>La sección trae el enlace del endpoint, los snippets de configuración listos para pegar, y una tabla de todo lo que el agente puede hacer, ordenada por área.</li>
+          <li>Nace oculta del menú lateral; la activás desde Más herramientas cuando la quieras.</li>
+        </ul>
 
         <p><strong>Bot de Música renovado</strong></p>
         <p>
@@ -181,10 +194,19 @@
         </ul>
         <p>Los 10 idiomas quedan a la par, con la misma cantidad de textos cada uno.</p>
 
-        <p><strong>Arreglos en la cola de voz</strong></p>
+        <p><strong>Arreglos y mejoras en la voz</strong></p>
         <ul>
           <li><strong>Orden real.</strong> La cola ahora se ordena por el momento en que se escribió cada mensaje, no por el orden en que llegó a la app. Como los mensajes de chat pasan por moderación (con demora variable) y las entradas y regalos no, antes un "entró fulano" o tu propio mensaje se podían colar delante de mensajes anteriores que todavía estaban en moderación.</li>
           <li><strong>Retomar al reactivar.</strong> Si apagabas el interruptor global de TTS con mensajes pendientes y lo volvías a encender, esos mensajes quedaban atrapados y la voz se quedaba muda hasta el siguiente mensaje nuevo. Ahora la cola pendiente se retoma al reactivar.</li>
+          <li>
+            <strong>TTS más resistente a los cortes de Google.</strong> El servicio gratuito de voz de Google corta cuando le pedís muchas frases seguidas (devuelve audio vacío). Ahora la app:
+            <ul>
+              <li><strong>Guarda en disco</strong> las frases ya dichas (saludos, nombres de regalos, apodos): se repiten al instante sin volver a pedirlas.</li>
+              <li><strong>Reintenta</strong> hasta 2 veces cuando el audio llega vacío.</li>
+              <li>Si Google corta en serie, <strong>espera un poco y sigue</strong> (5 s, 15 s, 60 s) en vez de trabarse; un pedido exitoso lo resetea.</li>
+              <li>En la práctica: menos silencios de la voz durante directos largos.</li>
+            </ul>
+          </li>
         </ul>
 
         <p><strong>YouTube ya no se queda mudo en silencio</strong></p>
@@ -194,19 +216,28 @@
 
         <p><strong>Por dentro: backend reconstruido de cero</strong></p>
         <p>
-          Todo el servidor que corre dentro de la app se reescribió, de un archivo monolítico a 16 partes independientes por área (configuración, idioma, moderación, canales, chat, overlays, móvil, sonido, bot, clips, telemetría, avisos, etc.).
+          Todo el servidor que corre dentro de la app se reescribió, de un archivo monolítico a 17 áreas independientes (configuración, idioma, moderación, canales, chat, overlays, móvil, sonido, bot, clips, promos, telemetría, agente MCP, etc.).
         </p>
         <ul>
-          <li>Una parte que falla al arrancar ya no tumba a las demás.</li>
+          <li>Un área que falla al arrancar ya no tumba a las demás.</li>
           <li>Se revisó función por función contra el servidor viejo. En el camino aparecieron y se arreglaron fallos reales: las acciones de guardado y moderación aceptaban pedidos de cualquier origen; el panel de Estado de Avanzado no mostraba si había un canal de TikTok conectado; contadores de likes de un canal ya desconectado podían disparar un parpadeo fantasma en el overlay.</li>
           <li>La configuración se guarda de forma atómica: no se corrompe si se corta la luz justo mientras guarda.</li>
           <li>El descargador del Bot de Música ahora se cierra bien en Windows al salir.</li>
+          <li>El frontend también se reconstruyó por dentro (mismo criterio que el backend); no cambia cómo se ve ni cómo se usa.</li>
           <li>Cada versión pasa por pruebas automáticas y revisión de estilo antes de compilarse.</li>
         </ul>
         <p>Nada de esto cambia cómo se usa la app.</p>
 
+        <p><strong>Métricas de uso anónimas</strong></p>
+        <p>
+          Se agrega un conteo anónimo de uso (qué funciones se usan, cuántas sesiones, retención) a un servidor propio. <strong>Nunca</strong> viaja: tu nombre, apodos, IDs, la IP, el texto del chat, ni el valor de tus ajustes (solo el nombre del ajuste que tocaste). Sin identificador de máquina. Si no está configurado, la app no hace ni una sola petición. Los errores y crashes van a un sistema aparte, también propio, y alimentan el botón "Reportar bug".
+        </p>
+
         <p><strong>Otros cambios</strong></p>
         <ul>
+          <li>Los banners de la barra lateral ahora rotan con una transición suave cada 30 segundos, y el banner central bajo el chat se renovó. Los banners abren la invitación de Discord al hacerles clic.</li>
+          <li>Nuevo banner de comunidad en el menú, con bordes redondeados.</li>
+          <li>El aviso de estado de conexión ahora aparece solo cuando estás en vivo, no siempre.</li>
           <li>Animación suave al cambiar de vista, tanto en la ventana principal como en el panel móvil y la nueva tienda. Respeta el ajuste de "reducir movimiento".</li>
           <li>Las imágenes de vista previa de las herramientas se optimizaron (de unos 11 MB a medio MB en total).</li>
           <li>De acá en adelante, los íconos de la interfaz son gráficos vectoriales, no emojis.</li>
@@ -219,7 +250,13 @@
           <li>El aviso de autopromoción por voz suena solo, por tiempo de directo, sin interruptor para apagarlo.</li>
           <li>Marcar un clip desde el móvil ahora solo guarda el replay en OBS. El marcador local de clip en el escritorio ya no se registra en ese caso; antes se guardaba por duplicado.</li>
           <li>Las instalaciones nuevas arrancan con Clips y Control móvil ocultos del menú.</li>
+          <li>El Agente MCP viene activo pero solo escucha en tu propia PC; las acciones destructivas quedan detrás de un segundo interruptor apagado.</li>
         </ul>
+
+        <p><strong>Gracias</strong></p>
+        <p>
+          Gracias a <a href="https://www.tiktok.com/@fedmasteer" target="_blank" rel="noopener">@FedMasteer</a> por su contribución de código a esta versión.
+        </p>
       </article>
 
       <article class="post" id="v1-7-2">
@@ -470,7 +507,7 @@
       <div style="width: min(1180px, 100% - 40px); margin: 0px auto; padding: clamp(40px, 6vw, 72px) 0px 28px;">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: clamp(28px, 4vw, 40px); margin-bottom: clamp(36px, 5vw, 56px);">
         <div>
-          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Producto</p>
+          <p style="margin: 0px 0px 16px; color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Producto</p>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
             <a href="index.html#features">Funciones</a>
             <a href="index.html#overlays">Overlays</a>
@@ -479,7 +516,7 @@
           </div>
         </div>
         <div>
-          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Comunidad</p>
+          <p style="margin: 0px 0px 16px; color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Comunidad</p>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
             <a href="https://discord.com/invite/mwY859tcQK" target="_blank" rel="noopener">Discord</a>
             <a href="https://github.com/iKhunsa/tiktok-tts" target="_blank" rel="noopener">GitHub</a>
@@ -488,7 +525,7 @@
           </div>
         </div>
         <div>
-          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Recursos</p>
+          <p style="margin: 0px 0px 16px; color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Recursos</p>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
             <a href="blog.html">Blog</a>
             <a href="preguntas-frecuentes.html">FAQ</a>
@@ -499,7 +536,7 @@
           </div>
         </div>
         <div>
-          <p style="margin: 0px 0px 16px; color: rgb(90, 90, 90); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Canales</p>
+          <p style="margin: 0px 0px 16px; color: rgb(138, 138, 138); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;">Canales</p>
           <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.76rem; color: rgb(138, 138, 138);">
             <a href="https://www.youtube.com/@br0k3ny" target="_blank" rel="noopener">YouTube</a>
             <a href="https://www.tiktok.com/@soykurorai" target="_blank" rel="noopener">TikTok</a>
@@ -508,12 +545,12 @@
           </div>
         </div>
         </div>
-        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: rgb(90, 90, 90); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.08); color: rgb(138, 138, 138); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;">
           <span>© 2026 TikLive TTS</span>
           <span>Hecho para streamers</span>
         </div>
       </div>
     </footer>
-<script src="script.js"></script>
+<script src="script.js?v=3"></script>
   </body>
 </html>
