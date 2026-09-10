@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "features": "Features",
+    "overlays": "Overlays",
+    "creators": "Creators",
+    "support": "Support",
+    "download": "Download",
+    "releases": "Releases",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "roadmap": "Roadmap"
+  },
+  "cta": {
+    "download": "Download"
+  }
+}
