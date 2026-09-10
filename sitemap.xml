@@ -29,6 +29,14 @@
   </url>
   <url>
     <loc>https://tiklivetts.es/creadores.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiklivetts.es/creadores.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiklivetts.es/en/creadores.html" />
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tiklivetts.es/en/creadores.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiklivetts.es/creadores.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiklivetts.es/en/creadores.html" />
     <priority>0.6</priority>
   </url>
   <url>
@@ -137,6 +145,18 @@
     <loc>https://tiklivetts.es/en/patch-notes.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://tiklivetts.es/notas-de-parche.html" />
     <xhtml:link rel="alternate" hreflang="en" href="https://tiklivetts.es/en/patch-notes.html" />
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tiklivetts.es/roadmap.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiklivetts.es/roadmap.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiklivetts.es/en/roadmap.html" />
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tiklivetts.es/en/roadmap.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://tiklivetts.es/roadmap.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tiklivetts.es/en/roadmap.html" />
     <priority>0.5</priority>
   </url>
   <url>

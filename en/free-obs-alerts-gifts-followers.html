@@ -52,8 +52,6 @@
         "mainEntityOfPage": "https://tiklivetts.es/en/free-obs-alerts-gifts-followers.html"
       }
     </script>
-    <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
-  <script defer src="/_vercel/insights/script.js"></script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -71,8 +69,9 @@
     .scp3:hover { background: #202020 !important; }
     .scp4:hover { background: #F0213A !important; color: #ffffff !important; }
 
-    .nav-drawer { display: none; flex-direction: column; gap: 2px; position: absolute; top: calc(100% + 8px); right: 20px; width: min(260px, calc(100% - 40px)); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #1c1c1c; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5); z-index: 30; }
-    .nav-drawer.open { display: flex; }
+    .nav-drawer { display: flex; visibility: hidden; opacity: 0; transform: scale(0.97) translateY(-4px); transform-origin: top right; pointer-events: none; transition: opacity 200ms ease-out, transform 200ms ease-out, visibility 0s linear 200ms; flex-direction: column; gap: 2px; position: absolute; top: calc(100% + 8px); right: 20px; width: min(260px, calc(100% - 40px)); border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: #1c1c1c; overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.5); z-index: 30; }
+    .nav-drawer.open { visibility: visible; opacity: 1; transform: none; pointer-events: auto; transition: opacity 180ms ease-out, transform 180ms ease-out; }
+    @media (prefers-reduced-motion: reduce) { .nav-drawer, .nav-drawer.open { transform: none; transition: opacity 140ms ease-out, visibility 0s; } }
     .nav-drawer a { padding: 13px 18px; font-size: 0.78rem; letter-spacing: 0.04em; color: #F2F2F2; border-top: 1px solid rgba(255,255,255,0.08); }
     .nav-drawer a:first-child { border-top: 0; }
     .nav-drawer a:hover { background: #232323; color: #F0213A; }
@@ -94,20 +93,20 @@
         </a>
 
         <div style="display: flex; align-items: center; gap: 8px; position: relative;">
-          <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; min-height: 36px; padding: 0px 16px; background: rgb(240, 33, 58); color: #ffffff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;">Download</a>
+          <a href="https://github.com/iKhunsa/tiktok-tts/releases/latest" target="_blank" rel="noopener" class="scp0" data-latest-exe style="display: inline-flex; align-items: center; min-height: 36px; padding: 0px 16px; background: rgb(240, 33, 58); color: #ffffff; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;" data-i18n="cta.download">Download</a>
 
           <a href="../alertas-obs-gratis-regalos-seguidores.html" hreflang="es" aria-label="View in Spanish" class="scp1" style="display: grid; place-items: center; width: 36px; height: 36px; padding: 0px; border: 1px solid rgba(255, 255, 255, 0.14); background: transparent; color: rgb(242, 242, 242); cursor: pointer;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9z"></path></svg></a>
 
                     <button type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer" id="nav-toggle" class="scp1" style="display: grid; place-items: center; width: 36px; height: 36px; padding: 0px; border: 1px solid rgba(255, 255, 255, 0.14); background: transparent; color: rgb(242, 242, 242); font-family: inherit; font-size: 0.8rem; cursor: pointer;"><span id="nav-toggle-glyph">≡</span></button>
 
           <nav class="nav-drawer" id="nav-drawer" aria-label="Sections">
-          <a href="index.html#features">Features</a>
-          <a href="index.html#overlays">Overlays</a>
-          <a href="creadores.html">Creators</a>
-          <a href="index.html#support">Support</a>
-          <a href="index.html#download">Download</a>
-          <a href="blog.html">Blog</a>
-          <a href="faq.html">FAQ</a>
+          <a href="index.html#features" data-i18n="nav.features">Features</a>
+          <a href="index.html#overlays" data-i18n="nav.overlays">Overlays</a>
+          <a href="creadores.html" data-i18n="nav.creators">Creators</a>
+          <a href="index.html#support" data-i18n="nav.support">Support</a>
+          <a href="index.html#download" data-i18n="nav.download">Download</a>
+          <a href="blog.html" data-i18n="nav.blog">Blog</a>
+          <a href="faq.html" data-i18n="nav.faq">FAQ</a>
           </nav>
         </div>
       </div>
@@ -195,6 +194,7 @@
         </div>
       </div>
     </footer>
-<script src="../script.js?v=3"></script>
+<script defer src="../assets/i18n.js"></script>
+?v=3"></script>
   </body>
 </html>
