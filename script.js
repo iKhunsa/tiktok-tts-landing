@@ -117,6 +117,14 @@ if (downloadButtons.length) {
       }
     })
     .catch(() => {});
+
+  downloadButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.open(button.href, "_blank", "noopener");
+      window.location.href = "download/started/";
+    });
+  });
 }
 
 // Copiar direcciones de donación

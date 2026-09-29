@@ -9,9 +9,9 @@
 (function () {
   "use strict";
   var lang = document.documentElement.lang === "en" ? "en" : "es";
-  var base = location.pathname.indexOf("/en/") !== -1 ? "../" : "";
+  var base = new URL("../i18n/", document.currentScript.src).href;
 
-  fetch(base + "i18n/" + lang + ".json")
+  fetch(base + lang + ".json")
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (dict) {
       if (!dict) return;

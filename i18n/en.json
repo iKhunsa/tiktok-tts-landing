@@ -12,5 +12,33 @@
   },
   "cta": {
     "download": "Download"
+  },
+  "downloadStarted": {
+    "home": "Home",
+    "title": "Thanks for downloading TikLive TTS!",
+    "lead": "Your download should begin shortly. If it didn't, <a href=\"https://github.com/iKhunsa/tiktok-tts/releases/latest\">click here</a>.",
+    "discordText": "Chat with the community, get help and share your ideas.",
+    "discordAction": "Join Discord →",
+    "githubText": "Star the project, report issues or contribute.",
+    "githubAction": "View repository →",
+    "tiktokText": "Follow TikLive TTS news, tutorials and clips.",
+    "tiktokAction": "Follow on TikTok →",
+    "helpTitle": "Is your browser stopping the app download?",
+    "helpText": "Watch this video to download and install it step by step.",
+    "helpAction": "Watch help video →",
+    "footerText": "Reads your chat out loud and shows OBS-ready alerts. Free and open source.",
+    "product": "Product",
+    "community": "Community",
+    "resources": "Resources",
+    "legal": "Legal",
+    "features": "Features",
+    "overlays": "Overlays",
+    "support": "Support",
+    "creators": "Creators",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "madeFor": "Made for streamers"
   }
 }
