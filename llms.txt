@@ -1,6 +1,6 @@
 # TikLive TTS
 
-> TikLive TTS is a free, open-source Windows desktop app that reads TikTok Live, Twitch and YouTube Live chat out loud (text-to-speech, 13 languages) and shows OBS-ready overlays for gift alerts, likes and followers. No account or sign-up required.
+> TikLive TTS is an open-source Windows desktop app that reads TikTok Live, Twitch and YouTube Live chat out loud and shows OBS-ready overlays. It offers a Free plan and paid plans; some features require an account.
 
 Official site: https://tiklivetts.es/
 Source code: https://github.com/iKhunsa/tiktok-tts
@@ -30,11 +30,11 @@ Community: https://discord.com/invite/mwY859tcQK
 
 ## Key facts
 
-- Price: free, no paid tier, no locked features. Funded by voluntary donations.
+- Price: Free, Sin Promos and Pro plans; current prices and features are shown in the app before payment.
 - License: open source, full code on GitHub.
 - Platforms read simultaneously: TikTok Live, Twitch, YouTube Live.
 - Languages: 13 text-to-speech languages/voices.
-- Requires no account, no login, runs locally on Windows.
+- Some features require an account; see the Terms and Privacy Policy for data processing details.
 - OBS integration via local Browser Source overlays (gift alerts, like counter, follower counter).
 - Includes anti-spam filtering, viewer moderation (mute/ban), and auto-reconnect with backoff.
 
