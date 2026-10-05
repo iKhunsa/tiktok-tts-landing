@@ -1792,3 +1792,12 @@ html.js .reveal.visible {
     align-items: flex-start;
   }
 }
+
+
+.page-main ul, .page-main ol { margin: 18px 0; padding-left: 1.4rem; }
+.page-main li + li { margin-top: 10px; }
+.legal-notice { margin: 28px 0; padding: 18px; border-left: 3px solid var(--brand); background: var(--surface-soft); }
+.legal-table-wrap { margin: 24px 0; overflow-x: auto; }
+.legal-table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 0.82rem; }
+.legal-table th, .legal-table td { padding: 12px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.legal-table th { color: var(--ink); background: var(--surface-soft); }
