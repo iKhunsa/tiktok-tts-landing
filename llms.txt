@@ -33,7 +33,7 @@ Community: https://discord.com/invite/mwY859tcQK
 - Price: Free, Sin Promos and Pro plans; current prices and features are shown in the app before payment.
 - License: open source, full code on GitHub.
 - Platforms read simultaneously: TikTok Live, Twitch, YouTube Live.
-- Languages: 13 text-to-speech languages/voices.
+- Languages: 12 text-to-speech voices in 10 languages.
 - Some features require an account; see the Terms and Privacy Policy for data processing details.
 - OBS integration via local Browser Source overlays (gift alerts, like counter, follower counter).
 - Includes anti-spam filtering, viewer moderation (mute/ban), and auto-reconnect with backoff.

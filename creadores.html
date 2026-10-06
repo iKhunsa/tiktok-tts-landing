@@ -74,6 +74,9 @@
     .scp3:hover { transform: translateY(-2px); }
     a[class^="scp"]:active, button[class^="scp"]:active { transform: translateY(0); }
 
+    .ttt-count[hidden] { display: none; }
+    .ttt-count { margin: 0 0 18px; color: rgb(138, 138, 138); font-size: 0.78rem; letter-spacing: 0.04em; }
+    .ttt-count strong { display: block; color: #F0213A; font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.6rem, 6vw, 3.8rem); font-weight: 300; line-height: 1; letter-spacing: -0.03em; }
     #ttt-creators { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; overflow: hidden; margin-top: clamp(28px, 4vw, 40px); }
     .ttt-c { display: flex; flex-direction: column; gap: 16px; padding: clamp(22px, 3vw, 30px); background: rgb(28, 28, 28); }
     .ttt-c:hover { background: #202020; }
@@ -109,10 +112,11 @@
     </header>
 <main id="top" class="page-main" style="width: min(1180px, calc(100% - 40px));">
       <p class="eyebrow">Ya lo usan en directo</p>
+      <p class="ttt-count" hidden><strong id="ttt-count"></strong> creadores ya se unieron a TikLive TTS</p>
       <h1>Creadores que suenan con TikLive TTS</h1>
       <p style="max-width: 60ch;">
         Streamers reales que dejan que su chat hable en sus lives. Pásate por sus canales y salúdalos.
-        Esta lista se actualiza sola: sale directo del panel, sin que nadie edite esta página a mano.
+        Esta lista se actualiza sola cada día con los nuevos creadores que se unen, sin que nadie edite esta página a mano.
       </p>
 
       <div id="ttt-creators" aria-live="polite"></div>
@@ -172,5 +176,14 @@
 <script defer src="assets/i18n.js"></script>
 <script src="script.js?v=3"></script>
     <script src="https://telemetria.tiklivetts.es/embed/creators.js"></script>
+    <script>
+      // Total de creadores = tarjetas que acaba de pintar el widget (se actualiza a diario en telemetría).
+      (function () {
+        var n = document.querySelectorAll('#ttt-creators .ttt-c').length;
+        if (!n) return;
+        document.getElementById('ttt-count').textContent = n.toLocaleString(document.documentElement.lang);
+        document.querySelector('.ttt-count').hidden = false;
+      })();
+    </script>
   </body>
 </html>

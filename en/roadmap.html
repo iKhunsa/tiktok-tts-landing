@@ -393,7 +393,7 @@
       // Keep in sync with roadmap.html (Spanish) — same order and status.
       var RM_ITEMS = [
         {
-          status: "progress",
+          status: "done",
           title: "Full TTS engine refactor and Kick support",
           desc: [
             "We're rebuilding TikLiveTTS's core from scratch to get it ready for what's coming. The current system works, but it's built as a single block, which limits how fast we can ship new features without risking the stability of everything else. That's why we're moving to a modular architecture, where each feature lives in its own independent module.",
@@ -418,12 +418,13 @@
           ]
         },
         {
-          status: "planned",
+          status: "progress",
           title: "Full Overlays rebuild and AI agent integration (MCP)",
           desc: [
             "This is one of the biggest updates on the roadmap. We're redesigning and rebuilding the Overlay section from the ground up, with a modular data architecture that allows much deeper customization than today: you'll be able to fine-tune every detail of your overlays.",
             "We're also rolling out MCP support across the whole app. This opens the door for AI agents like Claude or Codex to interact directly with TikLiveTTS, taking actions on your behalf and working alongside the Overlay section.",
-            "As part of this integration, there's a surprise waiting: a feature designed to catch you off guard with new ways to customize your stream (if you're the analytical type, you can probably guess it — the hint is AI agents)."
+            "As part of this integration, there's a surprise waiting: a feature designed to catch you off guard with new ways to customize your stream (if you're the analytical type, you can probably guess it — the hint is AI agents).",
+            "Current status: MCP tools have been available since v1.8.6, and customizable overlays with live preview are in beta."
           ]
         },
         {
