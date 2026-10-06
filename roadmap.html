@@ -391,7 +391,7 @@
       // (mover un item de "planned" a "progress" a "done") o agregar nuevos.
       var RM_ITEMS = [
         {
-          status: "progress",
+          status: "done",
           title: "Refactorización completa del motor de TTS y soporte para Kick",
           desc: [
             "Estamos reconstruyendo desde cero el núcleo de TikLiveTTS para dejarlo preparado para el crecimiento que viene. El sistema actual funciona, pero está pensado como un bloque único, lo que limita qué tan rápido podemos sumar funciones nuevas sin arriesgar la estabilidad del resto de la app. Por eso estamos migrando a una arquitectura modular, donde cada función vive en su propio módulo independiente.",
@@ -416,12 +416,13 @@
           ]
         },
         {
-          status: "planned",
+          status: "progress",
           title: "Renovación total de Overlays e integración con agentes de IA (MCP)",
           desc: [
             "Esta es una de las actualizaciones más grandes del roadmap. Vamos a rediseñar y reconstruir por completo la sección de Overlay, con una arquitectura de datos modular que permite una personalización mucho más profunda que la actual: van a poder ajustar cada detalle de sus overlays a su medida.",
             "Además, estamos incorporando funciones de MCP en toda la aplicación. Esto abre la puerta a que agentes de IA como Claude o Codex puedan interactuar directamente con TikLiveTTS, ejecutando acciones por ustedes y trabajando junto a la sección de Overlay.",
-            "Como parte de esta integración, adjunto les espera una sorpresa: una función pensada para sorprenderlos con nuevas formas de personalizar su transmisión (pero si son analíticos, se lo pueden imaginar — la pista son los agentes de IA)."
+            "Como parte de esta integración, adjunto les espera una sorpresa: una función pensada para sorprenderlos con nuevas formas de personalizar su transmisión (pero si son analíticos, se lo pueden imaginar — la pista son los agentes de IA).",
+            "Estado actual: las herramientas MCP ya están disponibles desde la v1.8.6, y los overlays personalizables con vista previa en vivo están en beta."
           ]
         },
         {
